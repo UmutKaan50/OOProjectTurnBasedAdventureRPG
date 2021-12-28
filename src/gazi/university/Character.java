@@ -24,49 +24,37 @@ public class Character {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public int getHealth() {
         return health;
     }
-
     public void setHealth(int health) {
         this.health = health;
     }
-
     public int getMana() {
         return mana;
     }
-
     public void setMana(int mana) {
         this.mana = mana;
     }
-
     public int getStrength() {
         return strength;
     }
-
     public void setStrength(int strength) {
         this.strength = strength;
     }
-
     public int getMoney() {
         return money;
     }
-
     public void setMoney(int money) {
         this.money = money;
     }
-
     public Inventory getInventory() {
         return inventory;
     }
-
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
-
 }
