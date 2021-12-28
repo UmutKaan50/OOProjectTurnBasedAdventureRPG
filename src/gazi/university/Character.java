@@ -12,6 +12,11 @@ public class Character {
     private int strength;
     private int money;
     private Inventory inventory;
-    private int experience;
-}
 
+    public void levelUp(){
+
+    }
+    public void buyItem(){}
+    public void sellItem(){}
+    public void usePotion(){}
+}
