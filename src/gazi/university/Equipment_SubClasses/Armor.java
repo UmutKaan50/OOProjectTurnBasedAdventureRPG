@@ -22,7 +22,7 @@ public class Armor {
 
     private void setListOfArmor(Armor armor) throws ClassNotFoundException {
         String type = armor.ArmorName;
-        Class<?> classCall = Class.forName("Shield");
+        Class<?> classCall = Class.forName(type);
         Object obj = armor.getClass().cast(classCall);
         listOfArmor.add(obj);
     }
