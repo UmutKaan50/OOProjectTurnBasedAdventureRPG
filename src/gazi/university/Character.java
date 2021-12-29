@@ -17,7 +17,9 @@ public class Character {
         this.inventory = inv;
     }
     public void levelUp(){}
-    public void buyItem(){}
+    public void buyItem(){
+
+    }
     public void sellItem(){}
     public void usePotion(){}
 
