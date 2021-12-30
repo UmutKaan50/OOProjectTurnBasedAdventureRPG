@@ -16,12 +16,20 @@ public class Character {
         this.money = money;
         this.inventory = inv;
     }
-    public void levelUp(){}
+    public void levelUp(){
+        health += 20;
+        mana += 20;
+        strength += 5;
+        money += 100;
+    }
     public void buyItem(){
 
     }
+
     public void sellItem(){}
-    public void usePotion(){}
+    public void usePotion(){
+
+    }
 
     public String getName() {
         return name;
