@@ -9,7 +9,7 @@ public class HealthPotion extends Potions {
     public HealthPotion(int price){
         super(price);
     }
-    public void regen(Character character, int price){
-
+    public void regen(Character character){
+        character.setHealth(character.getHealth() + 100);
     }
 }
