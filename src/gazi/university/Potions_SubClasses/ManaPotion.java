@@ -7,7 +7,7 @@ public class ManaPotion extends Potions {
     private Character character;
 
     public ManaPotion(int price){
-
+        super(price);
     }
 
     public void regen(Character character, int price){

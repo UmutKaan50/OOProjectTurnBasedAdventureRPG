@@ -7,7 +7,7 @@ public class HealthPotion extends Potions {
     private Character character;
 
     public HealthPotion(int price){
-
+        super(price);
     }
     public void regen(Character character, int price){
 
