@@ -1,6 +1,6 @@
 package gazi.university;
 
-public class Character {
+public class Character implements ActiveAndPassive, Info{
     private String name;
     private int health;
     private int mana;
@@ -147,5 +147,21 @@ public class Character {
     }
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
+    }
+
+    // Implementing and overriding methods from interfaces.
+    @Override
+    public int defaultAttack() {
+        return 0;
+    }
+
+    @Override
+    public int activeSkill() {
+        return 0;
+    }
+
+    @Override
+    public int passiveSkill() {
+        return 0;
     }
 }
