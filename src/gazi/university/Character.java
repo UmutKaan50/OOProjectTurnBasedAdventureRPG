@@ -100,7 +100,7 @@ public class Character {
         money += 100;
     }
 
-    public void buyItem(){
+    public void buyItem(Equipment equipment){
 
     }
 
