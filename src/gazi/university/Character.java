@@ -69,23 +69,19 @@ public class Character {
         // Checking the level up process here.
         if (experience >= xpToLvl2 && lvl == 1)
         {
-            lvl++;
-            experience = 0;
+            levelUpChanges();
         }
         else if (experience >= xpToLvl3 && lvl == 2)
         {
-            lvl++;
-            experience = 0;
+            levelUpChanges();
         }
         else if (experience >= xpToLvl4 && lvl == 3)
         {
-            lvl++;
-            experience = 0;
+           levelUpChanges();
         }
         else if(experience >= xpToLvl5 && lvl == 4)
         {
-            lvl++;
-            experience = 0;
+           levelUpChanges();
         }
 
 
@@ -94,18 +90,25 @@ public class Character {
 
     }
     private void levelUpChanges(){
+        lvl++;
+        experience = 0;
         health += 20;
         mana += 20;
         strength += 5;
         money += 100;
     }
 
-    public void buyItem(Equipment equipment){
-
+    // Configured both buyItem and sellItem classes.
+    public void buyItem(Equipment item){
+        inventory.getEquipmentList().add(item);
     }
 
-    public void sellItem(){}
+    public void sellItem(Equipment item){
+        inventory.getEquipmentList().remove(item);
+    }
+
     public void usePotion(){
+        // Thinking about adding a potion as parameter and removing it after usage.
 
     }
 
