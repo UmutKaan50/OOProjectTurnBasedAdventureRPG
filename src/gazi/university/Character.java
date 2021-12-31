@@ -17,6 +17,9 @@ public class Character {
         this.inventory = inv;
     }
     public void levelUp(){
+        // Let's make this changes in another method and call them.
+        // In addition I think it'll be better to have if and else if cases for leveling up.
+        // I'll be commiting and pushing them soon inshaallah.
         health += 20;
         mana += 20;
         strength += 5;
