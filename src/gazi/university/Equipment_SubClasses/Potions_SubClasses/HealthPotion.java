@@ -1,7 +1,7 @@
-package gazi.university.Potions_SubClasses;
+package gazi.university.Equipment_SubClasses.Potions_SubClasses;
 
 import gazi.university.Character;
-import gazi.university.Potions;
+import gazi.university.Equipment_SubClasses.Potions;
 
 public class HealthPotion extends Potions {
     // Maybe I can change Character association.

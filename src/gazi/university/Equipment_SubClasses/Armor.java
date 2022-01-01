@@ -1,30 +1,25 @@
 package gazi.university.Equipment_SubClasses;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Armor {
+    private final List<Armor> listOfArmor = new ArrayList<>();
     private int flatArmor;
     private int price;
-    private String ArmorName;
-    private List<Object> listOfArmor;
 
-    public Armor(int flatArmor, int price, String ArmorName) throws ClassNotFoundException {
-        this.flatArmor = flatArmor;
-        this.price = price;
-        this.ArmorName = ArmorName;
-        setListOfArmor(this);//We Automatically add an Armor item to the list and should not be set by a user
-    }
-    public Armor(){} //We created this constructor to not pass any data from its subclasses when we call it
-
-    public List<Object> getListOfArmor() {
-        return listOfArmor;
+    public Armor(){}
+    public List<Armor> getListOfArmor() {
+        return this.listOfArmor;
     }
 
-    private void setListOfArmor(Armor armor) throws ClassNotFoundException {
-        String type = armor.ArmorName;
-        Class<?> classCall = Class.forName(type);
-        Object obj = armor.getClass().cast(classCall);
-        listOfArmor.add(obj);
+    public void addArmorToList(Armor armor){
+        this.listOfArmor.add(armor);
     }
-
+    public int getFlatArmor(){
+        return this.flatArmor;
+    }
+    public int getPrice(){
+        return this.price;
+    }
 }

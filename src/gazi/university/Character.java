@@ -110,11 +110,11 @@ public class Character implements ActiveAndPassive, Info{
 
     // Configured both buyItem and sellItem classes.
     public void buyItem(Equipment item){
-        inventory.getEquipmentList().add(item);
+        //inventory.getEquipmentList().add(item);
     }
 
     public void sellItem(Equipment item){
-        inventory.getEquipmentList().remove(item);
+        //inventory.getEquipmentList().remove(item);
     }
 
     public void usePotion(){
