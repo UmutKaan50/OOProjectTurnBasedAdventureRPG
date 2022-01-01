@@ -1,6 +1,6 @@
 package gazi.university;
 
-public class Character {
+public class Character{
     private String name;
     private int health;
     private int mana;
@@ -59,4 +59,5 @@ public class Character {
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
+
 }
