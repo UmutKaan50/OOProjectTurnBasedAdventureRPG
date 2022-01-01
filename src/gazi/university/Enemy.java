@@ -1,9 +1,11 @@
 package gazi.university;
 
-public class Enemy {
+public class Enemy implements ActiveAndPassive{
+
     private String name;
     private int health;
     private int level;
+
     public Enemy(String name, int health, int level){
         this.name = name;
         this.health = health;
@@ -39,6 +41,21 @@ public class Enemy {
 
     public void setLevel(int level) {
         this.level = level;
+    }
+
+    @Override
+    public int defaultAttack(Object obj) {
+        return 0;
+    }
+
+    @Override
+    public int activeSkill(Object obj) {
+        return 0;
+    }
+
+    @Override
+    public int passiveSkill() {
+        return 0;
     }
 
 }
