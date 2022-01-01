@@ -1,8 +1,9 @@
 package gazi.university;
 
 public class Inventory {
-    // We need only update our Equipment class and be able to get this update from Inventory class
-    // Through Inventory class, we can access to the all list of equipments we want which can facilitate our job
+    // We do not need this class since we have one class that contains all the necessary objects in it.!!!
+    // Suggest me logical use of this class, otherwise I am going to delete it.
+    // By logically I mean not because we have to use it, but we NEED this to use it.!!
 
     private Equipment equipment;
 
