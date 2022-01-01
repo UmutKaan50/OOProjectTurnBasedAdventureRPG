@@ -1,22 +1,19 @@
 package gazi.university;
-import java.security.PublicKey;
-import java.util.*;
 
 public class Inventory {
-    // Variables: Equipments, Potions.
-    // Constructors: 3
+    // We need only update our Equipment class and be able to get this update from Inventory class
+    // Through Inventory class, we can access to the all list of equipments we want which can facilitate our job
 
-    private ArrayList<Equipment> equipmentList = new ArrayList<Equipment>();
+    private Equipment equipment;
 
     public Inventory(){
 
     }
 
-    public ArrayList<Equipment> getEquipmentList() {
-        return equipmentList;
+    public void updateEquipments(Equipment equipment) {
+        this.equipment = equipment;
     }
-
-    public void setEquipmentList(ArrayList<Equipment> equipmentList) {
-        this.equipmentList = equipmentList;
+    public Equipment getEquipment(){
+        return this.equipment;
     }
 }
