@@ -7,6 +7,16 @@ public class Character implements ActiveAndPassive, Info{
     private int strength;
     private int money;
     private Inventory inventory;
+    // Added
+    private int damage;
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
 
     // Added variables
     // Dexterity and intelligence was forgotten.
@@ -151,12 +161,12 @@ public class Character implements ActiveAndPassive, Info{
 
     // Implementing and overriding methods from interfaces.
     @Override
-    public int defaultAttack() {
+    public int defaultAttack(Object obj) {
         return 0;
     }
 
     @Override
-    public int activeSkill() {
+    public int activeSkill(Object obj) {
         return 0;
     }
 
