@@ -1,33 +1,22 @@
 package gazi.university;
+import java.security.PublicKey;
+import java.util.*;
 
 public class Inventory {
-    private Equipment equipment;
-    private Potions potions;
+    // Variables: Equipments, Potions.
+    // Constructors: 3
 
-    public Inventory(Equipment equipment, Potions potions){
-        this.equipment = equipment;
-        this.potions = potions;
-    }
-    public Inventory(Equipment equipment){
-        this.equipment = equipment;
-    }
-    public Inventory(Potions potions){
-        this.potions = potions;
+    private ArrayList<Equipment> equipmentList = new ArrayList<Equipment>();
+
+    public Inventory(){
+
     }
 
-    public Equipment getEquipment() {
-        return equipment;
+    public ArrayList<Equipment> getEquipmentList() {
+        return equipmentList;
     }
 
-    public void setEquipment(Equipment equipment) {
-        this.equipment = equipment;
-    }
-
-    public Potions getPotions() {
-        return potions;
-    }
-
-    public void setPotions(Potions potions) {
-        this.potions = potions;
+    public void setEquipmentList(ArrayList<Equipment> equipmentList) {
+        this.equipmentList = equipmentList;
     }
 }
