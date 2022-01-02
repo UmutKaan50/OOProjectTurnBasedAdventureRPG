@@ -7,5 +7,6 @@ public interface ActiveAndPassive {
 
     // I'm not sure about this part. But it looks good.
     void activeSkill(Enemy enemy);
-    void passiveSkill();
+
+    // I removed passiveSkill function. We can add it later if required.
 }

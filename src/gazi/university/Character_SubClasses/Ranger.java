@@ -18,8 +18,4 @@ public class Ranger extends Character {
 
     }
 
-    @Override
-    public void passiveSkill() {
-
-    }
 }

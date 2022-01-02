@@ -182,11 +182,6 @@ public class Character implements ActiveAndPassive, Info{
 
     }
 
-    @Override
-    public void passiveSkill() {
-
-    }
-
     // Implementing and overriding methods from interfaces.
 
 

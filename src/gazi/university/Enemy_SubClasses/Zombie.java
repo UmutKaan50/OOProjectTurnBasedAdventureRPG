@@ -16,7 +16,4 @@ public class Zombie extends Enemy {
 
     }
 
-    public void passiveSkill() {
-
-    }
 }

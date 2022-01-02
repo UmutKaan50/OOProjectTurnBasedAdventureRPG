@@ -65,9 +65,4 @@ public class Enemy implements ActiveAndPassive{
 
     }
 
-    @Override
-    public void passiveSkill() {
-
-    }
-
 }

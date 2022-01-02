@@ -19,12 +19,6 @@ public class Poacher extends Enemy {
 
     }
 
-
-    public void passiveSkill() {
-
-    }
-
-
 }
 
 
