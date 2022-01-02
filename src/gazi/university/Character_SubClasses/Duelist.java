@@ -16,7 +16,7 @@ public class Duelist extends Character {
 
     @Override
     public void defaultAttack(Enemy enemy) {
-
+        enemy.setHealth(enemy.getHealth() - getDamage());
     }
 
     @Override

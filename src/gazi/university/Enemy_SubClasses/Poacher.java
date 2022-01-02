@@ -15,7 +15,7 @@ public class Poacher extends Enemy {
     }
 
 
-    public void activeSkill(Enemy enemy) {
+    public void activeSkill(Character character) {
 
     }
 

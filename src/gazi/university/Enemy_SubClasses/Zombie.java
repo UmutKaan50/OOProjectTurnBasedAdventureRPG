@@ -1,5 +1,6 @@
 package gazi.university.Enemy_SubClasses;
 
+import gazi.university.Character;
 import gazi.university.Enemy;
 
 public class Zombie extends Enemy {
@@ -7,16 +8,14 @@ public class Zombie extends Enemy {
         super(name, health, level);
     }
 
-    @Override
-    public void defaultAttack(Enemy enemy) {
+    public void defaultAttack(Character character) {
+        character.setHealth(character.getHealth() - getDamage());
     }
 
-    @Override
-    public void activeSkill(Enemy enemy) {
+    public void activeSkill(Character character) {
 
     }
 
-    @Override
     public void passiveSkill() {
 
     }
