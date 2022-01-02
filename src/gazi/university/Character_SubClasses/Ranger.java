@@ -1,11 +1,11 @@
 package gazi.university.Character_SubClasses;
 
 import gazi.university.Character;
-import gazi.university.Inventory;
+import gazi.university.Equipment;
 
 public class Ranger extends Character {
-    public Ranger(String name, int health, int mana, int strength, int money, Inventory inv){
-        super(name, health, mana, strength, money, inv);
+    public Ranger(String name, int health, int mana, int strength, int money, Equipment equipment){
+        super(name, health, mana, strength, money, equipment);
     }
 
     @Override

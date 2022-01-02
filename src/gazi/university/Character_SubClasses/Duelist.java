@@ -2,12 +2,12 @@ package gazi.university.Character_SubClasses;
 
 
 import gazi.university.Character;
-import gazi.university.Inventory;
+import gazi.university.Equipment;
 
 public class Duelist extends Character {
 
-    public Duelist(String name, int health, int mana, int str, int money, Inventory inv){
-        super(name, health, mana, str, money, inv);
+    public Duelist(String name, int health, int mana, int str, int money, Equipment equipment){
+        super(name, health, mana, str, money, equipment);
     }
 
     @Override

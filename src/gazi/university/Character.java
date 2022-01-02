@@ -6,7 +6,7 @@ public class Character implements ActiveAndPassive, Info{
     private int mana;
     private int strength;
     private int money;
-    private Inventory inventory;
+    private Equipment equipment;
     // Added
     private int damage;
 
@@ -63,13 +63,13 @@ public class Character implements ActiveAndPassive, Info{
         this.dexterity = dexterity;
     }
 
-    public Character(String name, int health, int mana, int strength, int money, Inventory inv){
+    public Character(String name, int health, int mana, int strength, int money, Equipment equipment){
         this.name = name;
         this.health = health;
         this.mana = mana;
         this.strength = strength;
         this.money = money;
-        this.inventory = inv;
+        this.equipment = equipment;
     }
     public void levelUp(){
         // Let's make this changes in another method and call them.
@@ -108,9 +108,11 @@ public class Character implements ActiveAndPassive, Info{
         money += 100;
     }
 
-    // Configured both buyItem and sellItem classes.
+    // Please, modify your code in the methods. (Suggestion) How about if you create three buyItem methods according
+    // its parameters type? e.g. buyItem(Weapon weapon) so on...
     public void buyItem(Equipment item){
-        //inventory.getEquipmentList().add(item);
+        //Please, modify your code here. Note that an Equipment cannot be more than one
+        // because it serves as a container of Weapon, Armor, Potions which have lists of their subclasses
     }
 
     public void sellItem(Equipment item){
@@ -152,11 +154,11 @@ public class Character implements ActiveAndPassive, Info{
     public void setMoney(int money) {
         this.money = money;
     }
-    public Inventory getInventory() {
-        return inventory;
+    public Equipment getEquipment() {
+        return equipment;
     }
-    public void setInventory(Inventory inventory) {
-        this.inventory = inventory;
+    public void setEquipment(Equipment equipment) {
+        this.equipment = equipment;
     }
 
     // Implementing and overriding methods from interfaces.
