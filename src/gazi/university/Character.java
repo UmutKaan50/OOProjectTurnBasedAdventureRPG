@@ -181,6 +181,11 @@ public class Character implements ActiveAndPassive, Info{
     }
 
     @Override
+    public int defaultAttack(Enemy enemy) {
+        return 0;
+    }
+
+    @Override
     public int passiveSkill() {
         return 0;
     }
