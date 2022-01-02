@@ -4,6 +4,8 @@ import gazi.university.Enemy;
 import gazi.university.Location;
 import gazi.university.Character;
 
+import java.util.List;
+
 public abstract class Battlefield extends Location { //Since each battlefield's requirements vary from their level and
     // these methods are a MUST in each battlefield, we have
     //to make each method abstract and create their own logic.
@@ -18,6 +20,7 @@ public abstract class Battlefield extends Location { //Since each battlefield's 
 
     // Deleted get and setEnemy method since we must define
     //certain amount and kind of enemies belonging to respective level of battlefield
+    public abstract List<Enemy> getListOfEnemy();
 
     public abstract void killedEnemy(Enemy killedEnemy);
 
