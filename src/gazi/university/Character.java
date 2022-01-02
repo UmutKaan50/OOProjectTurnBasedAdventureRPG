@@ -9,6 +9,7 @@ public class Character implements ActiveAndPassive, Info{
     private Equipment equipment;
     // Added
     private int damage;
+    private String currentLocation;
 
     public int getDamage() {
         return damage;
@@ -17,6 +18,15 @@ public class Character implements ActiveAndPassive, Info{
     public void setDamage(int damage) {
         this.damage = damage;
     }
+
+    public String getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(String currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+
 
     // Added variables
     // Dexterity and intelligence was forgotten.
