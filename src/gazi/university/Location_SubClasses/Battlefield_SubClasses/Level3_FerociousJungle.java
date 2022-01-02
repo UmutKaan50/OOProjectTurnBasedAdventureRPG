@@ -15,6 +15,10 @@ public class Level3_FerociousJungle extends Battlefield {
     private List<Enemy> listOfEnemies = new ArrayList<>();
     private static final int numberOfEnemies = 35;
     private int remainedNumber = numberOfEnemies;
+    private static final int totalGoldAward = numberOfEnemies * 10;
+    private int remainedGold = totalGoldAward;
+    private static final int totalXpAward = numberOfEnemies * 5;
+    private int remainedXpAward = totalXpAward;
 
     public Level3_FerociousJungle(Enemy enemy, Character character){
         super(enemy, character);
@@ -60,42 +64,33 @@ public class Level3_FerociousJungle extends Battlefield {
     }
 
     @Override
-    public int getNumberOfEnemies() {
-        return numberOfEnemies;
-    }
-
-    @Override
-    public void setNumberOfEnemies(int numberOfEnemies) { //Thinking about deletion
-
-    }
-
-    @Override
     public int getRemainedEnemies() {
         return this.remainedNumber;
     }
 
     @Override
-    public void setRemainedEnemies(int remainedEnemies) {
-
+    protected void setRemainedEnemies(int remainedEnemies) { //Thinking about using this method in database management since
+                                                             //in the flow of game this method should be secured from player.
+        this.remainedNumber = remainedEnemies;
     }
 
     @Override
-    public int getTotalGoldAward() {
+    public int getRemainedGold() {
         return 0;
     }
 
     @Override
-    public void setTotalGoldAward(int totalGoldAward) {
+    public void setRemainedGold(int totalGoldAward) {
 
     }
 
     @Override
-    public int getTotalExperience() {
+    public int getRemainedExperience() {
         return 0;
     }
 
     @Override
-    public void setTotalExperience(int totalExperience) {
+    public void setRemainedExperience(int totalExperience) {
 
     }
 }

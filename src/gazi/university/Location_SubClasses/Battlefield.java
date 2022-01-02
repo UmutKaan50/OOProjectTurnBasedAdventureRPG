@@ -24,20 +24,18 @@ public abstract class Battlefield extends Location { //Since each battlefield's 
 
     public abstract void killedEnemy(Enemy killedEnemy);
 
-    public abstract int getNumberOfEnemies();
-
-    protected abstract void setNumberOfEnemies(int numberOfEnemies); //Thinking about deleting this method since the number
+     //Deleted this method(get and set numberOfEnemies()) since the number
     //of enemies must be defined by default.
 
-    public abstract int getRemainedEnemies();
+    protected abstract int getRemainedEnemies();
 
     protected abstract void setRemainedEnemies(int remainedEnemies);
 
-    public abstract int getTotalGoldAward();
+    protected abstract int getRemainedGold();
 
-    public abstract void setTotalGoldAward(int totalGoldAward);
+    protected abstract void setRemainedGold(int remainedGold);
 
-    public abstract int getTotalExperience();
+    protected abstract int getRemainedExperience();
 
-    public abstract void setTotalExperience(int totalExperience);
+    protected abstract void setRemainedExperience(int totalExperience);
 }

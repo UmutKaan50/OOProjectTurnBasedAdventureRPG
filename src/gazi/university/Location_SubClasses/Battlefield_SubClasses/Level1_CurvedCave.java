@@ -15,6 +15,10 @@ public class Level1_CurvedCave extends Battlefield {
     private List<Enemy> listOfEnemies = new ArrayList<>();
     private static final int numberOfEnemies = 15;
     private int remainedNumber = numberOfEnemies;
+    private static final int totalGoldAward = numberOfEnemies * 10;
+    private int remainedGold = totalGoldAward;
+    private static final int totalXpAward = numberOfEnemies * 5;
+    private int remainedXpAward = totalXpAward;
 
     public Level1_CurvedCave(Enemy enemy, Character character){
         super(enemy, character);
@@ -60,42 +64,34 @@ public class Level1_CurvedCave extends Battlefield {
     }
 
     @Override
-    public int getNumberOfEnemies() {
-        return numberOfEnemies;
-    }
-
-    @Override
-    protected void setNumberOfEnemies(int numberOfEnemies) {
-
-    }
-
-    @Override
     public int getRemainedEnemies() {
         return this.remainedNumber;
     }
 
     @Override
-    protected void setRemainedEnemies(int remainedEnemies) {
+    protected void setRemainedEnemies(int remainedEnemies) {//Thinking about using this method in database management since
+                                                            // in the flow of game this method should be secured from player.
+        this.remainedNumber = remainedEnemies;
 
     }
 
     @Override
-    public int getTotalGoldAward() {
-        return 0;
+    public int getRemainedGold() {
+        return this.remainedGold;
     }
 
     @Override
-    public void setTotalGoldAward(int totalGoldAward) {
-
+    public void setRemainedGold(int totalGoldAward) {
+        this.remainedGold = remainedGold;
     }
 
     @Override
-    public int getTotalExperience() {
-        return 0;
+    public int getRemainedExperience() {
+        return this.remainedXpAward;
     }
 
     @Override
-    public void setTotalExperience(int totalExperience) {
-
+    public void setRemainedExperience(int totalExperience) {
+        this.remainedXpAward = remainedXpAward;
     }
 }
