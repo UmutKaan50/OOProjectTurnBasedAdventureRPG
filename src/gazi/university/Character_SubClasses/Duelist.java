@@ -11,19 +11,22 @@ public class Duelist extends Character {
         super(name, health, mana, str, money, equipment);
     }
 
+    // Looking for the type of this method.
+    // enemy.setHealth(enemy.getHealth() - getDamage());
+
     @Override
-    public int defaultAttack(Enemy enemy) {
-        return 0;
+    public void defaultAttack(Enemy enemy) {
+
     }
 
     @Override
-    public int activeSkill(Enemy enemy) {
-        return super.activeSkill(enemy);
+    public void activeSkill(Enemy enemy) {
+
     }
 
     @Override
-    public int passiveSkill() {
-        return 0;
+    public void passiveSkill() {
+
     }
 
 }

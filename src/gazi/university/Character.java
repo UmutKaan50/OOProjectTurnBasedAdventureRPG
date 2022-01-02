@@ -172,21 +172,22 @@ public class Character implements ActiveAndPassive, Info{
         this.equipment = equipment;
     }
 
+    @Override
+    public void defaultAttack(Enemy enemy) {
+
+    }
+
+    @Override
+    public void activeSkill(Enemy enemy) {
+
+    }
+
+    @Override
+    public void passiveSkill() {
+
+    }
+
     // Implementing and overriding methods from interfaces.
 
 
-    @Override
-    public int activeSkill(Enemy enemy) {
-        return 0;
-    }
-
-    @Override
-    public int defaultAttack(Enemy enemy) {
-        return 0;
-    }
-
-    @Override
-    public int passiveSkill() {
-        return 0;
-    }
 }

@@ -1,5 +1,6 @@
 package gazi.university.Enemy_SubClasses;
 
+import gazi.university.Character;
 import gazi.university.Enemy;
 
 public class Poacher extends Enemy {
@@ -7,19 +8,20 @@ public class Poacher extends Enemy {
         super(name, health, level);
     }
 
-    @Override
-    public int defaultAttack(Enemy enemy) {
-        return super.defaultAttack(enemy);
+    // Planning to make more changes here.
+
+    public void defaultAttack(Character character) {
+        character.setHealth(character.getHealth() - getDamage());
     }
 
-    @Override
-    public int activeSkill(Enemy enemy) {
-        return super.activeSkill(enemy);
+
+    public void activeSkill(Enemy enemy) {
+
     }
 
-    @Override
-    public int passiveSkill() {
-        return super.passiveSkill();
+
+    public void passiveSkill() {
+
     }
 
 

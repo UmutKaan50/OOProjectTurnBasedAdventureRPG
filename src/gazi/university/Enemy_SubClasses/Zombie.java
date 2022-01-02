@@ -8,17 +8,16 @@ public class Zombie extends Enemy {
     }
 
     @Override
-    public int defaultAttack(Enemy enemy) {
-        return super.defaultAttack(enemy);
+    public void defaultAttack(Enemy enemy) {
     }
 
     @Override
-    public int activeSkill(Enemy enemy) {
-        return super.activeSkill(enemy);
+    public void activeSkill(Enemy enemy) {
+
     }
 
     @Override
-    public int passiveSkill() {
-        return super.passiveSkill();
+    public void passiveSkill() {
+
     }
 }

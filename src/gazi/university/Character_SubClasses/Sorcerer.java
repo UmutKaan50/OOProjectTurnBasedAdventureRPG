@@ -8,20 +8,18 @@ public class Sorcerer extends Character {
     public Sorcerer(String name, int health, int mana, int strength, int money, Equipment equipment){
         super(name, health, mana, strength, money, equipment);
     }
-
     @Override
-    public int defaultAttack(Enemy enemy) {
-        return 0;
+    public void defaultAttack(Enemy enemy) {
+
     }
 
     @Override
-    public int activeSkill(Enemy enemy) {
-        return super.activeSkill(enemy);
+    public void activeSkill(Enemy enemy) {
+
     }
 
-
     @Override
-    public int passiveSkill() {
-        return super.passiveSkill();
+    public void passiveSkill() {
+
     }
 }
