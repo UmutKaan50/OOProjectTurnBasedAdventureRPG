@@ -15,6 +15,10 @@ public class Sorcerer extends Character {
 
     @Override
     public void activeSkill(Enemy enemy) {
+        // Sorcerer's active skill deals normal damage and then steals 2 dmg from enemy.
+        enemy.setHealth(enemy.getHealth() - getDamage());
+        enemy.setDamage(enemy.getDamage() - 2);
+        setDamage(getDamage() + 2);
 
     }
 

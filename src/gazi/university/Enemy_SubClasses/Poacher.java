@@ -14,11 +14,6 @@ public class Poacher extends Enemy {
         character.setHealth(character.getHealth() - getDamage());
     }
 
-
-    public void activeSkill(Character character) {
-
-    }
-
 }
 
 

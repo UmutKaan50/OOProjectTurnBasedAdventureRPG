@@ -11,9 +11,4 @@ public class Vampire extends Enemy {
     public void defaultAttack(Character character) {
         character.setHealth(character.getHealth() - getDamage());
     }
-
-    public void activeSkill(Character character) {
-
-    }
-
 }

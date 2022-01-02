@@ -15,6 +15,9 @@ public class Ranger extends Character {
 
     @Override
     public void activeSkill(Enemy enemy) {
+        // Ranger's active skills damages opponnent normal attack and then heals same amount dealt damage.
+        enemy.setHealth(enemy.getHealth() - getDamage());
+        setHealth(getHealth() + getDamage());
 
     }
 

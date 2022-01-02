@@ -21,9 +21,9 @@ public class Duelist extends Character {
 
     @Override
     public void activeSkill(Enemy enemy) {
-        // Duelist's active skill deals double damage.
+        // Duelist's active skill deals double damage and increased damage by 2. (for now)
         enemy.setHealth(enemy.getHealth() - getDamage() * 2);
-
+        setDamage(getDamage() + 2);
     }
 
 }
