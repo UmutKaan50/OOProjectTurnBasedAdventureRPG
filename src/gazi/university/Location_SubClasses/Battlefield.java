@@ -3,68 +3,38 @@ package gazi.university.Location_SubClasses;
 import gazi.university.Enemy;
 import gazi.university.Location;
 import gazi.university.Character;
-import java.util.List;
 
-public abstract class Battlefield extends Location {
-    private Enemy enemy;
-    private List<Enemy> listOfEnemies;
-    private int numberOfEnemies;
-    private int remainedEnemies;
-    private int totalGoldAward;
-    private int totalExperience;
+public abstract class Battlefield extends Location { //Since each battlefield's requirements vary from their level and
+    // these methods are a MUST in each battlefield, we have
+    //to make each method abstract and create their own logic.
 
     public Battlefield(Enemy enemy, Character character){
         super(character);
     }
-    public void spawnEnemy(Enemy enemy){
 
-    }
-    public Enemy getEnemy() {
-        return enemy;
-    }
+    protected abstract void spawnEnemy(Enemy enemy); //this method is not public but protected because we should not engage
+    //in object creation in process of the creation of game's flow. Instead, we will only distribute the created objects in the game
 
-    public void setEnemy(Enemy enemy) {
-        this.enemy = enemy;
-    }
+    public abstract Enemy getEnemy();
 
-    public List<Enemy> getListOfEnemies() {
-        return listOfEnemies;
-    }
+    public abstract void setEnemy(Enemy enemy);// Thinking about deleting this method since we must define
+    //certain amount and kind of enemies belonging to respective level of battlefield
 
-    public void setListOfEnemies(List<Enemy> listOfEnemies) {
-        this.listOfEnemies = listOfEnemies;
-    }
+    public abstract void killedEnemy(Enemy killedEnemy);
 
-    public int getNumberOfEnemies() {
-        return numberOfEnemies;
-    }
+    public abstract int getNumberOfEnemies();
 
-    public void setNumberOfEnemies(int numberOfEnemies) {
-        this.numberOfEnemies = numberOfEnemies;
-    }
+    public abstract void setNumberOfEnemies(int numberOfEnemies);
 
-    public int getRemainedEnemies() {
-        return remainedEnemies;
-    }
+    public abstract int getRemainedEnemies();
 
-    public void setRemainedEnemies(int remainedEnemies) {
-        this.remainedEnemies = remainedEnemies;
-    }
+    public abstract void setRemainedEnemies(int remainedEnemies);
 
-    public int getTotalGoldAward() {
-        return totalGoldAward;
-    }
+    public abstract int getTotalGoldAward();
 
-    public void setTotalGoldAward(int totalGoldAward) {
-        this.totalGoldAward = totalGoldAward;
-    }
+    public abstract void setTotalGoldAward(int totalGoldAward);
 
-    public int getTotalExperience() {
-        return totalExperience;
-    }
+    public abstract int getTotalExperience();
 
-    public void setTotalExperience(int totalExperience) {
-        this.totalExperience = totalExperience;
-    }
-
+    public abstract void setTotalExperience(int totalExperience);
 }
