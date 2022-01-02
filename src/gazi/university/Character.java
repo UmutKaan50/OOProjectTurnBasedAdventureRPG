@@ -42,7 +42,7 @@ public class Character implements ActiveAndPassive, Info{
 
     // Getters and setters for my additional variables.
     public int getIntelligence() {
-        return intelligence;
+        return this.intelligence;
     }
 
     public void setIntelligence(int intelligence) {
@@ -50,7 +50,7 @@ public class Character implements ActiveAndPassive, Info{
     }
 
     public int getLvl() {
-        return lvl;
+        return this.lvl;
     }
 
     public void setLvl(int lvl) {
@@ -58,7 +58,7 @@ public class Character implements ActiveAndPassive, Info{
     }
 
     public int getExperience() {
-        return experience;
+        return this.experience;
     }
 
     public void setExperience(int experience) {
@@ -66,7 +66,7 @@ public class Character implements ActiveAndPassive, Info{
     }
 
     public int getDexterity() {
-        return dexterity;
+        return this.dexterity;
     }
 
     public void setDexterity(int dexterity) {

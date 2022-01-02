@@ -22,7 +22,7 @@ public abstract class Battlefield extends Location { //Since each battlefield's 
     //certain amount and kind of enemies belonging to respective level of battlefield
     public abstract List<Enemy> getListOfEnemy();
 
-    public abstract void killedEnemy(Enemy killedEnemy);
+    public abstract void killedEnemy(Character character, Enemy killedEnemy);
 
      //Deleted this method(get and set numberOfEnemies()) since the number
     //of enemies must be defined by default.

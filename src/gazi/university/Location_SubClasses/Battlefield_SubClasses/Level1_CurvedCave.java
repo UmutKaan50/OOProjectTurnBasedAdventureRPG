@@ -19,6 +19,7 @@ public class Level1_CurvedCave extends Battlefield {
     private int remainedGold = totalGoldAward;
     private static final int totalXpAward = numberOfEnemies * 5;
     private int remainedXpAward = totalXpAward;
+    private List<Integer> GoldXpPerEnemy = new ArrayList<>();
 
     public Level1_CurvedCave(Enemy enemy, Character character){
         super(enemy, character);
@@ -37,6 +38,10 @@ public class Level1_CurvedCave extends Battlefield {
             switch (typeName[randomNumber]) { // this is called "Enhanced switch statement", guys. :)
                 case "Poacher" -> {
                     Poacher poacher = new Poacher("Poacher1", 10, 1);
+
+                    // We should talk about each enemy's price when it is killed (how much gold and xp does it worth?)
+                    //After that, assign those values to each of them in their respective classes to be able to add them character's variables.
+
                     this.listOfEnemies.add(poacher);
                 }
                 case "Vampire" -> {
@@ -58,8 +63,9 @@ public class Level1_CurvedCave extends Battlefield {
     }
 
     @Override
-    public void killedEnemy(Enemy killedEnemy) {
+    public void killedEnemy(Character character, Enemy killedEnemy) {
         this.remainedNumber = numberOfEnemies - 1;
+
         this.listOfEnemies.remove(numberOfEnemies - remainedNumber);
     }
 
@@ -76,22 +82,22 @@ public class Level1_CurvedCave extends Battlefield {
     }
 
     @Override
-    public int getRemainedGold() {
+    protected int getRemainedGold() {
         return this.remainedGold;
     }
 
     @Override
-    public void setRemainedGold(int totalGoldAward) {
+    protected void setRemainedGold(int totalGoldAward) {
         this.remainedGold = remainedGold;
     }
 
     @Override
-    public int getRemainedExperience() {
+    protected int getRemainedExperience() {
         return this.remainedXpAward;
     }
 
     @Override
-    public void setRemainedExperience(int totalExperience) {
+    protected void setRemainedExperience(int totalExperience) {
         this.remainedXpAward = remainedXpAward;
     }
 }

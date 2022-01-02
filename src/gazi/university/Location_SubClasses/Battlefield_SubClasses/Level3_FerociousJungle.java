@@ -58,7 +58,7 @@ public class Level3_FerociousJungle extends Battlefield {
     }
 
     @Override
-    public void killedEnemy(Enemy killedEnemy) {
+    public void killedEnemy(Character character, Enemy killedEnemy) {
         this.remainedNumber = numberOfEnemies - 1;
         this.listOfEnemies.remove(numberOfEnemies - remainedNumber);
     }
