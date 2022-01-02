@@ -13,6 +13,8 @@ import java.util.Random;
 
 public class Level1_CurvedCave extends Battlefield {
     private List<Enemy> listOfEnemies = new ArrayList<>();
+    private static final int numberOfEnemies = 15;
+    private int remainedNumber = numberOfEnemies;
 
     public Level1_CurvedCave(Enemy enemy, Character character){
         super(enemy, character);
@@ -23,9 +25,9 @@ public class Level1_CurvedCave extends Battlefield {
     @Override
     protected void spawnEnemy(Enemy enemy) { // this method generates list of Enemies in random order respective to the level fo battlefield
         int times = 0;
-        String[] typeName = {"Poacher", "Vampire", "Zombie"};
+        String[] typeName = {"Poacher", "Vampire", "Zombie"};//Thinking about how to randomly pick up the level of enemy
 
-        while(times != this.getNumberOfEnemies()){
+        while(times != this.remainedNumber){
             Random random = new Random();
             int randomNumber = random.nextInt(typeName.length);
             switch (typeName[randomNumber]) { // this is called "Enhanced switch statement", guys. :)
@@ -47,37 +49,28 @@ public class Level1_CurvedCave extends Battlefield {
     }
 
     @Override
-    public Enemy getEnemy() {
-        return null;
-    }
-
-    @Override
-    public void setEnemy(Enemy enemy) {
-
-    }
-
-    @Override
     public void killedEnemy(Enemy killedEnemy) {
-
+        this.remainedNumber = numberOfEnemies - 1;
+        this.listOfEnemies.remove(numberOfEnemies - remainedNumber);
     }
 
     @Override
     public int getNumberOfEnemies() {
-        return 0;
+        return numberOfEnemies;
     }
 
     @Override
-    public void setNumberOfEnemies(int numberOfEnemies) {
+    protected void setNumberOfEnemies(int numberOfEnemies) {
 
     }
 
     @Override
     public int getRemainedEnemies() {
-        return 0;
+        return this.remainedNumber;
     }
 
     @Override
-    public void setRemainedEnemies(int remainedEnemies) {
+    protected void setRemainedEnemies(int remainedEnemies) {
 
     }
 
