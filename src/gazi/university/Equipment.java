@@ -15,27 +15,43 @@ public class Equipment {
     private List<Armor> armor = new ArrayList<>();
     private List<Potions> potions = new ArrayList<>();
 
-    public Equipment(){}
+    public Equipment() {
+    }
 
-    public List<Weapon> getListOfWeapons(){
+    public List<Weapon> getListOfWeapons() {
         return this.weapon;
     }
-    public List<Armor> getListOfArmor(){
+
+    public List<Armor> getListOfArmor() {
         return this.armor;
     }
-    public List<Potions> getListOfPotions(){
+
+    public List<Potions> getListOfPotions() {
         return this.potions;
     }
 
-    public void addItemOfEquipment(@Nullable Weapon weapon, @Nullable Armor armor, @Nullable Potions potions){
-        if(weapon != null){
+    public void setWeaponToList(Weapon weapon) {
+        this.weapon.add(weapon);
+    } //just added
+
+    public void setArmorToList(Armor armor) {
+        this.armor.add(armor);
+    } //just added
+
+    public void setPotionsToList( Potions potions) {
+        this.potions.add(potions);
+    } //just added
+
+    public void addItemsOfEquipment(@Nullable Weapon weapon, @Nullable Armor armor, @Nullable Potions potions) {
+        if (weapon != null) {
             this.weapon = weapon.getListOfWeapons();
         }
-        if(armor != null){
+        if (armor != null) {
             this.armor = armor.getListOfArmor();
         }
-        if(potions != null){
+        if (potions != null) {
             this.potions = potions.getListOfPotions();
         }
     }
+
 }
