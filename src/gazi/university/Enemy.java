@@ -44,12 +44,12 @@ public class Enemy implements ActiveAndPassive{
     }
 
     @Override
-    public int defaultAttack(Object obj) {
+    public int activeSkill(Enemy enemy) {
         return 0;
     }
 
     @Override
-    public int activeSkill(Object obj) {
+    public int defaultAttack(Enemy enemy) {
         return 0;
     }
 

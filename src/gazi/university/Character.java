@@ -1,6 +1,7 @@
 package gazi.university;
 
 public class Character implements ActiveAndPassive, Info{
+
     private String name;
     private int health;
     private int mana;
@@ -172,13 +173,10 @@ public class Character implements ActiveAndPassive, Info{
     }
 
     // Implementing and overriding methods from interfaces.
-    @Override
-    public int defaultAttack(Object obj) {
-        return 0;
-    }
+
 
     @Override
-    public int activeSkill(Object obj) {
+    public int activeSkill(Enemy enemy) {
         return 0;
     }
 

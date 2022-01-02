@@ -1,6 +1,7 @@
 package gazi.university.Character_SubClasses;
 
 import gazi.university.Character;
+import gazi.university.Enemy;
 import gazi.university.Equipment;
 
 public class Sorcerer extends Character {
@@ -9,14 +10,15 @@ public class Sorcerer extends Character {
     }
 
     @Override
-    public int defaultAttack(Object obj) {
+    public int defaultAttack(Enemy enemy) {
         return 0;
     }
 
     @Override
-    public int activeSkill(Object obj) {
-        return 0;
+    public int activeSkill(Enemy enemy) {
+        return super.activeSkill(enemy);
     }
+
 
     @Override
     public int passiveSkill() {
