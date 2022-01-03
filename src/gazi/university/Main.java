@@ -40,36 +40,32 @@ public class Main {
         System.out.println("Oyunumuzda üç adet karakter sınıfı bulunmaktadır:\n");
         System.out.println("1 - Duelist\n2 - Ranger\n3 - Sorcerer");
         System.out.println("Hangisini seçeceksiniz?");
-        String characterChoice = scan.nextLine();
-        Character player = characterSelection(characterChoice, initialName);
-        player = characterSelection(characterChoice, initialName, player);
+        int characterChoice = scan.nextInt();
+        // Making more methods for processes is required.
+        if(characterChoice == 1){
+            Duelist player = new Duelist(initialName, 100, 100, 5, 3, 2, 50, null);
+            temporaryMessageCall(player);
+        }
+        else if(characterChoice == 2){
+            Ranger player = new Ranger(initialName, 100, 100, 3, 5, 2, 50, null);
+            temporaryMessageCall(player);
+        }
+        else if(characterChoice == 3){
+            Sorcerer player = new Sorcerer(initialName, 100, 100, 2, 3, 5, 50, null);
+            temporaryMessageCall(player);
+        }
 
+
+
+
+    }
+    static void temporaryMessageCall(Character player){
         // While loop or exception handling can be added above.
         // I realized that we need to add equipItem and unequipItem methods.
-        System.out.println("İyi eğlenceler, " + player.getClass() + " " + player.getName());
+        System.out.println("İyi eğlenceler, " + player.getClass().getSimpleName() + " " + player.getName());
         System.out.println("Güç değeriniz: " + player.getStrength());
         System.out.println("");
-
     }
-
-    public static Character characterSelection(String characterChoice, String initialName){
-        // I tried to solve a choice issue.
-        if (characterChoice == "1"){
-            Duelist player = new Duelist(initialName, 100, 100, 5, 3, 2, 50,null);
-            return player;
-        }
-        else if (characterChoice == "2"){
-            Ranger player = new Ranger(initialName, 100, 100, 3, 4, 3, 50, null);
-            return player;
-        }
-        else if(characterChoice == "3"){
-             player = new Sorcerer(initialName, 100, 100, 2,  3, 5,50, null);
-            return player;
-        }
-
-        return player;
-    }
-
 
 
 
