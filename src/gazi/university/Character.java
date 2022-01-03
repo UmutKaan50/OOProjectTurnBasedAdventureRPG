@@ -12,7 +12,6 @@ public class Character implements ActiveAndPassive, Info{
     private int strength;
     private int money;
     private Equipment equipment;
-    // Added
     private int damage;
     private String currentLocation;
 
@@ -32,9 +31,6 @@ public class Character implements ActiveAndPassive, Info{
         this.currentLocation = currentLocation;
     }
 
-
-    // Added variables
-    // Dexterity and intelligence was forgotten.
     private int dexterity;
     private int intelligence;
     private int lvl = 0;
@@ -93,6 +89,7 @@ public class Character implements ActiveAndPassive, Info{
     public Character(){
 
     }
+
     public void levelUp(){
         // Let's make this changes in another method and call them.
         // In addition I think it'll be better to have if and else if cases for leveling up.
@@ -115,12 +112,8 @@ public class Character implements ActiveAndPassive, Info{
         {
            levelUpChanges();
         }
-
-
-
-
-
     }
+
     private void levelUpChanges(){
         lvl++;
         experience = 0;
@@ -130,12 +123,6 @@ public class Character implements ActiveAndPassive, Info{
         money += 100;
     }
 
-    // Please, modify your code in the methods. (Suggestion) How about if you create three buyItem methods according
-    // its parameters type? e.g. buyItem(Weapon weapon) so on...
-    //Please, modify your code here. Note that an Equipment cannot be more than one
-    // because it serves as a container of Weapon, Armor, Potions which have lists of their subclasses
-
-    // Changed overloaded buyitem Methods for flexiblity and solved the issue here.
     public void buyItem(Weapon weapon){
             equipment.setWeaponToList(weapon);
             setMoney(getMoney() - weapon.getPrice());
@@ -161,8 +148,6 @@ public class Character implements ActiveAndPassive, Info{
     public void sellItem(Potions potions){
 
     }
-
-
     public void usePotion(){
         // Thinking about adding a potion as parameter and removing it after usage.
 
@@ -216,6 +201,5 @@ public class Character implements ActiveAndPassive, Info{
     }
 
     // Implementing and overriding methods from interfaces.
-
 
 }
