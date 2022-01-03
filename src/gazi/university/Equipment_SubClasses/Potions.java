@@ -26,4 +26,8 @@ public class Potions extends Equipment {
     public int getPrice(){
         return this.price;
     }
+
+    public void effect(Potions potion){
+
+    }
 }
