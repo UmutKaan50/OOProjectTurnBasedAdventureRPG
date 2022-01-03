@@ -6,8 +6,6 @@ import gazi.university.Character_SubClasses.Sorcerer;
 import gazi.university.Equipment_SubClasses.Weapon;
 import gazi.university.Equipment_SubClasses.Weapon_SubClasses.Axe;
 import gazi.university.Equipment_SubClasses.Weapon_SubClasses.Sword;
-import jdk.swing.interop.SwingInterOpUtils;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.List;
 import java.util.*;
@@ -27,7 +25,7 @@ public class Main {
        System.out.println(weaponList.get(0).getClass().getSimpleName());
        System.out.println(weaponList.get(1).getClass().getSimpleName());
        Equipment equipment = new Equipment();
-       equipment.addItemOfEquipment(weapon, null , null);
+       equipment.addItemsOfEquipment(weapon, null, null);
        weaponList = equipment.getListOfWeapons();
        System.out.println(weaponList.get(0).getClass().getSimpleName());
 
@@ -57,11 +55,6 @@ public class Main {
         // I realized that we need to add equipItem and unequipItem methods.
         System.out.println("İyi eğlenceler, " + player.getClass().getSimpleName() + initialName);
         System.out.println("");
-
-
-
-
-
 
     }
 
