@@ -5,18 +5,23 @@ import gazi.university.Equipment;
 import java.util.List;
 
 public class Potions extends Equipment {
-    // Made potions subclass of Equipments
 
-    private List<Potions> ListOfPotions;
+    private List<Potions> listOfPotions;
     private int price;
 
     public Potions(){}
 
     public List<Potions> getListOfPotions(){
-        return this.ListOfPotions;
+        return this.listOfPotions;
     }
     public void addPotionsToList(Potions potions){
-        this.ListOfPotions.add(potions);
+        this.price = potions.getPrice();
+        this.listOfPotions.add(potions);
+    }
+    public void removeWeaponFromList(Weapon weapon){ //Added the removal of item
+        int index = (int) this.getListOfPotions().stream().filter(x -> x.getPrice() == weapon.getPrice()
+                && x.getClass().getSimpleName().equals(weapon.getClass().getSimpleName())).count();
+        this.listOfPotions.remove(index);
     }
     public int getPrice(){
         return this.price;
