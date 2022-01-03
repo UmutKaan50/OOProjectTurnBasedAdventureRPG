@@ -18,7 +18,7 @@ public class Potions extends Equipment {
         this.price = potions.getPrice();
         this.listOfPotions.add(potions);
     }
-    public void removeWeaponFromList(Weapon weapon){ //Added the removal of item
+    public void removePotionsFromList(Weapon weapon){ //Added the removal of item
         int index = (int) this.getListOfPotions().stream().filter(x -> x.getPrice() == weapon.getPrice()
                 && x.getClass().getSimpleName().equals(weapon.getClass().getSimpleName())).count();
         this.listOfPotions.remove(index);

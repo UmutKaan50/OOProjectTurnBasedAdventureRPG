@@ -21,7 +21,7 @@ public class Armor extends Equipment {
         this.listOfArmor.add(armor);
     }
 
-    public void removeWeaponFromList(Armor armor){ //Added the removal of item
+    public void removeArmorFromList(Armor armor){ //Added the removal of item
         int index = (int) this.getListOfArmor().stream().filter(x -> x.getFlatArmor() == armor.getFlatArmor() &&
                 x.getPrice() == armor.getPrice() && x.getClass().getSimpleName().
                 equals(armor.getClass().getSimpleName())).count();
