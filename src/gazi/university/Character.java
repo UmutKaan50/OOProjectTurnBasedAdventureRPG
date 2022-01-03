@@ -140,12 +140,18 @@ public class Character implements ActiveAndPassive, Info{
 
     // And same logic implemented in selling.
     public void sellItem(Weapon weapon){
+        setMoney(getMoney() + weapon.getPrice());
+        equipment.getListOfWeapons().remove(weapon);
 
     }
     public void sellItem(Armor armor){
+        setMoney(getMoney() + armor.getPrice());
+        equipment.getListOfArmor().remove(armor);
 
     }
-    public void sellItem(Potions potions){
+    public void sellItem(Potions potion){
+        setMoney(getMoney() + potion.getPrice());
+        equipment.getListOfPotions().remove(potion)
 
     }
     public void usePotion(){
