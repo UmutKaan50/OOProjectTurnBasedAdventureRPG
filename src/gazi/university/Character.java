@@ -1,5 +1,9 @@
 package gazi.university;
 
+import gazi.university.Equipment_SubClasses.Armor;
+import gazi.university.Equipment_SubClasses.Potions;
+import gazi.university.Equipment_SubClasses.Weapon;
+
 public class Character implements ActiveAndPassive, Info{
 
     private String name;
@@ -124,9 +128,42 @@ public class Character implements ActiveAndPassive, Info{
     public void buyItem(Equipment item){
         //Please, modify your code here. Note that an Equipment cannot be more than one
         // because it serves as a container of Weapon, Armor, Potions which have lists of their subclasses
+
+        // Ok. As I know we can use instanceof here.
+        // Waiting for other classes' update.
+        if(item instanceof Weapon) {
+            equipment.setWeaponToList(item);
+            // ((Weapon) item) code generated automatically.
+            setMoney(getMoney() - ((Weapon) item).getPrice());
+        }
+        else if(item instanceof Armor){
+            equipment.setArmorToList(item);
+            setMoney(getMoney() - );
+
+        }
+        else if(item instanceof Potions){
+            equipment.setPotionsToList(item);
+            setMoney(getMoney() - item.);
+        }
+
+
+
+
+
+//        else if(item instanceof Potions)
+//            equipment.setPotionsToList(item);
     }
 
     public void sellItem(Equipment item){
+        if(item instanceof Weapon) {
+            equipment.(item);
+        }
+        else if(item instanceof Armor){
+            equipment.setArmorToList(item);
+        }
+        else if(item instanceof Potions){
+            equipment.setPotionsToList(item);
+        }
         //inventory.getEquipmentList().remove(item);
     }
 
