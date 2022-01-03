@@ -130,14 +130,8 @@ public class Character implements ActiveAndPassive, Info{
         money += 100;
     }
 
-    // Please, modify your code in the methods. (Suggestion) How about if you create three buyItem methods according
-    // its parameters type? e.g. buyItem(Weapon weapon) so on...
     public void buyItem(Equipment item){
-        //Please, modify your code here. Note that an Equipment cannot be more than one
-        // because it serves as a container of Weapon, Armor, Potions which have lists of their subclasses
 
-        // Ok. As I know we can use instanceof here.
-        // Waiting for other classes' update.
         if(item instanceof Weapon) {
             equipment.setWeaponToList(item);
             // ((Weapon) item) code generated automatically.
@@ -152,9 +146,6 @@ public class Character implements ActiveAndPassive, Info{
             equipment.setPotionsToList(item);
             setMoney(getMoney() - item.);
         }
-
-
-
 
 
 //        else if(item instanceof Potions)
