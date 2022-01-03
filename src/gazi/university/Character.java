@@ -151,7 +151,7 @@ public class Character implements ActiveAndPassive, Info{
     }
     public void sellItem(Potions potion){
         setMoney(getMoney() + potion.getPrice());
-        equipment.getListOfPotions().remove(potion)
+        equipment.getListOfPotions().remove(potion);
 
     }
     public void usePotion(){
