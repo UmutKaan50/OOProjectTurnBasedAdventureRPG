@@ -3,11 +3,8 @@ package gazi.university.NPC_SubClasses;
 import gazi.university.Character;
 import gazi.university.Equipment;
 import gazi.university.Equipment_SubClasses.Armor;
-import gazi.university.Equipment_SubClasses.Armor_SubClasses.*;
 import gazi.university.Equipment_SubClasses.Potions;
 import gazi.university.Equipment_SubClasses.Weapon;
-import gazi.university.Equipment_SubClasses.Weapon_SubClasses.*;
-import gazi.university.Equipment_SubClasses.Potions_SubClasses.*;
 import gazi.university.NPC;
 
 public class Blacksmith extends NPC {
