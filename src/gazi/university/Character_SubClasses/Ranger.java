@@ -18,6 +18,7 @@ public class Ranger extends Character {
         // Ranger's active skills damages opponnent normal attack and then heals same amount dealt damage.
         enemy.setHealth(enemy.getHealth() - getDamage());
         setHealth(getHealth() + getDamage());
+        setMana(getMana() - 10);
 
     }
 

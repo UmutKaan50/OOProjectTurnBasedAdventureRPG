@@ -89,6 +89,10 @@ public class Character implements ActiveAndPassive, Info{
         this.money = money;
         this.equipment = equipment;
     }
+    // Adding another constructor for flexibility. And I needed it.
+    public Character(){
+
+    }
     public void levelUp(){
         // Let's make this changes in another method and call them.
         // In addition I think it'll be better to have if and else if cases for leveling up.

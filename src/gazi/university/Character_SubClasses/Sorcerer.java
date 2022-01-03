@@ -19,6 +19,7 @@ public class Sorcerer extends Character {
         enemy.setHealth(enemy.getHealth() - getDamage());
         enemy.setDamage(enemy.getDamage() - 2);
         setDamage(getDamage() + 2);
+        setMana(getMana() - 10);
 
     }
 

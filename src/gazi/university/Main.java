@@ -6,6 +6,8 @@ import gazi.university.Character_SubClasses.Sorcerer;
 import gazi.university.Equipment_SubClasses.Weapon;
 import gazi.university.Equipment_SubClasses.Weapon_SubClasses.Axe;
 import gazi.university.Equipment_SubClasses.Weapon_SubClasses.Sword;
+import jdk.swing.interop.SwingInterOpUtils;
+import org.w3c.dom.ls.LSOutput;
 
 import java.util.List;
 import java.util.*;
@@ -41,16 +43,31 @@ public class Main {
         System.out.println("1 - Duelist\n2 - Ranger\n3 - Sorcerer");
         System.out.println("Hangisini seçeceksiniz?");
         String characterChoice = scan.nextLine();
+        Character player = new Character();
         if (characterChoice == "1"){
-            Duelist duelist = new Duelist(initialName, 100, 100, 5, 3, 2, 50,null);
+            player = new Duelist(initialName, 100, 100, 5, 3, 2, 50,null);
         }
         else if (characterChoice == "2"){
-            Ranger ranger = new Ranger(initialName, 100, 100, 3, 4, 3, 50, null);
+            player = new Ranger(initialName, 100, 100, 3, 4, 3, 50, null);
         }
         else if(characterChoice == "3"){
-            Sorcerer sorcerer = new Sorcerer(initialName, 100, 100, 2,  3, 5,50, null);
+            player = new Sorcerer(initialName, 100, 100, 2,  3, 5,50, null);
         }
+        // While loop or exception handling can be added above.
+        // I realized that we need to add equipItem and unequipItem methods.
+        System.out.println("İyi eğlenceler, " + player.getClass().getSimpleName() + initialName);
+        System.out.println("");
+
+
+
+
+
+
     }
+
+
+
+
 
 
 }
