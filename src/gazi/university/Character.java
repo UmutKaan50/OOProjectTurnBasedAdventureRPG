@@ -130,40 +130,38 @@ public class Character implements ActiveAndPassive, Info{
         money += 100;
     }
 
-    public void buyItem(Equipment item){
+    // Please, modify your code in the methods. (Suggestion) How about if you create three buyItem methods according
+    // its parameters type? e.g. buyItem(Weapon weapon) so on...
+    //Please, modify your code here. Note that an Equipment cannot be more than one
+    // because it serves as a container of Weapon, Armor, Potions which have lists of their subclasses
 
-        if(item instanceof Weapon) {
-            equipment.setWeaponToList(item);
-            // ((Weapon) item) code generated automatically.
-            setMoney(getMoney() - ((Weapon) item).getPrice());
-        }
-        else if(item instanceof Armor){
-            equipment.setArmorToList(item);
-            setMoney(getMoney() - );
-
-        }
-        else if(item instanceof Potions){
-            equipment.setPotionsToList(item);
-            setMoney(getMoney() - item.);
-        }
-
-
-//        else if(item instanceof Potions)
-//            equipment.setPotionsToList(item);
+    // Changed overloaded buyitem Methods for flexiblity and solved the issue here.
+    public void buyItem(Weapon weapon){
+            equipment.setWeaponToList(weapon);
+            setMoney(getMoney() - weapon.getPrice());
     }
 
-    public void sellItem(Equipment item){
-        if(item instanceof Weapon) {
-            equipment.(item);
-        }
-        else if(item instanceof Armor){
-            equipment.setArmorToList(item);
-        }
-        else if(item instanceof Potions){
-            equipment.setPotionsToList(item);
-        }
-        //inventory.getEquipmentList().remove(item);
+    public void buyItem(Armor armor){
+        equipment.setArmorToList(armor);
+        setMoney(getMoney() - armor.getPrice());
     }
+
+    public void buyItem(Potions potion){
+        equipment.setPotionsToList(potion);
+        setMoney(getMoney() - potion.getPrice());
+    }
+
+    // And same logic implemented in selling.
+    public void sellItem(Weapon weapon){
+
+    }
+    public void sellItem(Armor armor){
+
+    }
+    public void sellItem(Potions potions){
+
+    }
+
 
     public void usePotion(){
         // Thinking about adding a potion as parameter and removing it after usage.
