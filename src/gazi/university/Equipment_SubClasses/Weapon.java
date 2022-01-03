@@ -21,6 +21,11 @@ public class Weapon extends Equipment {
         this.price = weapon.getPrice();
         this.listOfWeapons.add(weapon);
     }
+    public void removeWeaponFromList(Weapon weapon){ //Added the removal of item
+        int index = (int) this.getListOfWeapons().stream().filter(x -> x.getDamage() == weapon.getDamage() && x.getPrice() == weapon.getPrice()
+        && x.getClass().getSimpleName().equals(weapon.getClass().getSimpleName())).count();
+        this.listOfWeapons.remove(index);
+    }
     public int getDamage (){
         return this.Damage;
     }
