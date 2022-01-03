@@ -62,7 +62,7 @@ public class Main {
     static void temporaryMessageCall(Character player){
         // While loop or exception handling can be added above.
         // I realized that we need to add equipItem and unequipItem methods.
-        System.out.println("İyi eğlenceler, " + player.getClass() + " " + player.getName());
+        System.out.println("İyi eğlenceler, " + player.getClass().getSimpleName()U + " " + player.getName());
         System.out.println("Güç değeriniz: " + player.getStrength());
         System.out.println("");
     }
