@@ -7,8 +7,8 @@ import gazi.university.Equipment;
 
 public class Duelist extends Character {
 
-    public Duelist(String name, int health, int mana, int str, int money, Equipment equipment){
-        super(name, health, mana, str, money, equipment);
+    public Duelist(String name, int health, int mana, int str, int dex, int intel, int money, Equipment equipment){
+        super(name, health, mana, str, dex, intel, money, equipment);
     }
 
     // Looking for the type of this method.

@@ -5,8 +5,8 @@ import gazi.university.Enemy;
 import gazi.university.Equipment;
 
 public class Ranger extends Character {
-    public Ranger(String name, int health, int mana, int strength, int money, Equipment equipment){
-        super(name, health, mana, strength, money, equipment);
+    public Ranger(String name, int health, int mana, int str, int dex, int intel, int money, Equipment equipment){
+        super(name, health, mana, str, dex, intel, money, equipment);
     }
     @Override
     public void defaultAttack(Enemy enemy) {

@@ -5,8 +5,8 @@ import gazi.university.Enemy;
 import gazi.university.Equipment;
 
 public class Sorcerer extends Character {
-    public Sorcerer(String name, int health, int mana, int strength, int money, Equipment equipment){
-        super(name, health, mana, strength, money, equipment);
+    public Sorcerer(String name, int health, int mana, int str, int dex, int intel, int money, Equipment equipment){
+        super(name, health, mana, str, dex, intel, money, equipment);
     }
     @Override
     public void defaultAttack(Enemy enemy) {

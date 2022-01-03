@@ -78,11 +78,14 @@ public class Character implements ActiveAndPassive, Info{
         this.dexterity = dexterity;
     }
 
-    public Character(String name, int health, int mana, int strength, int money, Equipment equipment){
+    public Character(String name, int health, int mana, int strength, int dexterity, int intelligence,
+                     int money, Equipment equipment){
         this.name = name;
         this.health = health;
         this.mana = mana;
         this.strength = strength;
+        this.dexterity = dexterity;
+        this.intelligence = intelligence;
         this.money = money;
         this.equipment = equipment;
     }

@@ -1,10 +1,14 @@
 package gazi.university;
 
+import gazi.university.Character_SubClasses.Duelist;
+import gazi.university.Character_SubClasses.Ranger;
+import gazi.university.Character_SubClasses.Sorcerer;
 import gazi.university.Equipment_SubClasses.Weapon;
 import gazi.university.Equipment_SubClasses.Weapon_SubClasses.Axe;
 import gazi.university.Equipment_SubClasses.Weapon_SubClasses.Sword;
 
 import java.util.List;
+import java.util.*;
 
 
 public class Main {
@@ -24,5 +28,29 @@ public class Main {
        equipment.addItemOfEquipment(weapon, null , null);
        weaponList = equipment.getListOfWeapons();
        System.out.println(weaponList.get(0).getClass().getSimpleName());
+
+       // Let's start the game!
+       // Please explain what you've added.
+        // We can configure it. But first see something concrete.
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Oyunumuza hoş geldiniz!");
+        System.out.println("Size nasıl hitap edelim?");
+        String initialName = scan.nextLine();
+        System.out.println("Oyunumuzda üç adet karakter sınıfı bulunmaktadır:\n");
+        System.out.println("1 - Duelist\n2 - Ranger\n3 - Sorcerer");
+        System.out.println("Hangisini seçeceksiniz?");
+        String characterChoice = scan.nextLine();
+        if (characterChoice == "1"){
+            Duelist duelist = new Duelist(initialName, 100, 100, 5, 3, 2, 50,null);
+        }
+        else if (characterChoice == "2"){
+            Ranger ranger = new Ranger(initialName, 100, 100, 3, 4, 3, 50, null);
+        }
+        else if(characterChoice == "3"){
+            Sorcerer sorcerer = new Sorcerer(initialName, 100, 100, 2,  3, 5,50, null);
+        }
     }
+
+
 }
