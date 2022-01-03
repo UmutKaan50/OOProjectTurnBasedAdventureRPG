@@ -2,19 +2,18 @@ package gazi.university.NPC_SubClasses;
 
 import gazi.university.Character;
 import gazi.university.Equipment;
-import gazi.university.Equipment_SubClasses.Armor;
-import gazi.university.Equipment_SubClasses.Potions;
-import gazi.university.Equipment_SubClasses.Weapon;
+import gazi.university.Equipment_SubClasses.*;
 import gazi.university.NPC;
 
 public class Blacksmith extends NPC {
-    private Equipment equip;
-    private Character character;
+    private final Equipment equip;
+    private final Character character;
 
     public Blacksmith(Character character, Equipment equip){ // Blacksmith can accept both all its subclasses and their subclasses' too.
         super(equip.getClass().getSimpleName());
         this.equip = equip;
         this.character = character;
+        this.character.setCurrentLocation(this.getClass().getSimpleName());
     }
 
     public void buyItem(Equipment equipment){

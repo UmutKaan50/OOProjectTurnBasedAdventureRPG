@@ -12,61 +12,72 @@ import java.util.List;
 import java.util.Random;
 
 public class Level1_CurvedCave extends Battlefield {
-    private List<Enemy> listOfEnemies = new ArrayList<>();
-    private static final int numberOfEnemies = 15;
+    private Enemy enemy;
+    private final int numberOfEnemies = 15;
     private int remainedNumber = numberOfEnemies;
-    private static final int totalGoldAward = numberOfEnemies * 10;
+    private final int totalGoldAward = numberOfEnemies * 10; //150
     private int remainedGold = totalGoldAward;
-    private static final int totalXpAward = numberOfEnemies * 5;
+    private final int totalXpAward = numberOfEnemies * 5; //75
     private int remainedXpAward = totalXpAward;
     private List<Integer> GoldXpPerEnemy = new ArrayList<>();
 
-    public Level1_CurvedCave(Enemy enemy, Character character){
-        super(enemy, character);
+
+    public Level1_CurvedCave(Character character){
+        super(character);
         character.setCurrentLocation(this.getClass().getSimpleName()); //Let know where currently the character is.
-        spawnEnemy(enemy);
     }
 
     @Override
-    protected void spawnEnemy(Enemy enemy) { // this method generates list of Enemies in random order respective to the level fo battlefield
-        int times = 0;
-        String[] typeName = {"Poacher", "Vampire", "Zombie"};//Thinking about how to randomly pick up the level of enemy
+    public Enemy spawnEnemy() { // this method generates list of Enemies in random order respective to the level fo battlefield
+        this.enemy = new Enemy();
+        Poacher poacher = new Poacher();
+        List<Poacher> poachersLvl1 = poacher.getPoachersByLevel(1);
+        Vampire vampire = new Vampire();
+        List<Vampire> vampiresLvl1 = vampire.getVampiresByLevel(1);
+        Zombie zombie = new Zombie();
+        List<Zombie> zombiesByLvl1 = zombie.getZombiesByLevel(1);
 
+        int[] array = new int[numberOfEnemies];
+        for(int i = 0; i < numberOfEnemies; i++){
+            if(i != poachersLvl1.size()){
+                array[i] = i;
+            }
+            if(i >= poachersLvl1.size() && i < poachersLvl1.size() + vampiresLvl1.size()){
+                array[i] = i - poachersLvl1.size(); // returns the value starting from zero
+            }
+            if( i >= poachersLvl1.size() + vampiresLvl1.size() &&
+                    i < poachersLvl1.size() + vampiresLvl1.size() + zombiesByLvl1.size()){
+                array[i] = i - poachersLvl1.size() + vampiresLvl1.size(); // returns the value starting from zero
+            }
+        }
+
+        String[] typeName = {"Poacher", "Vampire", "Zombie"};
+        int times = 0;
         while(times != this.remainedNumber){
             Random random = new Random();
+            Random randomIndex = new Random();
+            int randomIndexForList = randomIndex.nextInt(15);
             int randomNumber = random.nextInt(typeName.length);
             switch (typeName[randomNumber]) { // this is called "Enhanced switch statement", guys. :)
                 case "Poacher" -> {
-                    Poacher poacher = new Poacher("Poacher1", 10, 1);
-
-                    // We should talk about each enemy's price when it is killed (how much gold and xp does it worth?)
-                    //After that, assign those values to each of them in their respective classes to be able to add them character's variables.
-
-                    this.listOfEnemies.add(poacher);
+                    this.enemy.addEnemyToList(poachersLvl1.get(array[randomIndexForList]));
                 }
                 case "Vampire" -> {
-                    Vampire vampire = new Vampire("Vampire1", 10, 1);
-                    this.listOfEnemies.add(vampire);
+                    this.enemy.addEnemyToList(vampiresLvl1.get(array[randomIndexForList]));
                 }
                 case "Zombie" -> {
-                    Zombie zombie = new Zombie("Zombie1", 10, 1);
-                    this.listOfEnemies.add(zombie);
+                    this.enemy.addEnemyToList(zombiesByLvl1.get(array[randomIndexForList]));
                 }
             }
             times++;
         }
-    }
-
-    @Override
-    public List<Enemy> getListOfEnemy() {
-        return this.listOfEnemies;
+        return this.enemy;
     }
 
     @Override
     public void killedEnemy(Character character, Enemy killedEnemy) {
         this.remainedNumber = numberOfEnemies - 1;
-
-        this.listOfEnemies.remove(numberOfEnemies - remainedNumber);
+        this.enemy.getListOfEnemies().remove(numberOfEnemies - remainedNumber);
     }
 
     @Override

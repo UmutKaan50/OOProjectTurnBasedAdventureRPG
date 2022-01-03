@@ -1,58 +1,43 @@
 package gazi.university;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Enemy implements ActiveAndPassive{
 
     private String name;
     private int health;
     private int level;
-
-    // Added damage part.
     private int damage;
-    public int getDamage() {
-        return damage;
-    }
+    private List<Enemy> listOfEnemies = new ArrayList<>();
 
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
-
-
-
-    public Enemy(String name, int health, int level){
-        this.name = name;
-        this.health = health;
-        this.level = level;
-    }
-
-    public int goldAward(){
+    public Enemy(){}
+    public int getGoldAward(){
         return 0;
     }
-    public int xpAward(){
+    public int getXpAward(){
         return 0;
     }
-
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getHealth() {
         return health;
     }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
     public int getLevel() {
         return level;
     }
-
-    public void setLevel(int level) {
-        this.level = level;
+    public int getDamage() {
+        return damage;
+    }
+    public List<Enemy> getListOfEnemies() {
+        return this.listOfEnemies;
+    }
+    public void addEnemyToList(Enemy enemy){
+        this.name = enemy.getName();
+        this.health = enemy.getHealth();
+        this.level = enemy.getLevel();
+        this.listOfEnemies.add(enemy);
     }
 
     @Override

@@ -10,17 +10,12 @@ public abstract class Battlefield extends Location { //Since each battlefield's 
     // these methods are a MUST in each battlefield, we have
     //to make each method abstract and create their own logic.
 
-    public Battlefield(Enemy enemy, Character character){
+    public Battlefield(Character character){
         super(character);
     }
 
-    protected abstract void spawnEnemy(Enemy enemy); //this method is not public but protected because we should not engage
+    public abstract Enemy spawnEnemy(); //this method is not public but protected because we should not engage
     //in object creation in process of the creation of game's flow. Instead, we will only distribute the created objects in the game
-
-
-    // Deleted get and setEnemy method since we must define
-    //certain amount and kind of enemies belonging to respective level of battlefield
-    public abstract List<Enemy> getListOfEnemy();
 
     public abstract void killedEnemy(Character character, Enemy killedEnemy);
 
