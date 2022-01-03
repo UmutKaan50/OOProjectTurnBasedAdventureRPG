@@ -8,13 +8,17 @@ public class Potions extends Equipment {
     // Made potions subclass of Equipments
 
     private List<Potions> ListOfPotions;
+    private int price;
 
     public Potions(){}
 
     public List<Potions> getListOfPotions(){
         return this.ListOfPotions;
     }
-    protected void addPotionsToList(Potions potions){
+    public void addPotionsToList(Potions potions){
         this.ListOfPotions.add(potions);
+    }
+    public int getPrice(){
+        return this.price;
     }
 }
