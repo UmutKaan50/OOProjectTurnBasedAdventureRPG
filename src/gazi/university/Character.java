@@ -134,6 +134,8 @@ public class Character implements ActiveAndPassive, Info{
         money += 100;
     }
 
+    // Umut Kaan's thinking about
+
     public void buyItem(Weapon weapon){
             equipment.setWeaponToList(weapon);
             setMoney(getMoney() - weapon.getPrice());

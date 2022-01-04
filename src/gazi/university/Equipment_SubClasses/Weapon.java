@@ -1,5 +1,7 @@
 package gazi.university.Equipment_SubClasses;
 import gazi.university.Equipment;
+import gazi.university.Equipment_SubClasses.Weapon_SubClasses.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +10,6 @@ public class Weapon extends Equipment {
     private  List<Weapon> listOfWeapons = new ArrayList<>();
     private int Damage;
     private int price;
-
     public Weapon(){}
 
     @Override

@@ -73,23 +73,9 @@ public class Main {
         Equipment equipmentList = new Equipment();
 
         // Instantiating Equipments here
-        Equipment sword1 = new Sword();
-        Equipment sword2 = new Sword();
 
-        Equipment axe1 = new Axe();
-        Equipment axe2 = new Axe();
 
-        Equipment bow1 = new Bow();
-        Equipment bow2 = new Bow();
 
-        Equipment wand1 = new Wand();
-        Equipment wand2 = new Wand();
-
-        Equipment staff1 = new Staff();
-        Equipment staff2 = new Staff();
-
-        Equipment crossbow1 = new Crossbow();
-        Equipment crossbow2 = new Crossbow();
 
 
 
