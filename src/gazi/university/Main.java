@@ -41,6 +41,7 @@ public class Main {
 
         //Umut Kaan's Test ---------------------------------------------------------------------
 
+
         //System.out.println(enemies.get(0).toString());
         // Let's start the game!
         // Please explain what you've added.
@@ -74,8 +75,8 @@ public class Main {
     static void temporaryMessageCall(Character player){
         // While loop or exception handling can be added above.
         // I realized that we need to add equipItem and unequipItem methods.
-        System.out.println("İyi eğlenceler, " + player.getClass().getSimpleName() + " " + player.getName());
-        System.out.println("Güç değeriniz: " + player.getStrength());
+        System.out.println("Have fun, " + player.getClass().getSimpleName() + " " + player.getName());
+        System.out.println("Strength: " + player.getStrength());
         System.out.println("");
     }
 

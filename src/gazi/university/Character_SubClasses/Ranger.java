@@ -10,7 +10,13 @@ public class Ranger extends Character {
     }
     @Override
     public void defaultAttack(Enemy enemy) {
-        enemy.setHealth(enemy.getHealth() - getDamage());
+        if(enemy.getDefence() > this.getDamage())
+            System.out.println("Dealt 0 damage!");
+        else {
+            int dealt = enemy.getHealth() - (getDamage() - enemy.getDefence());
+            enemy.setHealth(dealt);
+            System.out.println("Dealt " + dealt + " damage!");
+        }
     }
 
     @Override

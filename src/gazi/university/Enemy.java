@@ -9,6 +9,8 @@ public class Enemy implements ActiveAndPassive{
     private int health;
     private int level;
     private int damage;
+    private int defence;
+
     private int gold;
     private final List<Enemy> listOfEnemies = new ArrayList<>();
 
@@ -36,6 +38,14 @@ public class Enemy implements ActiveAndPassive{
     }
     public int getGold(){return this.gold;}
     public void setGold(int gold){this.gold = gold;}
+    public int getDefence() {
+        return defence;
+    }
+
+    public void setDefence(int defence) {
+        this.defence = defence;
+    }
+
     public List<Enemy> getListOfEnemies() {
         return listOfEnemies;
     }
