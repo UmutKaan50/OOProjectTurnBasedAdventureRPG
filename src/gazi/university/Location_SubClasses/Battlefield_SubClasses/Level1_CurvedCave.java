@@ -6,7 +6,6 @@ import gazi.university.Enemy_SubClasses.Poacher;
 import gazi.university.Enemy_SubClasses.Vampire;
 import gazi.university.Enemy_SubClasses.Zombie;
 import gazi.university.Location_SubClasses.Battlefield;
-import gazi.university.NPC;
 
 import java.util.List;
 import java.util.Random;

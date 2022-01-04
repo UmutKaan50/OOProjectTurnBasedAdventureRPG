@@ -9,7 +9,7 @@ public abstract class Battlefield extends Location { //Since each battlefield's 
     //to make each method abstract and create their own logic.
 
     public Battlefield(Character character){
-        super();
+        super(character);
     }
 
     protected abstract void spawnEnemy(); //this method is not public but protected because we should not engage
