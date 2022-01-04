@@ -11,12 +11,11 @@ public class TownCenter extends Location {
     private final Shopkeeper shopkeeper;
 
     public TownCenter(Character character) {
-        super();
+        super(character);
         this.blacksmith = new Blacksmith(character,character.getEquipment());
         this.shopkeeper = new Shopkeeper(character, character.getEquipment());
     }
 
-    @Override
     public NPC goToNPC(String npcType){ //returns an instance of NPC's subclass
         String blackName = this.blacksmith.getClass().getSimpleName();
         String shopName = this.shopkeeper.getClass().getSimpleName();
@@ -26,12 +25,6 @@ public class TownCenter extends Location {
         }else if(npcType.equalsIgnoreCase(shopName)){
             return this.shopkeeper;
         }
-        return null;
-    }
-
-    @Override
-    public Battlefield goToBattlefield(int battlefieldLevel) {
-        System.out.println("There is no Battlefield in TownCenter!\nPlease, go out of TownCenter, first.");
         return null;
     }
 }

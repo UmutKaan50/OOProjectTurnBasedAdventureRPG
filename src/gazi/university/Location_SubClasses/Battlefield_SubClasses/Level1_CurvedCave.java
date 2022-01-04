@@ -91,14 +91,4 @@ public class Level1_CurvedCave extends Battlefield {
         this.remainedNumber = remainedEnemies;
 
     }
-
-    @Override
-    public NPC goToNPC(String npcType) {
-        return null;
-    }
-
-    @Override
-    public Battlefield goToBattlefield(int battlefieldLevel) {
-        return null;
-    }
 }
