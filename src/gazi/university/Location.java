@@ -1,18 +1,10 @@
 package gazi.university;
 
+import gazi.university.Location_SubClasses.Battlefield;
+
 public class Location {
-    private String currentLocation;
+    public Location(){}
 
-    public Location(Character character){
-
-    }
-    public void setCurrentLocation(String currentLocation){
-        this.currentLocation = currentLocation;
-    }
-    public String getCurrentLocation(){
-        return this.currentLocation;
-    }
-
-
-
+    public NPC goToNPC(String npcType){ return null;}
+    public Battlefield goToBattlefield(int battlefieldLevel){return null;}
 }

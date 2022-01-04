@@ -24,9 +24,11 @@ public class Enemy implements ActiveAndPassive{
     public int getHealth() {
         return health;
     }
+    public void setHealth(int health){this.health = health;}
     public int getLevel() {
         return level;
     }
+    public void setDamage(int Damage){this.damage = Damage;}
     public int getDamage() {
         return damage;
     }

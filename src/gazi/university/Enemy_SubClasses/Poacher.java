@@ -7,14 +7,19 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Poacher extends Enemy {
-    private final List<Poacher> poacherForBattleLvl1 = Arrays.asList( // total number is 5
+    private String name;
+    private int health;
+    private int level;
+    private int gold;
+
+    private static final List<Poacher> poacherForBattleLvl1 = Arrays.asList( // total number is 5
             new Poacher("PoacherLvl1.1", 10, 1, 4),
             new Poacher("PoacherLvl1.2", 11, 1, 5),
             new Poacher("PoacherLvl1.3", 12, 1, 6),
             new Poacher("PoacherLvl1.4", 14, 1, 12),
             new Poacher("PoacherLvl1.5", 15, 1, 13)
     );
-    private final List<Poacher> poacherForBattleLvl2 = Arrays.asList( // total number is 9
+    private static final List<Poacher> poacherForBattleLvl2 = Arrays.asList( // total number is 9
             new Poacher("PoacherLvl2.1", 20, 2, 19),
             new Poacher("PoacherLvl2.3", 21, 2, 19),
             new Poacher("PoacherLvl2.4", 22, 2, 20),
@@ -25,7 +30,7 @@ public class Poacher extends Enemy {
             new Poacher("PoacherLvl2.8", 25, 2, 25),
             new Poacher("PoacherLvl2.9", 28, 2, 28)
     );
-    private final List<Poacher> poacherForBattleLvl3 = Arrays.asList( //  total number is 12
+    private static final List<Poacher> poacherForBattleLvl3 = Arrays.asList( //  total number is 12
             new Poacher("PoacherLvl3.1", 20, 2, 29),
             new Poacher("PoacherLvl3.1", 21, 2, 29),
             new Poacher("PoacherLvl3.2", 22, 2, 20),
@@ -41,7 +46,12 @@ public class Poacher extends Enemy {
             new Poacher("PoacherLvl3.1", 20, 2, 29)
     );
 
-    private Poacher(String name, int health, int level, int gold){}
+    private Poacher(String name, int health, int level, int gold){
+        this.name = name;
+        this.health = health;
+        this.level = level;
+        this.gold = gold;
+    }
 
     public Poacher(){
         super();
@@ -49,9 +59,9 @@ public class Poacher extends Enemy {
 
     public List<Poacher> getPoachersByLevel(int level){
         return switch (level) {
-            case(1) -> this.poacherForBattleLvl1;
-            case(2) -> this.poacherForBattleLvl2;
-            case(3) -> this.poacherForBattleLvl3;
+            case(1) -> poacherForBattleLvl1;
+            case(2) -> poacherForBattleLvl2;
+            case(3) -> poacherForBattleLvl3;
             default -> null;
         };
     }

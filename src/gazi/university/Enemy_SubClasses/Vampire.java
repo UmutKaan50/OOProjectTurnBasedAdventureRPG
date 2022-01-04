@@ -8,14 +8,14 @@ import java.util.List;
 
 public class Vampire extends Enemy {
 
-    private final List<Vampire> vampiresForBattleLvl1 = Arrays.asList( // total number is 5
+    private static final List<Vampire> vampiresForBattleLvl1 = Arrays.asList( // total number is 5
             new Vampire("VampireLvl1.1", 10, 1, 4),
             new Vampire("VampireLvl1.2", 11, 1, 5),
             new Vampire("VampireLvl1.3", 12, 1, 6),
             new Vampire("VampireLvl1.4", 13, 1, 10),
             new Vampire("VampireLvl1.5", 15, 1, 14)
     );
-    private final List<Vampire> vampiresForBattleLvl2 = Arrays.asList( // total number is 8
+    private static final List<Vampire> vampiresForBattleLvl2 = Arrays.asList( // total number is 8
             new Vampire("VampireLvl1.1", 20, 2, 14),
             new Vampire("VampireLvl1.2", 21, 2, 12),
             new Vampire("VampireLvl1.3", 22, 2, 16),
@@ -25,7 +25,7 @@ public class Vampire extends Enemy {
             new Vampire("VampireLvl1.2", 21, 2, 22),
             new Vampire("VampireLvl1.3", 28, 2, 28)
     );
-    private final List<Vampire> vampireForBattleLvl3 = Arrays.asList( // total number is 12
+    private static final List<Vampire> vampireForBattleLvl3 = Arrays.asList( // total number is 12
             new Vampire("VampireLvl3.1", 30, 3, 24),
             new Vampire("VampireLvl3.2", 31, 3, 22),
             new Vampire("VampireLvl3.3", 32, 3, 26),
@@ -46,9 +46,9 @@ public class Vampire extends Enemy {
 
     public List<Vampire> getVampiresByLevel(int level){
         return switch(level){
-            case(1) -> this.vampiresForBattleLvl1;
-            case(2) -> this.vampiresForBattleLvl2;
-            case(3) -> this.vampireForBattleLvl3;
+            case(1) -> vampiresForBattleLvl1;
+            case(2) -> vampiresForBattleLvl2;
+            case(3) -> vampireForBattleLvl3;
             default -> null;
         };
     }
