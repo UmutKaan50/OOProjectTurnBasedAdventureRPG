@@ -2,17 +2,19 @@ package gazi.university.Equipment_SubClasses.Weapon_SubClasses;
 
 import gazi.university.Equipment_SubClasses.Armor;
 import gazi.university.Equipment_SubClasses.Armor_SubClasses.Boots;
+import gazi.university.Equipment_SubClasses.Weapon;
 
-public class Staff extends Armor {
+public class Staff extends Weapon {
     private int Damage;
     private int price;
     private String name;
 
     public Staff(String name, int Damage, int price){
-        this.name = name;
+        super(name);
         this.Damage = Damage;
         this.price = price;
     }
+
     public String getName(){return this.name;}
     public int getDamage(){
         return this.Damage;

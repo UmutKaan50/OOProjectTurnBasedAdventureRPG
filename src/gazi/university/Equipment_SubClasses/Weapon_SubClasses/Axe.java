@@ -8,19 +8,17 @@ public class Axe extends Weapon {
     private String name;
 
     public Axe(String name, int Damage, int price){
-        this.name = name;
+        super(name);
         this.Damage = Damage;
         this.price = price;
     }
-    @Override
+
     public String getName(){
         return this.name;
     }
-    @Override
     public int getDamage(){
         return this.Damage;
     }
-    @Override
     public int getPrice(){
         return this.price;
     }

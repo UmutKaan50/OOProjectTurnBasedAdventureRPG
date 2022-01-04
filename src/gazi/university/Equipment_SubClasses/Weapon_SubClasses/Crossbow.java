@@ -7,15 +7,18 @@ public class Crossbow extends Weapon {
     private int Damage;
     private int price;
 
-    public Crossbow(int Damage, int price){
+    public Crossbow(String name, int Damage, int price){
+        super(name);
         this.Damage = Damage;
         this.price = price;
     }
+
     public int getDamage(){
         return this.Damage;
     }
     public int getPrice(){
         return this.price;
     }
+
 
 }

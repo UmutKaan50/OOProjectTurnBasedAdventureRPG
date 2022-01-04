@@ -34,6 +34,9 @@ public class Main {
 
         //Umut Kaan's Test ---------------------------------------------------------------------
 
+        // Yesterday I was thinking about each Character bonus if they equip appropriate item.
+        // This makes equiping appropriate item logical I suppose.
+
 
         //System.out.println(enemies.get(0).toString());
         // Let's start the game!
@@ -52,19 +55,19 @@ public class Main {
 
         Character player = new Character();
 
+        // Selecting character class here
         if (characterChoice == 1){
-            player = new Duelist(initialName, 100, 100,50,3,2,50,null);
+            player = new Duelist(initialName, 100, 100,50,3,2,10,null);
         }
         if (characterChoice == 2){
-            player = new Ranger(initialName, 100, 100,3,5,2,50,null);
+            player = new Ranger(initialName, 100, 100,3,5,2,10,null);
         }
         if (characterChoice == 3){
-            player = new Sorcerer(initialName, 100, 100,2,3,5,50,null);
+            player = new Sorcerer(initialName, 100, 100,2,3,5,10,null);
         }
+
         temporaryMessageCall(player);
 
-
-        Equipment equipmentList = new Equipment();
 
         // Instantiating Equipments here
 

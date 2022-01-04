@@ -3,13 +3,17 @@ package gazi.university.Equipment_SubClasses;
 import gazi.university.Equipment;
 
 import java.util.List;
+import java.util.SplittableRandom;
 
 public class Potions extends Equipment {
 
     private List<Potions> listOfPotions;
     private int price;
+    private String name;
 
-    public Potions(){}
+    public Potions(String name){
+        this.name = name;
+    }
 
     public List<Potions> getListOfPotions(){
         return this.listOfPotions;
@@ -31,5 +35,21 @@ public class Potions extends Equipment {
 
     public void effect(Potions potion){
 
+    }
+
+    public void setListOfPotions(List<Potions> listOfPotions) {
+        this.listOfPotions = listOfPotions;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

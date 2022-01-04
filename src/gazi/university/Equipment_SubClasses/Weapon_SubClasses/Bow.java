@@ -8,10 +8,11 @@ public class Bow extends Weapon {
     private String name;
 
     public Bow(String name, int Damage, int price){
-        this.name = name;
+        super(name);
         this.Damage = Damage;
         this.price = price;
     }
+
     public String getName(){
         return this.name;
     }

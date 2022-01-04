@@ -11,23 +11,25 @@ public class Blacksmith extends NPC {
     private Equipment equip;
     private Character character;
 
-    Sword sword1 = new Sword(0,0);
-    Sword sword2 = new Sword(0,0);
+    Sword sword1 = new Sword("Heavy Sword",5,50);
+    Sword sword2 = new Sword("Masterwork Sword",10, 100);
 
-    Axe axe1 = new Axe(0,0);
-    Axe axe2 = new Axe(0,0);
+    Axe axe1 = new Axe("Heavy Axe", 15,200);
+    Axe axe2 = new Axe("Masterwork Axe", 20,300);
 
-    Bow bow1 = new Bow(0,0);
-    Bow bow2 = new Bow(0,0);
+    Bow bow1 = new Bow("Heavy Bow",5,50);
+    Bow bow2 = new Bow("Masterwork Bow",10,100);
 
-    Wand wand1 = new Wand(0,0);
-    Wand wand2 = new Wand(0,0);
+    Crossbow crossbow1 = new Crossbow("Heavy Crossbow", 15,200);
+    Crossbow crossbow2 = new Crossbow("Masterwork Crossbow",20, 300);
 
-    Staff staff1 = new Staff(0,0);
-    Staff staff2 = new Staff(0,0);
+    Wand wand1 = new Wand("Heavy Wand",5,50);
+    Wand wand2 = new Wand("Masterwork Wand",10,100);
 
-    Crossbow crossbow1 = new Crossbow(0,0);
-    Crossbow crossbow2 = new Crossbow(0,0);
+    Staff staff1 = new Staff("Heavy Staff",15,200);
+    Staff staff2 = new Staff("Masterwork Staff",20,300);
+
+
 
 
 
@@ -36,17 +38,24 @@ public class Blacksmith extends NPC {
         this.equip = equip;
         this.character = character;
         this.character.setCurrentLocation(this.getClass().getSimpleName());
+
         equip.setWeaponToList(sword1);
         equip.setWeaponToList(sword2);
+
         equip.setWeaponToList(axe1);
         equip.setWeaponToList(axe2);
-        equip.setWeaponToList(wand1);
-        equip.setWeaponToList(wand2);
-        equip.setWeaponToList(staff1);
-        equip.setWeaponToList(staff2);
+
         equip.setWeaponToList(bow1);
         equip.setWeaponToList(bow2);
 
+        equip.setWeaponToList(crossbow1);
+        equip.setWeaponToList(crossbow2);
+
+        equip.setWeaponToList(wand1);
+        equip.setWeaponToList(wand2);
+
+        equip.setWeaponToList(staff1);
+        equip.setWeaponToList(staff2);
     }
 
     public void buyItem(Equipment equipment){

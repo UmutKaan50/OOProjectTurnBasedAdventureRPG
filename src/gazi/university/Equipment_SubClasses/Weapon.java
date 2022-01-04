@@ -10,7 +10,11 @@ public class Weapon extends Equipment {
     private int price;
     private String name;
 
-    public Weapon(){}
+
+
+    public Weapon(String name){
+        this.name = name;
+    }
 
     @Override
     public List<Weapon> getListOfWeapons(){
@@ -35,4 +39,22 @@ public class Weapon extends Equipment {
     public int getPrice(){
         return this.price;
     }
+
+    public void setDamage(int damage) {
+        Damage = damage;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setListOfWeapons(List<Weapon> listOfWeapons) {
+        this.listOfWeapons = listOfWeapons;
+    }
 }
+
+

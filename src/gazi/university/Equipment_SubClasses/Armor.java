@@ -11,7 +11,9 @@ public class Armor extends Equipment {
     private int price;
     private String name;
 
-    public Armor(){}
+    public Armor(String name){
+        this.name = name;
+    }
     public List<Armor> getListOfArmor() {
         return this.listOfArmor;
     }
@@ -35,5 +37,19 @@ public class Armor extends Equipment {
     }
     public int getPrice(){
         return this.price;
+    }
+
+
+
+    public void setFlatArmor(int flatArmor) {
+        this.flatArmor = flatArmor;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
