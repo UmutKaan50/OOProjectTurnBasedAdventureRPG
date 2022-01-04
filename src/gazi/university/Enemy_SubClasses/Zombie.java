@@ -7,14 +7,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Zombie extends Enemy {
-    private final List<Zombie> zombiesForBattleLvl1 = Arrays.asList(
+    private final List<Zombie> zombiesForBattleLvl1 = Arrays.asList( // total number is 5
             new Zombie("ZombieLvl1.1", 10, 1, 6),
             new Zombie("ZombieLvl1.2", 11, 1, 7),
             new Zombie("ZombieLvl1.3", 12, 1, 10),
             new Zombie("ZombieLvl1.4", 12, 1, 11),
             new Zombie("ZombieLvl1.5", 15, 1, 16)
     );
-    private final List<Zombie> zombiesForBattleLvl2 = Arrays.asList(
+    private final List<Zombie> zombiesForBattleLvl2 = Arrays.asList( // total number is 8
             new Zombie("ZombieLvl2.1", 20, 2, 18),
             new Zombie("ZombieLvl2.2", 21, 2, 25),
             new Zombie("ZombieLvl2.3", 22, 2, 27),
@@ -24,7 +24,7 @@ public class Zombie extends Enemy {
             new Zombie("ZombieLvl2.2", 21, 2, 27),
             new Zombie("ZombieLvl2.9", 28, 2, 29)
     );
-    private final List<Zombie> zombiesForBattleLvl3 = Arrays.asList(
+    private final List<Zombie> zombiesForBattleLvl3 = Arrays.asList( // total number is 11
             new Zombie("ZombieLvl3.1", 30, 3, 26),
             new Zombie("ZombieLvl3.2", 31, 3, 27),
             new Zombie("ZombieLvl3.3", 33, 3, 33),
