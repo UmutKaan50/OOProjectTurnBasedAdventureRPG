@@ -22,7 +22,7 @@ public class Level2_DeadDesert extends Battlefield {
     }
 
     @Override
-    protected Enemy spawnEnemy() {
+    protected void spawnEnemy() {
         this.enemy = new Enemy();
         Poacher poacher = new Poacher();
         List<Poacher> poachersLvl2 = poacher.getPoachersByLevel(2);
@@ -65,7 +65,6 @@ public class Level2_DeadDesert extends Battlefield {
             }
             times++;
         }
-        return this.enemy;
     }
 
     @Override

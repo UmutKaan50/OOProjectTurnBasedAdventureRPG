@@ -12,14 +12,11 @@ public abstract class Battlefield extends Location { //Since each battlefield's 
         super(character);
     }
 
-    protected abstract Enemy spawnEnemy(); //this method is not public but protected because we should not engage
+    protected abstract void spawnEnemy(); //this method is not public but protected because we should not engage
     //in object creation in process of the creation of game's flow. Instead, we will only distribute the created objects in the game
 
     public abstract Enemy getEnemy();
     public abstract void killedEnemy(Character character, Enemy killedEnemy);
-
-
     protected abstract int getRemainedEnemies();
-
     protected abstract void setRemainedEnemies(int remainedEnemies);
 }

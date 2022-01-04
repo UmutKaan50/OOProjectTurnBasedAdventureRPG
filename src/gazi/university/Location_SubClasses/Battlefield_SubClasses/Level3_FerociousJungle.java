@@ -18,10 +18,11 @@ public class Level3_FerociousJungle extends Battlefield {
     public Level3_FerociousJungle(Character character){
         super(character);
         character.setCurrentLocation(this.getClass().getSimpleName());
+        spawnEnemy();
     }
 
     @Override
-    public Enemy spawnEnemy() {
+    protected void spawnEnemy() {
         this.enemy = new Enemy();
         Poacher poacher = new Poacher();
         List<Poacher> poachersLvl3 = poacher.getPoachersByLevel(3);
@@ -64,7 +65,6 @@ public class Level3_FerociousJungle extends Battlefield {
             }
             times++;
         }
-        return this.enemy;
     }
 
     @Override
