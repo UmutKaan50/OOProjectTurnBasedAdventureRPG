@@ -6,6 +6,7 @@ import gazi.university.Character_SubClasses.Sorcerer;
 import gazi.university.Equipment_SubClasses.Weapon;
 import gazi.university.Equipment_SubClasses.Weapon_SubClasses.Axe;
 import gazi.university.Equipment_SubClasses.Weapon_SubClasses.Sword;
+import gazi.university.Location_SubClasses.Battlefield_SubClasses.Level1_CurvedCave;
 
 import java.util.List;
 import java.util.*;
@@ -14,8 +15,8 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args){
-        // write your code here
 
+        // Rahman's Test ------------------------------------------------------------------
         Weapon weapon = new Weapon();
         Sword sword = new Sword(23, 44);
         weapon.addWeaponToList(sword);
@@ -28,11 +29,22 @@ public class Main {
         equipment.addItemsOfEquipment(weapon, null, null);
         weaponList = equipment.getListOfWeapons();
         System.out.println(weaponList.get(0).getClass().getSimpleName());
+        Character character = new Character();
 
-       // Let's start the game!
-       // Please explain what you've added.
+        Enemy enemy ;
+        Level1_CurvedCave level1_curvedCave = new Level1_CurvedCave(character);
+        enemy = level1_curvedCave.getEnemy();
+        List<Enemy> enemies = enemy.getListOfEnemies();
+        System.out.println(enemies.get(0).getName());
+        //------------------------------------------------------------
+
+
+        //Umut Kaan's Test ---------------------------------------------------------------------
+
+        //System.out.println(enemies.get(0).toString());
+        // Let's start the game!
+        // Please explain what you've added.
         // We can configure it. But first see something concrete.
-
         Scanner scan = new Scanner(System.in);
         System.out.println("You're welcome!");
         System.out.println("What do you want your name to be?\n");
