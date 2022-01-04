@@ -33,13 +33,13 @@ public class Level2_DeadDesert extends Battlefield {
 
         int[] array = new int[numberOfEnemies];
         for(int i = 0; i < numberOfEnemies; i++){
-            if(i != poachersLvl2.size()){
+            if(i < poachersLvl2.size()){
                 array[i] = i;
             }
-            if(i == poachersLvl2.size() && i != (poachersLvl2.size() + vampiresLvl2.size()) - 1){
+            if(i >= poachersLvl2.size() && i < (poachersLvl2.size() + vampiresLvl2.size())){
                 array[i] = i - poachersLvl2.size(); // returns the value starting from zero
             }
-            if( i == poachersLvl2.size() + vampiresLvl2.size() &&
+            if( i >= poachersLvl2.size() + vampiresLvl2.size() &&
                     i < poachersLvl2.size() + vampiresLvl2.size() + zombiesByLvl2.size()){
                 array[i] = i - (poachersLvl2.size() + vampiresLvl2.size()); // returns the value starting from zero
             }
@@ -47,14 +47,18 @@ public class Level2_DeadDesert extends Battlefield {
 
         String[] typeName = {"Poacher", "Vampire", "Zombie"};
         int times = 0;
-        while(times != this.remainedNumber){
+        while(times != this.remainedNumber){ // this guy generates random list of enemies from random enemy types
             Random random = new Random();
             Random randomIndex = new Random();
             int randomIndexForList = randomIndex.nextInt(25);
             int randomNumber = random.nextInt(typeName.length);
-            switch (typeName[randomNumber]) { // this is called "Enhanced switch statement", guys. :)
+            switch (typeName[randomNumber]) {
                 case "Poacher" -> {
-                    this.enemy.addEnemyToList(poachersLvl2.get(array[randomIndexForList]));
+                    try {
+                        this.enemy.addEnemyToList(poachersLvl2.get(array[randomIndexForList]));
+                    }catch(ArrayIndexOutOfBoundsException ex){
+                        this.enemy.addEnemyToList(zombiesByLvl2.get(array[randomIndexForList]));
+                    }
                 }
                 case "Vampire" -> {
                     this.enemy.addEnemyToList(vampiresLvl2.get(array[randomIndexForList]));

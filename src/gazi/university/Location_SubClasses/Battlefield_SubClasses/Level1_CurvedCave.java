@@ -35,13 +35,13 @@ public class Level1_CurvedCave extends Battlefield {
 
         int[] array = new int[numberOfEnemies];
         for(int i = 0; i < numberOfEnemies; i++){
-            if(i != poachersLvl1.size()){
+            if(i < poachersLvl1.size()){
                 array[i] = i;
             }
-            if(i == poachersLvl1.size() && i != (poachersLvl1.size() + vampiresLvl1.size()) - 1){
+            if(i >= poachersLvl1.size() && i < (poachersLvl1.size() + vampiresLvl1.size())){
                 array[i] = i - poachersLvl1.size(); // returns the value starting from zero
             }
-            if( i == poachersLvl1.size() + vampiresLvl1.size() &&
+            if( i >= poachersLvl1.size() + vampiresLvl1.size() &&
                     i < poachersLvl1.size() + vampiresLvl1.size() + zombiesByLvl1.size()){
                 array[i] = i - (poachersLvl1.size() + vampiresLvl1.size()); // returns the value starting from zero
             }
@@ -49,7 +49,7 @@ public class Level1_CurvedCave extends Battlefield {
 
         String[] typeName = {"Poacher", "Vampire", "Zombie"};
         int times = 0;
-        while(times != this.remainedNumber){
+        while(times != this.remainedNumber){ // this guy generates random list of enemies from random enemy types
             Random random = new Random();
             Random randomIndex = new Random();
             int randomIndexForList = randomIndex.nextInt(15);

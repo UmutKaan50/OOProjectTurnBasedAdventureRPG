@@ -9,17 +9,19 @@ public class Enemy implements ActiveAndPassive{
     private int health;
     private int level;
     private int damage;
-    private List<Enemy> listOfEnemies = new ArrayList<>();
+    private int gold;
+    private final List<Enemy> listOfEnemies = new ArrayList<>();
 
     public Enemy(){}
+    public String getName() {
+        return name;
+    }
+    public void setName(String name){this.name = name;}
     public int getGoldAward(){
         return 0;
     }
     public int getXpAward(){
         return 0;
-    }
-    public String getName() {
-        return name;
     }
     public int getHealth() {
         return health;
@@ -32,9 +34,12 @@ public class Enemy implements ActiveAndPassive{
     public int getDamage() {
         return damage;
     }
+    public int getGold(){return this.gold;}
+    public void setGold(int gold){this.gold = gold;}
     public List<Enemy> getListOfEnemies() {
-        return this.listOfEnemies;
+        return listOfEnemies;
     }
+
     public void addEnemyToList(Enemy enemy){
         this.name = enemy.getName();
         this.health = enemy.getHealth();
