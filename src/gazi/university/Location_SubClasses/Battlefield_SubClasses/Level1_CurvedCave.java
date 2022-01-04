@@ -33,7 +33,7 @@ public class Level1_CurvedCave extends Battlefield {
         List<Zombie> zombiesByLvl1 = zombie.getZombiesByLevel(1);
 
         int[] array = new int[numberOfEnemies];
-        for(int i = 0; i < numberOfEnemies; i++){
+        for(int i = 0; i < numberOfEnemies; i++){ //
             if(i < poachersLvl1.size()){
                 array[i] = i;
             }

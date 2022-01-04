@@ -18,26 +18,20 @@ public class Main {
 
         // Rahman's Test ------------------------------------------------------------------
         Weapon weapon = new Weapon();
-        Sword sword = new Sword(23, 44);
-        weapon.addWeaponToList(sword);
-        Axe axe = new Axe(22, 13);
-        weapon.addWeaponToList(axe);
+        //Sword sword = new Sword(23, 44);
+        //weapon.addWeaponToList(sword);
+        //Axe axe = new Axe(22, 13);
+        //weapon.addWeaponToList(axe);
         List<Weapon> weaponList = weapon.getListOfWeapons();
         System.out.println(weaponList.get(0).getClass().getSimpleName());
         System.out.println(weaponList.get(1).getClass().getSimpleName());
         Equipment equipment = new Equipment();
-        equipment.addItemsOfEquipment(weapon, null, null);
-        weaponList = equipment.getListOfWeapons();
         System.out.println(weaponList.get(0).getClass().getSimpleName());
-        Character character = new Character();
 
-        Enemy enemy ;
-        Level1_CurvedCave level1_curvedCave = new Level1_CurvedCave(character);
-        enemy = level1_curvedCave.getEnemy();
-        List<Enemy> enemies = enemy.getListOfEnemies();
-        System.out.println(enemies.get(0).getName());
+        equipment.addEquipmentToList(weapon.getListOfWeapons().get(1));
+        List<Equipment> equipmentList = equipment.getListOfEquipment();
+        System.out.println("This is equipment list: "+ equipmentList.get(0).toString());
         //------------------------------------------------------------
-
 
         //Umut Kaan's Test ---------------------------------------------------------------------
 

@@ -5,10 +5,15 @@ import gazi.university.Equipment_SubClasses.Weapon;
 public class Bow extends Weapon {
     private int Damage;
     private int price;
+    private String name;
 
-    public Bow(int Damage, int price){
+    public Bow(String name, int Damage, int price){
+        this.name = name;
         this.Damage = Damage;
         this.price = price;
+    }
+    public String getName(){
+        return this.name;
     }
     public int getDamage(){
         return this.Damage;

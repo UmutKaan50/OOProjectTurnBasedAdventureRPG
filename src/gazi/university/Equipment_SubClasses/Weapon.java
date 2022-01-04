@@ -8,6 +8,7 @@ public class Weapon extends Equipment {
     private  List<Weapon> listOfWeapons = new ArrayList<>();
     private int Damage;
     private int price;
+    private String name;
 
     public Weapon(){}
 
@@ -19,6 +20,7 @@ public class Weapon extends Equipment {
     public void addWeaponToList(Weapon weapon){
         this.Damage = weapon.getDamage();
         this.price = weapon.getPrice();
+        this.name = weapon.getName();
         this.listOfWeapons.add(weapon);
     }
     public void removeWeaponFromList(Weapon weapon){ //Added the removal of item
@@ -26,6 +28,7 @@ public class Weapon extends Equipment {
         && x.getClass().getSimpleName().equals(weapon.getClass().getSimpleName())).count();
         this.listOfWeapons.remove(index);
     }
+    public String getName(){return this.name;}
     public int getDamage (){
         return this.Damage;
     }

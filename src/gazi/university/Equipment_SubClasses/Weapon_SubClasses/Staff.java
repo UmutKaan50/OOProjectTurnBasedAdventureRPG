@@ -6,12 +6,14 @@ import gazi.university.Equipment_SubClasses.Armor_SubClasses.Boots;
 public class Staff extends Armor {
     private int Damage;
     private int price;
+    private String name;
 
-    public Staff(int Damage, int price){
+    public Staff(String name, int Damage, int price){
+        this.name = name;
         this.Damage = Damage;
         this.price = price;
     }
-
+    public String getName(){return this.name;}
     public int getDamage(){
         return this.Damage;
     }

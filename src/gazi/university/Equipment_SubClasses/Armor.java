@@ -9,6 +9,7 @@ public class Armor extends Equipment {
     private final List<Armor> listOfArmor = new ArrayList<>();
     private int flatArmor;
     private int price;
+    private String name;
 
     public Armor(){}
     public List<Armor> getListOfArmor() {
@@ -18,6 +19,7 @@ public class Armor extends Equipment {
     public void addArmorToList(Armor armor){
         this.flatArmor = armor.flatArmor;
         this.price = armor.price;
+        this.name = armor.getName();
         this.listOfArmor.add(armor);
     }
 
@@ -27,6 +29,7 @@ public class Armor extends Equipment {
                 equals(armor.getClass().getSimpleName())).count();
         this.listOfArmor.remove(index);
     }
+    public String getName(){return this.name;}
     public int getFlatArmor(){
         return this.flatArmor;
     }
