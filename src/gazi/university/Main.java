@@ -4,8 +4,7 @@ import gazi.university.Character_SubClasses.Duelist;
 import gazi.university.Character_SubClasses.Ranger;
 import gazi.university.Character_SubClasses.Sorcerer;
 import gazi.university.Equipment_SubClasses.Weapon;
-import gazi.university.Equipment_SubClasses.Weapon_SubClasses.Axe;
-import gazi.university.Equipment_SubClasses.Weapon_SubClasses.Sword;
+import gazi.university.Equipment_SubClasses.Weapon_SubClasses.*;
 import gazi.university.Location_SubClasses.Battlefield_SubClasses.Level1_CurvedCave;
 
 import java.util.List;
@@ -69,6 +68,29 @@ public class Main {
             player = new Sorcerer(initialName, 100, 100,2,3,5,50,null);
         }
         temporaryMessageCall(player);
+
+
+        Equipment equipmentList = new Equipment();
+
+        // Instantiating Equipments here
+        Equipment sword1 = new Sword();
+        Equipment sword2 = new Sword();
+
+        Equipment axe1 = new Axe();
+        Equipment axe2 = new Axe();
+
+        Equipment bow1 = new Bow();
+        Equipment bow2 = new Bow();
+
+        Equipment wand1 = new Wand();
+        Equipment wand2 = new Wand();
+
+        Equipment staff1 = new Staff();
+        Equipment staff2 = new Staff();
+
+        Equipment crossbow1 = new Crossbow();
+        Equipment crossbow2 = new Crossbow();
+
 
 
     }
