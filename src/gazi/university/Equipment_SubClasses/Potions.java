@@ -14,10 +14,12 @@ public class Potions extends Equipment {
     public List<Potions> getListOfPotions(){
         return this.listOfPotions;
     }
+
     public void addPotionsToList(Potions potions){
         this.price = potions.getPrice();
         this.listOfPotions.add(potions);
     }
+
     public void removePotionsFromList(Weapon weapon){ //Added the removal of item
         int index = (int) this.getListOfPotions().stream().filter(x -> x.getPrice() == weapon.getPrice()
                 && x.getClass().getSimpleName().equals(weapon.getClass().getSimpleName())).count();
