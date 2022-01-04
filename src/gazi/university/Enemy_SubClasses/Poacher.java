@@ -19,22 +19,19 @@ public class Poacher extends Enemy {
             new Poacher("PoacherLvl1.4", 14, 1, 12),
             new Poacher("PoacherLvl1.5", 15, 1, 13)
     );
-    private static final List<Poacher> poacherForBattleLvl2 = Arrays.asList( // total number is 9
-            new Poacher("PoacherLvl2.1", 20, 2, 19),
+    private static final List<Poacher> poacherForBattleLvl2 = Arrays.asList( // total number is 7
             new Poacher("PoacherLvl2.3", 21, 2, 19),
             new Poacher("PoacherLvl2.4", 22, 2, 20),
-            new Poacher("PoacherLvl2.5", 22, 2, 21),
             new Poacher("PoacherLvl2.6", 23, 2, 22),
             new Poacher("PoacherLvl2.7", 24, 2, 23),
             new Poacher("PoacherLvl2.8", 24, 2, 24),
             new Poacher("PoacherLvl2.8", 25, 2, 25),
             new Poacher("PoacherLvl2.9", 28, 2, 28)
     );
-    private static final List<Poacher> poacherForBattleLvl3 = Arrays.asList( //  total number is 12
+    private static final List<Poacher> poacherForBattleLvl3 = Arrays.asList( //  total number is 11
             new Poacher("PoacherLvl3.1", 20, 2, 29),
             new Poacher("PoacherLvl3.1", 21, 2, 29),
             new Poacher("PoacherLvl3.2", 22, 2, 20),
-            new Poacher("PoacherLvl3.2", 22, 2, 31),
             new Poacher("PoacherLvl3.3", 23, 2, 32),
             new Poacher("PoacherLvl3.4", 24, 2, 33),
             new Poacher("PoacherLvl3.4", 24, 2, 34),
@@ -65,13 +62,48 @@ public class Poacher extends Enemy {
             default -> null;
         };
     }
-
-    // Planning to make more changes here.
-
     public void defaultAttack(Character character) {
         character.setHealth(character.getHealth() - getDamage());
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public int getHealth() {
+        return health;
+    }
+
+    @Override
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    @Override
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public int getGold() {
+        return gold;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
+    }
+
+
+    // Planning to make more changes here.
 }
 
 
