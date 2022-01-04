@@ -63,7 +63,13 @@ public class Poacher extends Enemy {
         };
     }
     public void defaultAttack(Character character) {
-        character.setHealth(character.getHealth() - getDamage());
+        if(character.getDefance() > this.getDamage())
+            System.out.println("Dealt 0 damage!");
+        else {
+            int dealt = character.getHealth() - (getDamage() - character.getDefance());
+            character.setHealth(dealt);
+            System.out.println("Dealt " + dealt + " damage!");
+        }
     }
 
     @Override

@@ -4,8 +4,7 @@ import gazi.university.Character_SubClasses.Duelist;
 import gazi.university.Character_SubClasses.Ranger;
 import gazi.university.Character_SubClasses.Sorcerer;
 import gazi.university.Equipment_SubClasses.Weapon;
-import gazi.university.Equipment_SubClasses.Weapon_SubClasses.Axe;
-import gazi.university.Equipment_SubClasses.Weapon_SubClasses.Sword;
+import gazi.university.Equipment_SubClasses.Weapon_SubClasses.*;
 import gazi.university.Location_SubClasses.Battlefield_SubClasses.Level1_CurvedCave;
 
 import java.util.List;
@@ -34,6 +33,7 @@ public class Main {
         //------------------------------------------------------------
 
         //Umut Kaan's Test ---------------------------------------------------------------------
+
 
         //System.out.println(enemies.get(0).toString());
         // Let's start the game!
@@ -64,12 +64,21 @@ public class Main {
         temporaryMessageCall(player);
 
 
+        Equipment equipmentList = new Equipment();
+
+        // Instantiating Equipments here
+
+
+
+
+
+
     }
     static void temporaryMessageCall(Character player){
         // While loop or exception handling can be added above.
         // I realized that we need to add equipItem and unequipItem methods.
-        System.out.println("İyi eğlenceler, " + player.getClass().getSimpleName() + " " + player.getName());
-        System.out.println("Güç değeriniz: " + player.getStrength());
+        System.out.println("Have fun, " + player.getClass().getSimpleName() + " " + player.getName());
+        System.out.println("Strength: " + player.getStrength());
         System.out.println("");
     }
 

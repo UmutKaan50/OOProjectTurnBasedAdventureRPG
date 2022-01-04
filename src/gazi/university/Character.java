@@ -13,6 +13,17 @@ public class Character implements ActiveAndPassive, Info{
     private int money;
     private Equipment equipment;
     private int damage;
+    // Added defence variable for combat.
+    private int defance;
+
+    public int getDefance() {
+        return defance;
+    }
+
+    public void setDefance(int defance) {
+        this.defance = defance;
+    }
+
     private String currentLocation;
 
     public int getDamage() {
@@ -122,6 +133,8 @@ public class Character implements ActiveAndPassive, Info{
         strength += 5;
         money += 100;
     }
+
+    // Umut Kaan's thinking about
 
     public void buyItem(Weapon weapon){
             equipment.setWeaponToList(weapon);
