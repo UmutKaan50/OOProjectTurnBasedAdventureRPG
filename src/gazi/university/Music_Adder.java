@@ -6,15 +6,26 @@ import java.io.IOException;
 
 public class Music_Adder {
 
+    File file;
+    AudioInputStream audioStream;
+    Clip clip;
+
     public Music_Adder(String name) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 
-        File file = new File("C:\\Users\\nothi\\Desktop\\Music\\" + name);
-        AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
-        Clip clip = AudioSystem.getClip();
+        this.file= new File("C:\\Users\\nothi\\Desktop\\Music\\" + name);
+        this.audioStream = AudioSystem.getAudioInputStream(file);
+        this.clip = AudioSystem.getClip();
         clip.open(audioStream);
-        clip.start();
-
     }
+    
+    public void Start_Music(){
+        clip.start();
+    }
+
+    public void Stop_Music(){
+        clip.stop();
+    }
+
 
 }
 

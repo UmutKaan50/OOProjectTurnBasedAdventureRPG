@@ -49,8 +49,11 @@ public class Main {
 
         //Music adding test
 
+        Music_Adder musicAdder = null;
+
         try{
-            Music_Adder musicAdder = new Music_Adder("DOOM.wav");
+            musicAdder = new Music_Adder("Main.wav");
+            musicAdder.Start_Music();
         }
         catch(Exception e){
             e.printStackTrace();
@@ -89,7 +92,6 @@ public class Main {
         WeaponMerchant wm1 = new WeaponMerchant(player);
 
 
-
         // Instantiating Equipments here
 
         System.out.println("***");
@@ -97,7 +99,7 @@ public class Main {
         for (Weapon item: wm1.getWeaponList()
              ) {
             System.out.println(item.getName());
-            
+
         }
 
         System.out.println("***");
