@@ -20,6 +20,8 @@ public class Equipment {
     private List<Armor> armor = new ArrayList<>();
     private List<Potions> potions = new ArrayList<>();
     private List<Equipment> equipment = new ArrayList<>();
+
+    // Constructor
     public Equipment() {}
 
     public List<Weapon> getListOfWeapons() {

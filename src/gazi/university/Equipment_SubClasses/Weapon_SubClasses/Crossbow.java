@@ -7,6 +7,7 @@ public class Crossbow extends Weapon {
     private int Damage;
     private int price;
 
+    // Constructor
     public Crossbow(String name, int Damage, int price){
         super(name);
         this.Damage = Damage;

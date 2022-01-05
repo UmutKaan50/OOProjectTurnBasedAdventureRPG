@@ -9,6 +9,7 @@ import gazi.university.Location_SubClasses.TownCenter;
 public class Location {
     private final Character character;
 
+    // Constructor
     public Location(Character character){
         this.character = character;
     }

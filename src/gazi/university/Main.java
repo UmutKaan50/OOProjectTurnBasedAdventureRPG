@@ -16,7 +16,7 @@ public class Main {
     public static void main(String[] args){
 
         // Rahman's Test ------------------------------------------------------------------
-        Weapon weapon = new Weapon();
+        Weapon weapon = new Weapon("Rahman's weapon");
         //Sword sword = new Sword(23, 44);
         //weapon.addWeaponToList(sword);
         //Axe axe = new Axe(22, 13);

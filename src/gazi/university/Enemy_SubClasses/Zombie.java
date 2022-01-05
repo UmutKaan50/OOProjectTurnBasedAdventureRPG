@@ -44,6 +44,8 @@ public class Zombie extends Enemy {
             new Zombie("ZombieLvl3.8", 37, 3, 37),
             new Zombie("ZombieLvl3.9", 39, 3, 39)
     );
+
+    // Constructor
     private Zombie(String name, int health, int level, int gold){
         this.name = name;
         this.health = health;

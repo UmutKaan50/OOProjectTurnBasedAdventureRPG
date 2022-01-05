@@ -9,6 +9,7 @@ public class Staff extends Weapon {
     private int price;
     private String name;
 
+    // Constructor
     public Staff(String name, int Damage, int price){
         super(name);
         this.Damage = Damage;

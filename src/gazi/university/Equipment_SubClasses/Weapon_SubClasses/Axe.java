@@ -7,6 +7,7 @@ public class Axe extends Weapon {
     private int price;
     private String name;
 
+    // Constructor
     public Axe(String name, int Damage, int price){
         super(name);
         this.Damage = Damage;

@@ -15,6 +15,7 @@ public class Level2_DeadDesert extends Battlefield {
     private final int numberOfEnemies = 25;
     private int remainedNumber = numberOfEnemies;
 
+    // Constructor
     public Level2_DeadDesert(Character character){
         super(character);
         character.setCurrentLocation(this.getClass().getSimpleName());

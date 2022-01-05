@@ -7,6 +7,7 @@ import gazi.university.Equipment;
 
 public class Duelist extends Character {
 
+    // Constructor
     public Duelist(String name, int health, int mana, int str, int dex, int intel, int money, Equipment equipment){
         super(name, health, mana, str, dex, intel, money, equipment);
     }

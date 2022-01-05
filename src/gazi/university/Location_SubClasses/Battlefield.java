@@ -8,6 +8,7 @@ public abstract class Battlefield extends Location { //Since each battlefield's 
     // these methods are a MUST in each battlefield, we have
     //to make each method abstract and create their own logic.
 
+    // Constructor
     public Battlefield(Character character){
         super(character);
     }

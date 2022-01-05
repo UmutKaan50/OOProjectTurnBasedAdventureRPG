@@ -16,6 +16,7 @@ public class Level1_CurvedCave extends Battlefield {
     private int remainedNumber = numberOfEnemies;
 
 
+    // Constructor
     public Level1_CurvedCave(Character character){
         super(character);
         character.setCurrentLocation(this.getClass().getSimpleName()); //Let know where currently the character is.

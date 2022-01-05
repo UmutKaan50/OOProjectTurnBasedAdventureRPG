@@ -14,6 +14,7 @@ public class Enemy implements ActiveAndPassive{
     private int gold;
     private final List<Enemy> listOfEnemies = new ArrayList<>();
 
+    // Constructor
     public Enemy(){}
     public String getName() {
         return name;

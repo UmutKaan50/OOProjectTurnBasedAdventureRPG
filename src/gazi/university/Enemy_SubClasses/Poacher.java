@@ -43,6 +43,7 @@ public class Poacher extends Enemy {
             new Poacher("PoacherLvl3.1", 20, 2, 29)
     );
 
+    // Constructor
     private Poacher(String name, int health, int level, int gold){
         this.name = name;
         this.health = health;

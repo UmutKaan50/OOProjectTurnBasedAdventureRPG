@@ -45,6 +45,8 @@ public class Vampire extends Enemy {
             new Vampire("VampireLvl3.9", 38, 3, 38),
             new Vampire("VampireLvl3.8", 37, 3, 36)
     );
+
+    // Constructor
     private Vampire(String name, int health, int level, int gold){
         this.name = name;
         this.health = health;

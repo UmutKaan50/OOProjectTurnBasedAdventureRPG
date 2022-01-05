@@ -5,19 +5,16 @@ import gazi.university.Equipment_SubClasses.Armor;
 public class Shield extends Armor {
    private int flatArmor;
    private int price;
-   private String name;
 
+    // Constructor
    public Shield(String name, int flatArmor, int price){
-       this.name = name;
+       super(name);
        this.flatArmor = flatArmor;
        this.price = price;
    }
 
-   @Override
-   public String getName(){
-       return this.name;
-   }
-   @Override
+
+    @Override
     public int getFlatArmor(){
         return this.flatArmor;
     }

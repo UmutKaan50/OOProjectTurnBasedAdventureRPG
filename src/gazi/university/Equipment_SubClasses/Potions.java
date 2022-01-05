@@ -10,9 +10,13 @@ public class Potions extends Equipment {
     private List<Potions> listOfPotions;
     private int price;
     private String name;
+    private int regenAmount;
 
-    public Potions(String name){
+    // Constructor
+    public Potions(String name, int price, int regenAmount){
         this.name = name;
+        this.price = price;
+        this.regenAmount = regenAmount;
     }
 
     public List<Potions> getListOfPotions(){
@@ -33,10 +37,6 @@ public class Potions extends Equipment {
         return this.price;
     }
 
-    public void effect(Potions potion){
-
-    }
-
     public void setListOfPotions(List<Potions> listOfPotions) {
         this.listOfPotions = listOfPotions;
     }
@@ -51,5 +51,13 @@ public class Potions extends Equipment {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getRegenAmount() {
+        return regenAmount;
+    }
+
+    public void setRegenAmount(int regenAmount) {
+        this.regenAmount = regenAmount;
     }
 }

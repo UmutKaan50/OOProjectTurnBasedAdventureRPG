@@ -10,8 +10,7 @@ public class Weapon extends Equipment {
     private int price;
     private String name;
 
-
-
+    // Constructor
     public Weapon(String name){
         this.name = name;
     }

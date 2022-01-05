@@ -10,6 +10,7 @@ public class TownCenter extends Location {
     private final Blacksmith blacksmith;
     private final Shopkeeper shopkeeper;
 
+    // Constructor
     public TownCenter(Character character) {
         super(character);
         this.blacksmith = new Blacksmith(character,character.getEquipment());

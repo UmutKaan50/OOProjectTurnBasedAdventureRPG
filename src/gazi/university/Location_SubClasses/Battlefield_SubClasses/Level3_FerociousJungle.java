@@ -15,6 +15,7 @@ public class Level3_FerociousJungle extends Battlefield {
     private final int numberOfEnemies = 35;
     private int remainedNumber = numberOfEnemies;
 
+    // Constructor
     public Level3_FerociousJungle(Character character){
         super(character);
         character.setCurrentLocation(this.getClass().getSimpleName());

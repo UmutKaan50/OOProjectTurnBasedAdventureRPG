@@ -11,6 +11,7 @@ public class Armor extends Equipment {
     private int price;
     private String name;
 
+    // Constructor
     public Armor(String name){
         this.name = name;
     }

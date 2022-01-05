@@ -9,13 +9,13 @@ public class Shopkeeper extends NPC {
     private Equipment equip;
     private Character character;
 
-    HealthPotion hp1 = new HealthPotion();
-    HealthPotion hp2 = new HealthPotion();
-    HealthPotion hp3 = new HealthPotion();
+    HealthPotion hp1 = new HealthPotion("Broken Health Potion",50,50);
+    HealthPotion hp2 = new HealthPotion("Normal Health Potion", 100,75);
+    HealthPotion hp3 = new HealthPotion("Masterwork Health Potion", 200,100);
 
-    ManaPotion mp1 = new ManaPotion();
-    ManaPotion mp2 = new ManaPotion();
-    ManaPotion mp3 = new ManaPotion();
+    ManaPotion mp1 = new ManaPotion("Broken Mana Potion", 50,50);
+    ManaPotion mp2 = new ManaPotion("Normal Mana Potion",100,75);
+    ManaPotion mp3 = new ManaPotion("Masterwork Health Potion", 200,100);
 
 
     public Shopkeeper(Character character, Equipment equip){

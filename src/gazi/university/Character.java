@@ -169,7 +169,6 @@ public class Character implements ActiveAndPassive, Info{
     }
     public void usePotion(Potions potion){
         // Thinking about adding a potion as parameter and removing it after usage.
-        potion.effect(potion);
         equipment.getListOfPotions().remove(potion);
 
     }
