@@ -3,7 +3,7 @@ package gazi.university;
 public class NPC {
     private Character character;
 
-    public NPC(){}
+    // I removed free NPC constructor.
     public NPC(Character character){
         this.character = character;
     }

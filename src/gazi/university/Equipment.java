@@ -68,7 +68,7 @@ public class Equipment {
 
         if(itemPackageName.equals(Axe.class.getPackageName())){
             Weapon weapon = (Weapon) equipment;
-            long index = this.weapon.stream().filter(x -> x.getDamage() == weapon.getDamage() && x.getPrice() == weapon.getPrice()
+            long index = this.weapon.stream().filter(x -> x.getFlatDamage() == weapon.getFlatDamage() && x.getPrice() == weapon.getPrice()
                     && x.getClass().getSimpleName().equals(weapon.getClass().getSimpleName())).count();
             this.weapon.remove((int) index);
         }

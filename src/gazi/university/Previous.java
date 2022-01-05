@@ -3,6 +3,9 @@ package gazi.university;
 public class Previous {
 
     /*
+    *from Umut Kaan's buy item method in weapon merchant.
+    *
+    * //getCharacter().getEquipment().setArmorToList(armor);
     *
     *  Umut Kaan used to store this functions in Character class.
     public void buyItem(Weapon weapon){

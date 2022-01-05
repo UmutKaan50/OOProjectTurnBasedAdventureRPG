@@ -7,7 +7,8 @@ import gazi.university.Location_SubClasses.Battlefield_SubClasses.Level3_Ferocio
 import gazi.university.Location_SubClasses.TownCenter;
 
 public class Location {
-    private final Character character;
+
+    private Character character;
 
     // Constructor
     public Location(Character character){

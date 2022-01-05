@@ -3,28 +3,28 @@ package gazi.university.Location_SubClasses;
 import gazi.university.Character;
 import gazi.university.Location;
 import gazi.university.NPC;
-import gazi.university.NPC_SubClasses.Blacksmith;
-import gazi.university.NPC_SubClasses.Shopkeeper;
+import gazi.university.NPC_SubClasses.WeaponMerchant;
+import gazi.university.NPC_SubClasses.PotionMerchant;
 
 public class TownCenter extends Location {
-    private final Blacksmith blacksmith;
-    private final Shopkeeper shopkeeper;
+    private WeaponMerchant weaponMerchant;
+    private PotionMerchant potionMerchant;
 
     // Constructor
     public TownCenter(Character character) {
         super(character);
-        this.blacksmith = new Blacksmith(character,character.getEquipment());
-        this.shopkeeper = new Shopkeeper(character, character.getEquipment());
+        this.weaponMerchant = new WeaponMerchant(character);
+        this.potionMerchant = new PotionMerchant(character);
     }
 
     public NPC goToNPC(String npcType){ //returns an instance of NPC's subclass
-        String blackName = this.blacksmith.getClass().getSimpleName();
-        String shopName = this.shopkeeper.getClass().getSimpleName();
+        String blackName = this.weaponMerchant.getClass().getSimpleName();
+        String shopName = this.potionMerchant.getClass().getSimpleName();
 
         if(npcType.equalsIgnoreCase(blackName)){
-            return this.blacksmith;
+            return this.weaponMerchant;
         }else if(npcType.equalsIgnoreCase(shopName)){
-            return this.shopkeeper;
+            return this.potionMerchant;
         }
         return null;
     }

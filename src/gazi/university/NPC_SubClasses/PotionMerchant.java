@@ -6,8 +6,11 @@ import gazi.university.Equipment_SubClasses.Potion;
 import gazi.university.Equipment_SubClasses.Potions_SubClasses.*;
 import gazi.university.NPC;
 
-public class Shopkeeper extends NPC {
-    private Equipment equip;
+import java.util.List;
+
+public class PotionMerchant extends NPC {
+
+    private List<Potion> potions = null;
 
 
     HealthPotion hp1 = new HealthPotion("Broken Health Potion",50,50);
@@ -19,28 +22,27 @@ public class Shopkeeper extends NPC {
     ManaPotion mp3 = new ManaPotion("Masterwork Health Potion", 200,100);
 
 
-    public Shopkeeper(Character character){
+    public PotionMerchant(Character character){
         super(character);
         getCharacter().setCurrentLocation(this.getClass().getSimpleName());
 
-        equip.setPotionsToList(hp1);
-        equip.setPotionsToList(hp2);
-        equip.setPotionsToList(hp3);
+        potions.add(hp1);
+        potions.add(hp2);
+        potions.add(hp3);
 
-        equip.setPotionsToList(mp1);
-        equip.setPotionsToList(mp2);
-        equip.setPotionsToList(mp3);
-
+        potions.add(mp1);
+        potions.add(mp2);
+        potions.add(mp3);
     }
 
 
-    public void buyItem(Potion potion){
+    public void buyPotion(Potion potion){
 
         getCharacter().setMoney(getCharacter().getMoney() - potion.getPrice());
 
         if (potion instanceof HealthPotion){
             if (getCharacter().getHealthPotionEquipped() != null){
-                getCharacter().getEquipment().setPotionsToList(potion);
+                getCharacter().getEquipment().addEquipmentToList(potion);
             }
             else{
                 getCharacter().setHealthPotionEquipped((HealthPotion) potion);
@@ -48,14 +50,12 @@ public class Shopkeeper extends NPC {
         }
         else if(potion instanceof  ManaPotion){
             if (getCharacter().getManaPotionEquipped() != null){
-                getCharacter().getEquipment().setPotionsToList(potion);
+                getCharacter().getEquipment().addEquipmentToList(potion);
             }
             else{
                 getCharacter().setManaPotionEquipped((ManaPotion) potion);
             }
         }
-
-        getCharacter().getEquipment().setPotionsToList(potion);
 
     }
 }

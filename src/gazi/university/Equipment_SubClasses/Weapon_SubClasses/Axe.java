@@ -17,7 +17,7 @@ public class Axe extends Weapon {
     public String getName(){
         return this.name;
     }
-    public int getDamage(){
+    public int getFlatDamage(){
         return this.Damage;
     }
     public int getPrice(){
