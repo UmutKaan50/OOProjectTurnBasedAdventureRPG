@@ -4,6 +4,7 @@ import gazi.university.Character_SubClasses.Duelist;
 import gazi.university.Character_SubClasses.Ranger;
 import gazi.university.Character_SubClasses.Sorcerer;
 import gazi.university.Equipment_SubClasses.Weapon;
+import gazi.university.NPC_SubClasses.WeaponMerchant;
 
 import java.util.List;
 import java.util.*;
@@ -19,18 +20,26 @@ public class Main {
         //weapon.addWeaponToList(sword);
         //Axe axe = new Axe(22, 13);
         //weapon.addWeaponToList(axe);
-        List<Weapon> weaponList = weapon.getListOfWeapons();
-        System.out.println(weaponList.get(0).getClass().getSimpleName());
-        System.out.println(weaponList.get(1).getClass().getSimpleName());
-        Equipment equipment = new Equipment();
-        System.out.println(weaponList.get(0).getClass().getSimpleName());
 
-        equipment.addEquipmentToList(weapon.getListOfWeapons().get(1));
-        List<Equipment> equipmentList = equipment.getListOfEquipment();
-        System.out.println("This is equipment list: "+ equipmentList.get(0).toString());
+        // Rahman's commented part by Umut Kaan
+//        List<Weapon> weaponList = weapon.getListOfWeapons();
+//        System.out.println(weaponList.get(0).getClass().getSimpleName());
+//        System.out.println(weaponList.get(1).getClass().getSimpleName());
+//        Equipment equipment = new Equipment();
+//        System.out.println(weaponList.get(0).getClass().getSimpleName());
+//
+//        equipment.addEquipmentToList(weapon.getListOfWeapons().get(1));
+//        List<Equipment> equipmentList = equipment.getListOfEquipment();
+//        System.out.println("This is equipment list: "+ equipmentList.get(0).toString());
+
         //------------------------------------------------------------
 
         //Umut Kaan's Test ---------------------------------------------------------------------
+        // There was an error:
+//        Exception in thread "main" java.lang.NullPointerException: Cannot invoke "java.util.List.add(Object)" because "this.weaponList" is null
+////        at gazi.university.NPC_SubClasses.WeaponMerchant.<init>(WeaponMerchant.java:56)
+////        at gazi.university.Main.main(Main.java:74)
+
 
         // Yesterday I was thinking about each Character bonus if they equip appropriate item.
         // This makes equiping appropriate item logical I suppose.
@@ -67,9 +76,21 @@ public class Main {
 
         temporaryMessageCall(player);
 
+        WeaponMerchant wm1 = new WeaponMerchant(player);
+
+
 
         // Instantiating Equipments here
 
+        System.out.println("***");
+
+        for (Weapon item: wm1.getWeaponList()
+             ) {
+            System.out.println(item.getName());
+            
+        }
+
+        System.out.println("***");
 
 
 

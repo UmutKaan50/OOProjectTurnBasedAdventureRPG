@@ -6,14 +6,23 @@ import gazi.university.Equipment_SubClasses.*;
 import gazi.university.Equipment_SubClasses.Weapon_SubClasses.*;
 import gazi.university.NPC;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class WeaponMerchant extends NPC {
 
-    private List<Weapon> weaponList = null;
+    private List<Weapon> weaponList = new ArrayList<Weapon>();
 
-    Sword sword1 = new Sword("Heay Sword", 5, 50);
+    public List<Weapon> getWeaponList() {
+        return weaponList;
+    }
+
+    public void setWeaponList(List<Weapon> weaponList) {
+        this.weaponList = weaponList;
+    }
+
+    Sword sword1 = new Sword("Heavy Sword", 5, 50);
     Sword sword2 = new Sword("Masterwork Sword", 10, 100);
 
     Axe axe1 = new Axe("Heavy Axe", 15, 150);

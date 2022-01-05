@@ -6,16 +6,25 @@ import gazi.university.Equipment_SubClasses.Armor_SubClasses.BodyArmor;
 import gazi.university.Equipment_SubClasses.Armor_SubClasses.Boots;
 import gazi.university.Equipment_SubClasses.Armor_SubClasses.Helmet;
 import gazi.university.Equipment_SubClasses.Armor_SubClasses.Shield;
+import gazi.university.Equipment_SubClasses.Weapon;
 import gazi.university.NPC;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class ArmorMerchant extends NPC {
 
-    private List<Armor> armorList = null;
+    private List<Armor> armorList = new ArrayList<Armor>();
 
-    // Umut Kaan's TODO: Configure their values.
+    public List<Armor> getArmorList() {
+        return armorList;
+    }
+
+    public void setArmorList(List<Armor> armorList) {
+        this.armorList = armorList;
+    }
+// Umut Kaan's TODO: Configure their values.
 
 
     BodyArmor bodyArmor1 = new BodyArmor("Thick Body Armor", 5,100);

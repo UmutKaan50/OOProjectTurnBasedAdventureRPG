@@ -4,14 +4,23 @@ import gazi.university.Character;
 import gazi.university.Equipment;
 import gazi.university.Equipment_SubClasses.Potion;
 import gazi.university.Equipment_SubClasses.Potions_SubClasses.*;
+import gazi.university.Equipment_SubClasses.Weapon;
 import gazi.university.NPC;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PotionMerchant extends NPC {
 
-    private List<Potion> potions = null;
+    private List<Potion> potions = new ArrayList<Potion>();
 
+    public List<Potion> getPotions() {
+        return potions;
+    }
+
+    public void setPotions(List<Potion> potions) {
+        this.potions = potions;
+    }
 
     HealthPotion hp1 = new HealthPotion("Broken Health Potion",50,50);
     HealthPotion hp2 = new HealthPotion("Normal Health Potion", 100,75);
