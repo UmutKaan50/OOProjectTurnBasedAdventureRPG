@@ -46,6 +46,16 @@ public class Main {
         // TODO: Make required changes is Blacksmith class.
         // TODO : ilker abi bilgisayar cümle kur
 
+
+        //Music adding test
+
+        try{
+            Music_Adder musicAdder = new Music_Adder();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
         //System.out.println(enemies.get(0).toString());
         // Let's start the game!
         // Please explain what you've added.
