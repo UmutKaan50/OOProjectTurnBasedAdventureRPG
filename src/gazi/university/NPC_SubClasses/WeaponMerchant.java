@@ -9,6 +9,7 @@ import gazi.university.NPC;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class WeaponMerchant extends NPC {
 
@@ -43,7 +44,62 @@ public class WeaponMerchant extends NPC {
     // "I think them beaing final could be a problem for us. So I omitted that word." -UKO
 
 
+    @Override
+    public void showInventory() {
+        int counter = 1;
+        for (Weapon weaponItem: weaponList)
+        {
+            System.out.println(counter + " - " + weaponItem.getName() + ", " + weaponItem.getFlatDamage() + ", " +
+                    weaponItem.getPrice() + " gold");
+            counter++;
+        }
+        Scanner scan = new Scanner(System.in);
+        int choice = scan.nextInt();
 
+        switch (choice){
+            // Maybe item order can be changed.
+            case 1:
+                buyWeapon(sword1);
+                break;
+            case 2:
+                buyWeapon(sword2);
+                break;
+            case 3:
+                buyWeapon(axe1);
+                break;
+            case 4:
+                buyWeapon(axe2);
+                break;
+            case 5:
+                buyWeapon(bow1);
+                break;
+            case 6:
+                buyWeapon(bow2);
+                break;
+            case 7:
+                buyWeapon(crossbow1);
+                break;
+            case 8:
+                buyWeapon(crossbow2);
+                break;
+            case 9:
+                buyWeapon(wand1);
+                break;
+            case 10:
+                buyWeapon(wand2);
+                break;
+            case 11:
+                buyWeapon(staff1);
+                break;
+            case 12:
+                buyWeapon(staff2);
+                break;
+            default:
+                break;
+        }
+
+
+    }
 
 
 
@@ -78,14 +134,33 @@ public class WeaponMerchant extends NPC {
     }
 
     public void buyWeapon(Weapon weapon){
+
+        // If character's money is enough
+        if(getCharacter().getMoney() >= weapon.getPrice()){
+
+        getCharacter().setMoney(getCharacter().getMoney() - weapon.getPrice());
+            System.out.println("Bought: " + weapon.getName() + "\n");
+
+
         if(getCharacter().getWeaponEquipped() != null) {
             getCharacter().getEquipment().setWeaponToList(weapon);
         }
         else{
             getCharacter().setWeaponEquipped(weapon);
+            System.out.println("Bought " + weapon.getFlatDamage() + " damage");
+            System.out.println("\nPrevious damage: " + getCharacter().getDamage());
+            getCharacter().setDamage(getCharacter().getDamage() + weapon.getFlatDamage());
+            System.out.println("\nCurrent damage: " + getCharacter().getDefance() + "\n\n");
         }
-        getCharacter().setMoney(getCharacter().getMoney() - weapon.getPrice());
+
+        }else{
+            System.out.println("Not enough money!");
+
+        }
+
+
     }
+
 
 
 }

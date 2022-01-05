@@ -12,6 +12,7 @@ import gazi.university.NPC;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class ArmorMerchant extends NPC {
 
@@ -56,10 +57,58 @@ public class ArmorMerchant extends NPC {
         armorList.add(shield2);
     }
 
+    @Override
+    public void showInventory() {
+        int counter = 1;
+        for (Armor armorItem: armorList)
+        {
+            System.out.println(counter + " - " + armorItem.getName() + ", " + armorItem.getFlatArmor() + ", "
+                    + armorItem.getPrice() + " gold");
+            counter++;
+        }
+
+        Scanner scan = new Scanner(System.in);
+        int choice = scan.nextInt();
+
+        switch (choice){
+
+            case 1:
+                buyArmor(bodyArmor1);
+                break;
+            case 2:
+                buyArmor(bodyArmor2);
+                break;
+            case 3:
+                buyArmor(boots1);
+                break;
+            case 4:
+                buyArmor(boots2);
+                break;
+            case 5:
+                buyArmor(helmet1);
+                break;
+            case 6:
+                buyArmor(helmet2);
+                break;
+            case 7:
+                buyArmor(shield1);
+                break;
+            case 8:
+                buyArmor(shield2);
+                break;
+            default:
+                break;
+
+        }
+    }
+
     // Adding armor to armor list of directly equipping it after after buying here.
     public void buyArmor(Armor armor){
 
+        if (getCharacter().getMoney() >= armor.getPrice()){
+
         getCharacter().setMoney(getCharacter().getMoney() - armor.getPrice());
+            System.out.println("Bought: " + armor.getName() + "\n");
 
         if (armor instanceof BodyArmor){
             if (getCharacter().getBodyArmorEquipped() != null){
@@ -67,6 +116,10 @@ public class ArmorMerchant extends NPC {
             }
             else{
                 getCharacter().setBodyArmorEquipped((BodyArmor) armor);
+                System.out.println("Bought: " + armor.getFlatArmor() + " defence");
+                System.out.println("\nPrevious defence: " + getCharacter().getDefance());
+                getCharacter().setDefance(getCharacter().getDefance() + armor.getFlatArmor());
+                System.out.println("\nCurrent defence: " + getCharacter().getDefance() + "\n\n");
             }
         }
         else if (armor instanceof Boots){
@@ -75,6 +128,10 @@ public class ArmorMerchant extends NPC {
             }
             else{
                 getCharacter().setBootsEquipped((Boots) armor);
+                System.out.println("Bought: " + armor.getFlatArmor() + " defence");
+                System.out.println("\nPrevious defence: " + getCharacter().getDefance());
+                getCharacter().setDefance(getCharacter().getDefance() + armor.getFlatArmor());
+                System.out.println("\nCurrent defence: " + getCharacter().getDefance() + "\n\n");
             }
 
         }
@@ -84,6 +141,10 @@ public class ArmorMerchant extends NPC {
             }
             else{
                 getCharacter().setHelmetEquipped((Helmet) armor);
+                System.out.println(";Bought: " + armor.getFlatArmor() + " defence");
+                System.out.println("\nPrevious defence: " + getCharacter().getDefance());
+                getCharacter().setDefance(getCharacter().getDefance() + armor.getFlatArmor());
+                System.out.println("\nCurrent defence: " + getCharacter().getDefance() + "\n\n");
             }
 
         }
@@ -93,10 +154,22 @@ public class ArmorMerchant extends NPC {
             }
             else{
                 getCharacter().setShieldEquipped((Shield) armor);
+                System.out.println("Bought: " + armor.getFlatArmor() + " defence");
+                System.out.println("\nPrevious defence: " + getCharacter().getDefance());
+                getCharacter().setDefance(getCharacter().getDefance() + armor.getFlatArmor());
+                System.out.println("\nCurrent defence: " + getCharacter().getDefance() + "\n\n");
             }
 
         }
 
+
+
     }
+        else {
+            System.out.println("\nNot enough money!\n");
+        }
+    }
+
+
 
 }

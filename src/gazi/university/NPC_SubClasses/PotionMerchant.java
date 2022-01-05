@@ -9,17 +9,18 @@ import gazi.university.NPC;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class PotionMerchant extends NPC {
 
-    private List<Potion> potions = new ArrayList<Potion>();
+    private List<Potion> potionList = new ArrayList<Potion>();
 
-    public List<Potion> getPotions() {
-        return potions;
+    public List<Potion> getPotionList() {
+        return potionList;
     }
 
-    public void setPotions(List<Potion> potions) {
-        this.potions = potions;
+    public void setPotionList(List<Potion> potionList) {
+        this.potionList = potionList;
     }
 
     HealthPotion hp1 = new HealthPotion("Broken Health Potion",50,50);
@@ -35,35 +36,85 @@ public class PotionMerchant extends NPC {
         super(character);
         getCharacter().setCurrentLocation(this.getClass().getSimpleName());
 
-        potions.add(hp1);
-        potions.add(hp2);
-        potions.add(hp3);
+        potionList.add(hp1);
+        potionList.add(hp2);
+        potionList.add(hp3);
 
-        potions.add(mp1);
-        potions.add(mp2);
-        potions.add(mp3);
+        potionList.add(mp1);
+        potionList.add(mp2);
+        potionList.add(mp3);
     }
 
+    @Override
+    public void showInventory() {
+        // Maybe we could add item id but I don't think we need it now.
+        int counter = 1;
+        for (Potion potionItem: potionList){
+            System.out.println(counter + " - " + potionItem.getName() + ", " + potionItem.getRegenAmount() +
+                    ", " + potionItem.getPrice() + " gold");
+
+            counter++;
+        }
+        Scanner scan = new Scanner(System.in);
+        int choice = scan.nextInt();
+
+        switch (choice){
+
+            case 1:
+                buyPotion(hp1);
+                break;
+            case 2:
+                buyPotion(hp2);
+                break;
+            case 3:
+                buyPotion(hp3);
+                break;
+            case 4:
+                buyPotion(mp1);
+                break;
+            case 5:
+                buyPotion(mp2);
+                break;
+            case 6:
+                buyPotion(mp3);
+                break;
+            default:
+                break;
+
+        }
+
+    }
 
     public void buyPotion(Potion potion){
 
-        getCharacter().setMoney(getCharacter().getMoney() - potion.getPrice());
+        if(getCharacter().getMoney() >= potion.getPrice()) {
 
-        if (potion instanceof HealthPotion){
-            if (getCharacter().getHealthPotionEquipped() != null){
-                getCharacter().getEquipment().addEquipmentToList(potion);
-            }
-            else{
-                getCharacter().setHealthPotionEquipped((HealthPotion) potion);
+            getCharacter().setMoney(getCharacter().getMoney() - potion.getPrice());
+            System.out.println("Bought: " + potion.getName() + "\n");
+
+            if (potion instanceof HealthPotion) {
+                if (getCharacter().getHealthPotionEquipped() != null) {
+                    getCharacter().getEquipment().addEquipmentToList(potion);
+                } else {
+
+                    System.out.println("Bought: " + potion.getRegenAmount() + " regen amount");
+                    System.out.println("Previous regen amount: " + getCharacter().getHealthPotionEquipped().getRegenAmount());
+                    getCharacter().setHealthPotionEquipped((HealthPotion) potion);
+                    System.out.println("Current regen amount: " + getCharacter().getHealthPotionEquipped().getRegenAmount() + "\n\n");
+
+
+                }
+            } else if (potion instanceof ManaPotion) {
+                if (getCharacter().getManaPotionEquipped() != null) {
+                    getCharacter().getEquipment().addEquipmentToList(potion);
+                } else {
+                    getCharacter().setManaPotionEquipped((ManaPotion) potion);
+                }
             }
         }
-        else if(potion instanceof  ManaPotion){
-            if (getCharacter().getManaPotionEquipped() != null){
-                getCharacter().getEquipment().addEquipmentToList(potion);
-            }
-            else{
-                getCharacter().setManaPotionEquipped((ManaPotion) potion);
-            }
+        else
+        {
+            System.out.println("Not enough money!");
         }
 
     }

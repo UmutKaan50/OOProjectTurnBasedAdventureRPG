@@ -1,6 +1,6 @@
 package gazi.university;
 
-public class NPC {
+public abstract class NPC {
     private Character character;
 
     // I removed free NPC constructor.
@@ -16,5 +16,5 @@ public class NPC {
         this.character = character;
     }
 
-
+    public abstract void showInventory();
 }

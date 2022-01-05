@@ -24,6 +24,11 @@ public class Level1_CurvedCave extends Battlefield {
     }
 
     @Override
+    public boolean getLocation() {
+        return true;
+    }
+
+    @Override
     protected void spawnEnemy() { // this method generates list of Enemies in random order respective to the level fo battlefield
         this.enemy = new Enemy();
         Poacher poacher = new Poacher();
