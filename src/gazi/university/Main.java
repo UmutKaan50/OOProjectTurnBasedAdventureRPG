@@ -50,7 +50,7 @@ public class Main {
         //Music adding test
 
         try{
-            Music_Adder musicAdder = new Music_Adder();
+            Music_Adder musicAdder = new Music_Adder("DOOM.wav");
         }
         catch(Exception e){
             e.printStackTrace();
