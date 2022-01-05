@@ -13,7 +13,7 @@ public class Weapon extends Equipment {
     // Constructor
     public Weapon(String name){
         this.name = name;
-    }
+    } //Why do we need to pass a name of a weapon from subclasses?
 
     @Override
     public List<Weapon> getListOfWeapons(){

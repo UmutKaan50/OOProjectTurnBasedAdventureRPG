@@ -49,12 +49,13 @@ public class Level1_CurvedCave extends Battlefield {
 
         String[] typeName = {"Poacher", "Vampire", "Zombie"};
         int times = 0;
+
         while(times != this.remainedNumber){ // this guy generates random list of enemies from random enemy types
             Random random = new Random();
             Random randomIndex = new Random();
             int randomIndexForList = randomIndex.nextInt(15);
             int randomNumber = random.nextInt(typeName.length);
-            switch (typeName[randomNumber]) { // this is called "Enhanced switch statement", guys. :)
+            switch (typeName[randomNumber]) {
                 case "Poacher" -> {
                     this.enemy.addEnemyToList(poachersLvl1.get(array[randomIndexForList]));
                 }
