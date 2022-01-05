@@ -3,13 +3,17 @@ package gazi.university.NPC_SubClasses;
 import gazi.university.Character;
 import gazi.university.Equipment;
 import gazi.university.Equipment_SubClasses.*;
+import gazi.university.Equipment_SubClasses.Armor_SubClasses.BodyArmor;
+import gazi.university.Equipment_SubClasses.Armor_SubClasses.Boots;
+import gazi.university.Equipment_SubClasses.Armor_SubClasses.Helmet;
+import gazi.university.Equipment_SubClasses.Armor_SubClasses.Shield;
 import gazi.university.Equipment_SubClasses.Weapon_SubClasses.*;
 import gazi.university.NPC;
 
 public class Blacksmith extends NPC {
     // "I think them beaing final could be a problem for us. So I omitted that word." -UKO
     private Equipment equip;
-    private Character character;
+
 
     Sword sword1 = new Sword("Heavy Sword",5,50);
     Sword sword2 = new Sword("Masterwork Sword",10, 100);
@@ -31,10 +35,10 @@ public class Blacksmith extends NPC {
 
     // Constructor
     public Blacksmith(Character character, Equipment equip){ // Blacksmith can accept both all its subclasses and their subclasses' too.
-        super(equip.getClass().getSimpleName());
+        super(character);
         this.equip = equip;
-        this.character = character;
-        this.character.setCurrentLocation(this.getClass().getSimpleName());
+        // I think this part works.
+        character.setCurrentLocation(this.getClass().getSimpleName());
 
         equip.setWeaponToList(sword1);
         equip.setWeaponToList(sword2);
@@ -55,40 +59,56 @@ public class Blacksmith extends NPC {
         equip.setWeaponToList(staff2);
     }
 
-    public void buyItem(Equipment equipment){
-        String superClassName = equipment.getClass().getSuperclass().getSimpleName();
-        switch (superClassName) {
-            case "Weapon" -> {
-                Weapon weapon = (Weapon) equipment;
-                this.character.buyItem(weapon);
-            }
-            case "Armor" -> {
-                Armor armor = (Armor) equipment;
-                this.character.buyItem(armor);
-            }
-            case "Potions" -> {
-                Potions potions = (Potions) equipment;
-                this.character.buyItem(potions);
-            }
+    public void buyItem(Weapon weapon){
+        if(getCharacter().getWeaponEquipped() != null) {
+            getCharacter().getEquipment().setWeaponToList(weapon);
         }
+        else{
+            getCharacter().setWeaponEquipped(weapon);
+        }
+        getCharacter().setMoney(getCharacter().getMoney() - weapon.getPrice());
     }
 
-    public void sellItem(Equipment equipment){
-        String superClassName = equipment.getClass().getSuperclass().getSimpleName();
-        switch (superClassName) {
-            case "Weapon" -> {
-                Weapon weapon = (Weapon) equipment;
-                this.character.sellItem(weapon);
+    // Adding armor to armor list of directly equipping it after after buying here.
+    public void buyItem(Armor armor){
+
+        getCharacter().setMoney(getCharacter().getMoney() - armor.getPrice());
+
+        if (armor instanceof BodyArmor){
+            if (getCharacter().getBodyArmorEquipped() != null){
+                getCharacter().getEquipment().setArmorToList(armor);
             }
-            case "Armor" -> {
-                Armor armor = (Armor) equipment;
-                this.character.sellItem(armor);
-            }
-            case "Potions" -> {
-                Potions potions = (Potions) equipment;
-                this.character.sellItem(potions);
+            else{
+                getCharacter().setBodyArmorEquipped((BodyArmor) armor);
             }
         }
-    }
+        else if (armor instanceof Boots){
+            if (getCharacter().getBootsEquipped() != null){
+                getCharacter().getHelmetEquipped().setArmorToList(armor);
+            }
+            else{
+                getCharacter().setBootsEquipped((Boots) armor);
+            }
 
+        }
+        else if (armor instanceof Helmet){
+            if(getCharacter().getHelmetEquipped() != null){
+                getCharacter().getEquipment().setArmorToList(armor);
+            }
+            else{
+                getCharacter().setHelmetEquipped((Helmet) armor);
+            }
+
+        }
+        else if (armor instanceof Shield){
+            if (getCharacter().getShieldEquipped() != null){
+                getCharacter().getEquipment().setArmorToList(armor);
+            }
+            else{
+                getCharacter().setShieldEquipped((Shield) armor);
+            }
+
+        }
+
+    }
 }

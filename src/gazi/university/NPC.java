@@ -1,8 +1,20 @@
 package gazi.university;
 
 public class NPC {
-    private String name;
-    public NPC(String name){
-        this.name = name;
+    private Character character;
+
+    public NPC(){}
+    public NPC(Character character){
+        this.character = character;
     }
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+
+
 }

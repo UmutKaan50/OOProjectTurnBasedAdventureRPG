@@ -34,7 +34,8 @@ public class Main {
 
         // Yesterday I was thinking about each Character bonus if they equip appropriate item.
         // This makes equiping appropriate item logical I suppose.
-
+        // TODO: Make required changes is Blacksmith class.
+        // TODO : ilker abi bilgisayar cümle kur
 
         //System.out.println(enemies.get(0).toString());
         // Let's start the game!

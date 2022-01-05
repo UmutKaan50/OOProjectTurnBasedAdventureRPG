@@ -1,7 +1,13 @@
 package gazi.university;
 
 import gazi.university.Equipment_SubClasses.Armor;
-import gazi.university.Equipment_SubClasses.Potions;
+import gazi.university.Equipment_SubClasses.Armor_SubClasses.BodyArmor;
+import gazi.university.Equipment_SubClasses.Armor_SubClasses.Boots;
+import gazi.university.Equipment_SubClasses.Armor_SubClasses.Helmet;
+import gazi.university.Equipment_SubClasses.Armor_SubClasses.Shield;
+import gazi.university.Equipment_SubClasses.Potion;
+import gazi.university.Equipment_SubClasses.Potions_SubClasses.HealthPotion;
+import gazi.university.Equipment_SubClasses.Potions_SubClasses.ManaPotion;
 import gazi.university.Equipment_SubClasses.Weapon;
 
 public class Character implements ActiveAndPassive, Info{
@@ -13,6 +19,73 @@ public class Character implements ActiveAndPassive, Info{
     private int money;
     private Equipment equipment;
     private int damage;
+
+    // Added on Wednesday, 15:10 by Umut Kaan -----------------
+    private Weapon weaponEquipped = null;
+    private BodyArmor bodyArmorEquipped = null;
+    private Shield shieldEquipped = null;
+    private Boots bootsEquipped = null;
+    private Helmet helmetEquipped = null;
+    private HealthPotion healthPotionEquipped = null;
+    private ManaPotion manaPotionEquipped = null;
+
+    public Weapon getWeaponEquipped() {
+        return weaponEquipped;
+    }
+
+    public void setWeaponEquipped(Weapon weaponEquipped) {
+        this.weaponEquipped = weaponEquipped;
+    }
+
+    public BodyArmor getBodyArmorEquipped() {
+        return bodyArmorEquipped;
+    }
+
+    public void setBodyArmorEquipped(BodyArmor bodyArmorEquipped) {
+        this.bodyArmorEquipped = bodyArmorEquipped;
+    }
+
+    public Shield getShieldEquipped() {
+        return shieldEquipped;
+    }
+
+    public void setShieldEquipped(Shield shieldEquipped) {
+        this.shieldEquipped = shieldEquipped;
+    }
+
+    public Boots getBootsEquipped() {
+        return bootsEquipped;
+    }
+
+    public void setBootsEquipped(Boots bootsEquipped) {
+        this.bootsEquipped = bootsEquipped;
+    }
+
+    public Helmet getHelmetEquipped() {
+        return helmetEquipped;
+    }
+
+    public void setHelmetEquipped(Helmet helmetEquipped) {
+        this.helmetEquipped = helmetEquipped;
+    }
+
+    public HealthPotion getHealthPotionEquipped() {
+        return healthPotionEquipped;
+    }
+
+    public void setHealthPotionEquipped(HealthPotion healthPotionEquipped) {
+        this.healthPotionEquipped = healthPotionEquipped;
+    }
+
+    public ManaPotion getManaPotionEquipped() {
+        return manaPotionEquipped;
+    }
+
+    public void setManaPotionEquipped(ManaPotion manaPotionEquipped) {
+        this.manaPotionEquipped = manaPotionEquipped;
+    }
+    // -------------------------------------------------------------
+
     // Added defence variable for combat.
     private int defance;
 
@@ -136,20 +209,6 @@ public class Character implements ActiveAndPassive, Info{
 
     // Umut Kaan's thinking about
 
-    public void buyItem(Weapon weapon){
-            equipment.setWeaponToList(weapon);
-            setMoney(getMoney() - weapon.getPrice());
-    }
-
-    public void buyItem(Armor armor){
-        equipment.setArmorToList(armor);
-        setMoney(getMoney() - armor.getPrice());
-    }
-
-    public void buyItem(Potions potion){
-        equipment.setPotionsToList(potion);
-        setMoney(getMoney() - potion.getPrice());
-    }
 
     // And same logic implemented in selling.
     public void sellItem(Weapon weapon){
@@ -162,12 +221,12 @@ public class Character implements ActiveAndPassive, Info{
         equipment.getListOfArmor().remove(armor);
 
     }
-    public void sellItem(Potions potion){
+    public void sellItem(Potion potion){
         setMoney(getMoney() + potion.getPrice());
         equipment.getListOfPotions().remove(potion);
 
     }
-    public void usePotion(Potions potion){
+    public void usePotion(Potion potion){
         // Thinking about adding a potion as parameter and removing it after usage.
         equipment.getListOfPotions().remove(potion);
 

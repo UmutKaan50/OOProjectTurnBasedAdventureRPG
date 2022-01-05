@@ -6,7 +6,7 @@ import gazi.university.Equipment_SubClasses.Armor_SubClasses.Shield;
 import gazi.university.Equipment_SubClasses.Potions_SubClasses.HealthPotion;
 import gazi.university.Equipment_SubClasses.Potions_SubClasses.ManaPotion;
 import gazi.university.Equipment_SubClasses.Weapon;
-import gazi.university.Equipment_SubClasses.Potions;
+import gazi.university.Equipment_SubClasses.Potion;
 import gazi.university.Equipment_SubClasses.Weapon_SubClasses.Axe;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class Equipment {
 
     private List<Weapon> weapon = new ArrayList<>();
     private List<Armor> armor = new ArrayList<>();
-    private List<Potions> potions = new ArrayList<>();
+    private List<Potion> potions = new ArrayList<>();
     private List<Equipment> equipment = new ArrayList<>();
 
     // Constructor
@@ -31,7 +31,7 @@ public class Equipment {
         return this.armor;
     }
 
-    public List<Potions> getListOfPotions() {
+    public List<Potion> getListOfPotions() {
         return this.potions;
     }
 
@@ -59,7 +59,7 @@ public class Equipment {
             Armor armor = (Armor) equipment;
             this.setArmorToList(armor);
         }else if(itemPackageName.equals(HealthPotion.class.getPackageName())){
-            Potions potions = (Potions) equipment;
+            Potion potions = (Potion) equipment;
             this.setPotionsToList(potions);
         }
     }
@@ -79,13 +79,13 @@ public class Equipment {
             this.armor.remove((int) index);
         }
         else if(itemPackageName.equals(ManaPotion.class.getPackageName())){
-            Potions potions = (Potions) equipment;
+            Potion potions = (Potion) equipment;
             long index = this.armor.stream().filter(x -> x.getPrice() == potions.getPrice()
                     && x.getClass().getSimpleName().equals(potions.getClass().getSimpleName())).count();
             this.armor.remove((int) index);
         }
     }
-    public void setPotionsToList( Potions potions) {
+    public void setPotionsToList( Potion potions) {
         this.potions.add(potions);
         this.equipment.add(this.potions.listIterator().next());
     }

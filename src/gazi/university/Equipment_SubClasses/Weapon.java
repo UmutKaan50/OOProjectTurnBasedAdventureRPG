@@ -14,6 +14,7 @@ public class Weapon extends Equipment {
     public Weapon(String name){
         this.name = name;
     } //Why do we need to pass a name of a weapon from subclasses?
+    public Weapon(){}
 
     @Override
     public List<Weapon> getListOfWeapons(){

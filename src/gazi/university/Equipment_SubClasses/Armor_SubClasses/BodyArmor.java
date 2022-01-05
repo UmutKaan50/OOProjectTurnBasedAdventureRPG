@@ -12,6 +12,7 @@ public class BodyArmor extends Armor {
         this.flatArmor = flatArmor;
         this.price = price;
     }
+    public BodyArmor(){}
 
     @Override
     public int getFlatArmor(){
