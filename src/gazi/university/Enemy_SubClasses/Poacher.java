@@ -63,7 +63,7 @@ public class Poacher extends Enemy {
             default -> null;
         };
     }
-    public void defaultAttack(Character character) {
+    public void defaultAttack(Character character) { //Needs to be corrected!
         if(character.getDefance() > this.getDamage())
             System.out.println("Dealt 0 damage!");
         else {
