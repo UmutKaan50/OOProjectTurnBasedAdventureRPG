@@ -91,16 +91,4 @@ public class Level2_DeadDesert extends Battlefield {
         this.remainedNumber = numberOfEnemies - 1;
         this.enemy.getListOfEnemies().remove(numberOfEnemies - remainedNumber);
     }
-
-    @Override
-    public int getRemainedEnemies() {
-        return this.remainedNumber;
-    }
-
-    @Override
-    public void setRemainedEnemies(int remainedEnemies) {//Thinking about using this method in database management since
-                                                         //in the flow of game this method should be secured from player.
-        this.remainedNumber = remainedEnemies;
-
-    }
 }
