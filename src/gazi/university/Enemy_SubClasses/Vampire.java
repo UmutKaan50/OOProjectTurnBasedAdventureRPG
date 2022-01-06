@@ -15,15 +15,10 @@ public class Vampire extends Enemy {
     private static final List<Vampire> vampiresForBattleLvl1 = List.of( // total number is 1
             new Vampire("VampireLvl1.5", 15, 1, 19)
     );
-    private static final List<Vampire> vampiresForBattleLvl2 = Arrays.asList( // total number is 4
-            new Vampire("VampireLvl2.1", 20, 2, 20),
-            new Vampire("VampireLvl2.2", 21, 2, 22),
-            new Vampire("VampireLvl2.3", 24, 2, 24),
+    private static final List<Vampire> vampiresForBattleLvl2 = List.of( // total number is 1
             new Vampire("VampireLvl2.6", 28, 2, 28)
     );
-    private static final List<Vampire> vampireForBattleLvl3 = Arrays.asList( // total number is 4
-            new Vampire("VampireLvl3.1", 30, 3, 30),
-            new Vampire("VampireLvl3.7", 36, 3, 35),
+    private static final List<Vampire> vampireForBattleLvl3 = Arrays.asList( // total number is 2
             new Vampire("VampireLvl3.9", 38, 3, 38),
             new Vampire("VampireLvl3.8", 37, 3, 36)
     );
