@@ -159,7 +159,7 @@ public class WeaponMerchant extends NPC {
 
         if(getCharacter().getWeaponEquipped() != null) {
             System.out.println("Previous damage from weapon: " + getCharacter().getWeaponEquipped().getFlatDamage());
-            sellWeapon(weapon);
+            sellWeapon(getCharacter().getWeaponEquipped());
         }
             getCharacter().setWeaponEquipped(weapon);
             getCharacter().setDamage(getCharacter().getDamage() + weapon.getFlatDamage());
