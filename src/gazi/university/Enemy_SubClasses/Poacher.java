@@ -13,13 +13,13 @@ public class Poacher extends Enemy {
     private int gold;
 
     private static final List<Poacher> poacherForBattleLvl1 = List.of( // total number is 1
-            new Poacher("PoacherLvl1.5", 15, 1, 13)
+            new Poacher("PoacherLvl1.5", 15, 1, 12)
     );
     private static final List<Poacher> poacherForBattleLvl2 = Arrays.asList( // total number is 4
             new Poacher("PoacherLvl2.3", 21, 2, 19),
             new Poacher("PoacherLvl2.4", 22, 2, 20),
             new Poacher("PoacherLvl2.6", 23, 2, 22),
-            new Poacher("PoacherLvl2.7", 24, 2, 23)
+            new Poacher("PoacherLvl2.7", 24, 2, 27)
     );
     private static final List<Poacher> poacherForBattleLvl3 = Arrays.asList( //  total number is 3
             new Poacher("PoacherLvl3.1", 20, 2, 29),

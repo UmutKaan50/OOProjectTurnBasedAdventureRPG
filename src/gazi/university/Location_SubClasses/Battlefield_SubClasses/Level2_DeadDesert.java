@@ -51,7 +51,7 @@ public class Level2_DeadDesert extends Battlefield {
         while(times != this.remainedNumber){ // this guy generates random list of enemies from random enemy types
             Random random = new Random();
             Random randomIndex = new Random();
-            int randomIndexForList = randomIndex.nextInt(numberOfEnemies);
+            int randomIndexForList = randomIndex.nextInt(8);
             int randomNumber = random.nextInt(typeName.length);
             switch (typeName[randomNumber]) {
                 case "Poacher" -> {

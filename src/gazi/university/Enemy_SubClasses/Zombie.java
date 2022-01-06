@@ -13,7 +13,7 @@ public class Zombie extends Enemy {
     private int gold;
 
     private static final List<Zombie> zombiesForBattleLvl1 = List.of( // total number is 5
-            new Zombie("ZombieLvl1.5", 15, 1, 16)
+            new Zombie("ZombieLvl1.5", 15, 1, 18)
     );
     private static final List<Zombie> zombiesForBattleLvl2 = Arrays.asList( // total number is 9
             new Zombie("ZombieLvl2.1", 20, 2, 18),
