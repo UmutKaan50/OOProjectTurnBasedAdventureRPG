@@ -56,7 +56,7 @@ public class Level3_FerociousJungle extends Battlefield {
         while(times != this.remainedNumber){ // this guy generates random list of enemies from random enemy types
             Random random = new Random();
             Random randomIndex = new Random();
-            int randomIndexForList = randomIndex.nextInt(12);
+            int randomIndexForList = randomIndex.nextInt(numberOfEnemies);
             int randomNumber = random.nextInt(typeName.length);
             switch (typeName[randomNumber]) {
                 case "Poacher" -> {
@@ -93,14 +93,4 @@ public class Level3_FerociousJungle extends Battlefield {
         this.enemy.getListOfEnemies().remove(numberOfEnemies - remainedNumber);
     }
 
-    @Override
-    public int getRemainedEnemies() {
-        return this.remainedNumber;
-    }
-
-    @Override
-    protected void setRemainedEnemies(int remainedEnemies) { //Thinking about using this method in database management since
-                                                             //in the flow of game this method should be secured from player.
-        this.remainedNumber = remainedEnemies;
-    }
 }

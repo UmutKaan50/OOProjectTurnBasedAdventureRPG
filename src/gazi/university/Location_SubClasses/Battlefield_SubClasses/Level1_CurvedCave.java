@@ -169,15 +169,4 @@ public class Level1_CurvedCave extends Battlefield {
         this.enemy.getListOfEnemies().remove(numberOfEnemies - remainedNumber);
     }
 
-    @Override
-    public int getRemainedEnemies() {
-        return this.remainedNumber;
-    }
-
-    @Override
-    protected void setRemainedEnemies(int remainedEnemies) {//Thinking about using this method in database management since
-                                                            // in the flow of game this method should be secured from player.
-        this.remainedNumber = remainedEnemies;
-
-    }
 }

@@ -15,15 +15,11 @@ public class Zombie extends Enemy {
     private static final List<Zombie> zombiesForBattleLvl1 = List.of( // total number is 5
             new Zombie("ZombieLvl1.5", 15, 1, 18)
     );
-    private static final List<Zombie> zombiesForBattleLvl2 = Arrays.asList( // total number is 9
-            new Zombie("ZombieLvl2.1", 20, 2, 18),
-            new Zombie("ZombieLvl2.2", 21, 2, 27),
+    private static final List<Zombie> zombiesForBattleLvl2 = Arrays.asList( // total number is 2
             new Zombie("ZombieLvl2.9", 28, 2, 29),
             new Zombie("ZombieLvl2.8", 28, 2, 28)
     );
-    private static final List<Zombie> zombiesForBattleLvl3 = Arrays.asList( // total number is 5
-            new Zombie("ZombieLvl3.2", 32, 3, 31),
-            new Zombie("ZombieLvl3.3", 35, 3, 34),
+    private static final List<Zombie> zombiesForBattleLvl3 = Arrays.asList( // total number is 3
             new Zombie("ZombieLvl3.7", 36, 3, 36),
             new Zombie("ZombieLvl3.8", 37, 3, 37),
             new Zombie("ZombieLvl3.9", 39, 3, 39)
