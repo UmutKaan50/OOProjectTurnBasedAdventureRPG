@@ -11,24 +11,28 @@ public class Vampire extends Enemy {
     private int health;
     private int level;
     private int gold;
+    private int xp;
+    private int damage;
 
     private static final List<Vampire> vampiresForBattleLvl1 = List.of( // total number is 1
-            new Vampire("VampireLvl1.5", 15, 1, 19)
+            new Vampire("VampireLvl1.5", 15, 1, 19, 5, 20)
     );
     private static final List<Vampire> vampiresForBattleLvl2 = List.of( // total number is 1
-            new Vampire("VampireLvl2.6", 28, 2, 28)
+            new Vampire("VampireLvl2.6", 28, 2, 28, 15, 30)
     );
     private static final List<Vampire> vampireForBattleLvl3 = Arrays.asList( // total number is 2
-            new Vampire("VampireLvl3.9", 38, 3, 38),
-            new Vampire("VampireLvl3.8", 37, 3, 36)
+            new Vampire("VampireLvl3.9", 38, 3, 38, 30, 40),
+            new Vampire("VampireLvl3.8", 37, 3, 36, 30, 40)
     );
 
     // Constructor
-    private Vampire(String name, int health, int level, int gold){
+    private Vampire(String name, int health, int level, int gold, int damage, int xp){
         this.name = name;
         this.health = health;
         this.level = level;
         this.gold = gold;
+        this.xp = xp;
+        this.damage = damage;
     }
 
     public Vampire(){}
@@ -89,5 +93,17 @@ public class Vampire extends Enemy {
     public void setGold(int gold) {
         this.gold = gold;
     }
+
+    @Override
+    public int getXp(){return this.xp;}
+
+    @Override
+     public void setXp(int xp){this.xp = xp;}
+
+    @Override
+    public int getDamage(){return this.damage;}
+
+    @Override
+    public void setDamage(int damage){this.damage = damage;}
 
 }

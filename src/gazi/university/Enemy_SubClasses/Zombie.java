@@ -11,26 +11,29 @@ public class Zombie extends Enemy {
     private int health;
     private int level;
     private int gold;
+    private int xp;
+    private int damage;
 
     private static final List<Zombie> zombiesForBattleLvl1 = List.of( // total number is 5
-            new Zombie("ZombieLvl1.5", 15, 1, 18)
+            new Zombie("ZombieLvl1.5", 15, 1, 18, 5, 20)
     );
     private static final List<Zombie> zombiesForBattleLvl2 = Arrays.asList( // total number is 2
-            new Zombie("ZombieLvl2.9", 28, 2, 29),
-            new Zombie("ZombieLvl2.8", 28, 2, 28)
+            new Zombie("ZombieLvl2.9", 28, 2, 29, 15, 30),
+            new Zombie("ZombieLvl2.8", 28, 2, 28, 15, 30)
     );
     private static final List<Zombie> zombiesForBattleLvl3 = Arrays.asList( // total number is 3
-            new Zombie("ZombieLvl3.7", 36, 3, 36),
-            new Zombie("ZombieLvl3.8", 37, 3, 37),
-            new Zombie("ZombieLvl3.9", 39, 3, 39)
+            new Zombie("ZombieLvl3.7", 36, 3, 36, 30, 40),
+            new Zombie("ZombieLvl3.8", 37, 3, 37, 30, 40),
+            new Zombie("ZombieLvl3.9", 39, 3, 39, 30, 40)
     );
 
     // Constructor
-    private Zombie(String name, int health, int level, int gold){
+    private Zombie(String name, int health, int level, int gold, int damage, int xp){
         this.name = name;
         this.health = health;
         this.level = level;
         this.gold = gold;
+        this.xp = xp;
     }
     public Zombie(){}
 
@@ -89,5 +92,19 @@ public class Zombie extends Enemy {
     @Override
     public void setGold(int gold) {
         this.gold = gold;
+    }
+
+    @Override
+    public int getXp(){return this.xp;}
+
+    @Override
+    public void setXp(int xp){this.xp = xp;}
+
+    @Override
+    public int getDamage(){return this.damage;}
+
+    @Override
+    public void setDamage(int damage){
+        this.damage = damage;
     }
 }

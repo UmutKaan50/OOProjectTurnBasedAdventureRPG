@@ -11,6 +11,7 @@ public class Enemy {
     private int damage;
     private int defence;
     private int gold;
+    private int xp;
     private final List<Enemy> listOfEnemies = new ArrayList<>();
 
     // Constructor
@@ -32,6 +33,8 @@ public class Enemy {
     }
     public int getGold(){return this.gold;}
     public void setGold(int gold){this.gold = gold;}
+    public int getXp(){return this.xp;}
+    public void setXp(int xp){this.xp = xp;}
     public int getDefence() {
         return defence;
     }

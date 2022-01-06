@@ -3,7 +3,6 @@ package gazi.university.Enemy_SubClasses;
 import gazi.university.Character;
 import gazi.university.Enemy;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class Poacher extends Enemy {
@@ -11,23 +10,27 @@ public class Poacher extends Enemy {
     private int health;
     private int level;
     private int gold;
+    private int xp;
+    private int damage;
 
     private static final List<Poacher> poacherForBattleLvl1 = List.of( // total number is 1
-            new Poacher("PoacherLvl1.5", 15, 1, 12)
+            new Poacher("PoacherLvl1.5", 15, 1, 12, 5,20)
     );
     private static final List<Poacher> poacherForBattleLvl2 = List.of( // total number is 1
-            new Poacher("PoacherLvl2.7", 24, 2, 27)
+            new Poacher("PoacherLvl2.7", 24, 2, 27, 15,30)
     );
     private static final List<Poacher> poacherForBattleLvl3 = List.of( //  total number is 1
-            new Poacher("PoacherLvl3.2", 22, 2, 20)
+            new Poacher("PoacherLvl3.2", 22, 2, 20, 30, 40)
     );
 
     // Constructor
-    private Poacher(String name, int health, int level, int gold){
+    private Poacher(String name, int health, int level, int gold, int damage, int xp){
         this.name = name;
         this.health = health;
         this.level = level;
         this.gold = gold;
+        this.xp = xp;
+        this.damage = damage;
     }
 
     public Poacher(){
@@ -80,14 +83,29 @@ public class Poacher extends Enemy {
         this.level = level;
     }
 
+    @Override
     public int getGold() {
         return gold;
     }
 
+    @Override
     public void setGold(int gold) {
         this.gold = gold;
     }
 
+    @Override
+    public int getXp(){return this.xp;}
+
+    @Override
+    public void setXp(int xp){this.xp = xp;}
+
+    @Override
+    public int getDamage(){return this.damage;}
+
+    @Override
+    public void setDamage(int damage){
+        this.damage = damage;
+    }
 
     // Planning to make more changes here.
 }

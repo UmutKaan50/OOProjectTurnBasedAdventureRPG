@@ -8,10 +8,8 @@ import gazi.university.Enemy_SubClasses.Zombie;
 import gazi.university.Location_SubClasses.Battlefield;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class Level1_CurvedCave extends Battlefield {
 
@@ -168,5 +166,4 @@ public class Level1_CurvedCave extends Battlefield {
         this.remainedNumber = numberOfEnemies - 1;
         this.enemy.getListOfEnemies().remove(numberOfEnemies - remainedNumber);
     }
-
 }
