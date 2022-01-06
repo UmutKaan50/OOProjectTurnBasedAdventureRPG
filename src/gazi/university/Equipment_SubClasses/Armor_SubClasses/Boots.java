@@ -12,6 +12,7 @@ public class Boots extends Armor {
         this.flatArmor = flatArmor;
         this.price = price;
     }
+    public Boots(){}
 
     @Override
     public int getFlatArmor(){

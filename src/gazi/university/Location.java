@@ -6,8 +6,9 @@ import gazi.university.Location_SubClasses.Battlefield_SubClasses.Level2_DeadDes
 import gazi.university.Location_SubClasses.Battlefield_SubClasses.Level3_FerociousJungle;
 import gazi.university.Location_SubClasses.TownCenter;
 
-public class Location {
-    private final Character character;
+public abstract class Location {
+
+    private Character character;
 
     // Constructor
     public Location(Character character){
@@ -31,5 +32,16 @@ public class Location {
             return new Level3_FerociousJungle(this.character); //return this instance of this class with updated location of a character
         }
         return null;
+    }
+
+    // Ending control for now
+    public abstract boolean getLocation();
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
     }
 }

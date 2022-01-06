@@ -5,7 +5,6 @@ import gazi.university.Equipment_SubClasses.Weapon;
 public class Bow extends Weapon {
     private int Damage;
     private int price;
-    private String name;
 
     // Constructor
     public Bow(String name, int Damage, int price){
@@ -14,10 +13,7 @@ public class Bow extends Weapon {
         this.price = price;
     }
 
-    public String getName(){
-        return this.name;
-    }
-    public int getDamage(){
+    public int getFlatDamage(){
         return this.Damage;
     }
     public int getPrice(){

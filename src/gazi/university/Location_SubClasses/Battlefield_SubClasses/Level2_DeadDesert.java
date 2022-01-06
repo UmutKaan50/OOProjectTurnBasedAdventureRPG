@@ -23,6 +23,11 @@ public class Level2_DeadDesert extends Battlefield {
     }
 
     @Override
+    public boolean getLocation() {
+        return true;
+    }
+
+    @Override
     protected void spawnEnemy() {
         this.enemy = new Enemy();
         Poacher poacher = new Poacher();

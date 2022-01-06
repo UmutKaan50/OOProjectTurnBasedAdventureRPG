@@ -12,6 +12,8 @@ public class Helmet extends Armor {
         this.flatArmor = flatArmor;
         this.price = price;
     }
+    public Helmet(){}
+
 
     @Override
     public int getFlatArmor(){

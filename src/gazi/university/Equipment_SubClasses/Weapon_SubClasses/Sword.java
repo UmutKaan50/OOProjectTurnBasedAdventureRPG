@@ -14,7 +14,7 @@ public class Sword extends Weapon {
         this.price = price;
     }
     
-    public int getDamage(){
+    public int getFlatDamage(){
         return this.Damage;
     }
     public int getPrice(){

@@ -15,6 +15,8 @@ public class Armor extends Equipment {
     public Armor(String name){
         this.name = name;
     }
+    public Armor(){}
+
     public List<Armor> getListOfArmor() {
         return this.listOfArmor;
     }

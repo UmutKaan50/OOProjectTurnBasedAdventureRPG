@@ -12,6 +12,7 @@ public class Shield extends Armor {
        this.flatArmor = flatArmor;
        this.price = price;
    }
+   public Shield(){}
 
 
     @Override

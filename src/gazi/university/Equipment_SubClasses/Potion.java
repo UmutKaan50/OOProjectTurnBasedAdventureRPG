@@ -3,29 +3,30 @@ package gazi.university.Equipment_SubClasses;
 import gazi.university.Equipment;
 
 import java.util.List;
-import java.util.SplittableRandom;
 
-public class Potions extends Equipment {
+public class Potion extends Equipment {
 
-    private List<Potions> listOfPotions;
+    private List<Potion> listOfPotions;
     private int price;
     private String name;
     private int regenAmount;
 
     // Constructor
-    public Potions(String name, int price, int regenAmount){
+    public Potion(String name, int price, int regenAmount){
         this.name = name;
         this.price = price;
         this.regenAmount = regenAmount;
     }
 
-    public List<Potions> getListOfPotions(){
+    public Potion(){}
+
+    public List<Potion> getListOfPotions(){
         return this.listOfPotions;
     }
 
-    public void addPotionsToList(Potions potions){
-        this.price = potions.getPrice();
-        this.listOfPotions.add(potions);
+    public void addPotionsToList(Potion potion){
+        this.price = potion.getPrice();
+        this.listOfPotions.add(potion);
     }
 
     public void removePotionsFromList(Weapon weapon){ //Added the removal of item
@@ -37,7 +38,7 @@ public class Potions extends Equipment {
         return this.price;
     }
 
-    public void setListOfPotions(List<Potions> listOfPotions) {
+    public void setListOfPotions(List<Potion> listOfPotions) {
         this.listOfPotions = listOfPotions;
     }
 
