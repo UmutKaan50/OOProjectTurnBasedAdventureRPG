@@ -29,7 +29,7 @@ public class Level1_CurvedCave extends Battlefield {
     public boolean getLocation() {
 
         System.out.println("You're now in: " + this.getClass().getSimpleName());
-        System.out.println("\nThere are enemies here.");
+        System.out.println("\nThere are " + numberOfEnemies + " enemies here.");
 
         combat(numberOfEnemies);
 
@@ -41,10 +41,12 @@ public class Level1_CurvedCave extends Battlefield {
     public boolean combat(int numberOfEnemies){
         for (int i = 0; i < numberOfEnemies; i++){
             int defEnHealth = enemy.getHealth();
-            playerStats();
-            enemyStats();
+
             while (getCharacter().getHealth() > 0 && enemy.getHealth() > 0){
-                System.out.println("<A>ttack or <R<un away");
+                playerStats();
+                System.out.println();
+                enemyStats();
+                System.out.println("<A>ttack directly\t|\tuse <S>kill\t|\t<R>un away");
                 Scanner scan = new Scanner(System.in);
                 String selection = scan.next();
                 selection = selection.toUpperCase();
@@ -73,6 +75,21 @@ public class Level1_CurvedCave extends Battlefield {
 
 
                     }
+                else if(selection.equals("S")){
+                    System.out.println("You've used skill to the enemy!");
+                    getCharacter().activeSkill(enemy);
+                    try{
+                        Thread.sleep(1500);
+                    }
+                    catch (InterruptedException exception){
+                    }
+                    if (enemy.getHealth() > 0){
+                        System.out.println();
+                        System.out.println("Enemy has attacked to you!");
+                        getEnemy().defaultAttack(getCharacter());
+                    }
+                }
+
                 else {
                     return false;
 
@@ -83,6 +100,7 @@ public class Level1_CurvedCave extends Battlefield {
                 System.out.println("You've defeated the enemy!");
                 getCharacter().setMoney(getCharacter().getMoney() + enemy.getGold());
                 System.out.println("Money gained: " + enemy.getGold() + " gold");
+                getCharacter().setExperience(getCharacter().getExperience() + enemy.getXp());
                 enemy.setHealth(defEnHealth);
 
             }
@@ -95,7 +113,9 @@ public class Level1_CurvedCave extends Battlefield {
 
     public void playerStats(){
         System.out.println("-Your values-\n");
+        System.out.println(getCharacter().getName() + ", lvl " +getCharacter().getLvl());
         System.out.println("Life: " + getCharacter().getHealth());
+        System.out.println("Mana: " + getCharacter().getMana());
         System.out.println("\nDamage: " + getCharacter().getDamage());
         System.out.println("\nDefence: " + getCharacter().getDefence());
 
@@ -103,6 +123,7 @@ public class Level1_CurvedCave extends Battlefield {
 
     public void enemyStats(){
         System.out.println("-Enemy values-\n");
+        System.out.println(getEnemy().getClass().getSimpleName() + ", lvl" + getEnemy().getLevel());
         System.out.println("Life: " + getEnemy().getHealth());
         System.out.println("\nDamage: " + getEnemy().getDamage());
         System.out.println("\nDefence: " + getEnemy().getDefence());

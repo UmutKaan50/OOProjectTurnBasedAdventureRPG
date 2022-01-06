@@ -154,7 +154,7 @@ public class PotionMerchant extends NPC {
                 getCharacter().setHealthPotionEquipped(null);
             }
             else{
-                System.out.println("You've nothing to sell me yet.");
+                System.out.println("You've nothing to sell me yet.\n");
             }
     }
         else{
@@ -165,7 +165,7 @@ public class PotionMerchant extends NPC {
                 getCharacter().setManaPotionEquipped(null);
             }
             else{
-                System.out.println("You've nothing to sell me yet.");
+                System.out.println("You've nothing to sell me yet.\n");
             }
 
         }

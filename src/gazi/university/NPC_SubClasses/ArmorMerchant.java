@@ -190,7 +190,7 @@ public class ArmorMerchant extends NPC {
             getCharacter().setBodyArmorEquipped(null);
         }
         else{
-            System.out.println("You've nothing to sell me yet.");
+            System.out.println("You've nothing to sell me yet.\n");
         }
     }
         else if( armor instanceof Boots){
@@ -201,7 +201,7 @@ public class ArmorMerchant extends NPC {
                 getCharacter().setBootsEquipped(null);
             }
             else{
-                System.out.println("You've nothing to sell me yet.");
+                System.out.println("You've nothing to sell me yet.\n");
             }
 
         }
@@ -213,7 +213,7 @@ public class ArmorMerchant extends NPC {
                 getCharacter().setHelmetEquipped(null);
             }
             else{
-                System.out.println("You've nothing to sell me yet.");
+                System.out.println("You've nothing to sell me yet.\n");
             }
 
         }
@@ -225,7 +225,7 @@ public class ArmorMerchant extends NPC {
                 getCharacter().setShieldEquipped(null);
             }
             else{
-                System.out.println("You've nothing to sell me yet.");
+                System.out.println("You've nothing to sell me yet.\n");
             }
 
         }

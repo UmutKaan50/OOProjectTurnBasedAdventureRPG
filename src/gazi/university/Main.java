@@ -50,14 +50,6 @@ public class Main {
 
         //Music adding test
 
-        String mName1 = "DOOM.wav";
-        String mName2 = "Main.wav";
-        try{
-            Music_Adder musicAdder = new Music_Adder(mName2);
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
 
         //System.out.println(enemies.get(0).toString());
         // Let's start the game!

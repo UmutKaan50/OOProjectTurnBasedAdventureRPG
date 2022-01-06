@@ -83,7 +83,6 @@ public class TownCenter extends Location {
         System.out.println("2 - Armor Merchant");
         System.out.println("3 - Potion Merchant");
         System.out.println("4 - Exit");
-        System.out.println("Any other key - Exit");
         try{
             int choice = scan.nextInt();
             switch (choice) {

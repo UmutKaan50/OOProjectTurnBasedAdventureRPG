@@ -63,7 +63,7 @@ public class Enemy {
         else {
             int newLife = character.getHealth() - (getDamage() - character.getDefence());
             character.setHealth(newLife);
-            System.out.println("Dealt" + (getDamage() - getDefence()) + " damage!");
+            System.out.println("Dealt " + (getDamage() - getDefence()) + " damage!");
         }
 
     }

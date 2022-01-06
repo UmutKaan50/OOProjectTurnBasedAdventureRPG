@@ -19,7 +19,7 @@ public class Ranger extends Character {
         else {
             int newLife = enemy.getHealth() - (getDamage() - enemy.getDefence());
             enemy.setHealth(newLife);
-            System.out.println("Dealt " + (getDamage() - getDefence()) + " damage!");
+            System.out.println("Dealt " + (getDamage() - enemy.getDefence()) + " damage!");
         }
     }
 
@@ -29,10 +29,12 @@ public class Ranger extends Character {
             System.out.println("Not enough mana!");
         }
         else {
+            setMana(getMana() - 10);
             // Ranger's active skills damages opponnent normal attack and then heals same amount dealt damage.
             enemy.setHealth(enemy.getHealth() - getDamage());
-            setHealth(getHealth() + getDamage());
-            setMana(getMana() - 10);
+            setHealth(getHealth() + getDamage() / 2);
+            System.out.println("Dealt " + getDamage() + " damage!");
+
         }
     }
 

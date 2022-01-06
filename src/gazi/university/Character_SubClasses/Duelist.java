@@ -25,7 +25,7 @@ public class Duelist extends Character {
         else {
             int newLife = enemy.getHealth() - (getDamage() - enemy.getDefence());
             enemy.setHealth(newLife);
-            System.out.println("Dealt " + (getDamage() - getDefence()) + " damage!");
+            System.out.println("Dealt " + (getDamage() - enemy.getDefence()) + " damage!");
         }
     }
 
@@ -35,10 +35,14 @@ public class Duelist extends Character {
             System.out.println("Not enough mana!");
         }
         else {
-            // Duelist's active skill deals double damage and increased damage by 2. (for now)
-            enemy.setHealth(enemy.getHealth() - getDamage() * 2);
-            setDamage(getDamage() + 2);
             setMana(getMana() - 10);
+            // Duelist's active skill increases duelist damage by 2 and deals double damage.
+            setDamage(getDamage() + 2);
+            enemy.setHealth(enemy.getHealth() - getDamage() * 2);
+            System.out.println("Dealt " + (getDamage() * 2) + " damage!");
+            setDamage(getDamage() - 2);
+
+
         }
     }
 
