@@ -113,9 +113,24 @@ public class ArmorMerchant extends NPC {
         System.out.println("2 - Sell item");
         int choice = scan.nextInt();
         if (choice == 2){
+            System.out.println("My,\n1 - Body Armor\n2 - Boots\n3 - Helmet\n4 - Shield");
+            choice = scan.nextInt();
+            if (choice == 1){
+                sellArmor(getCharacter().getBodyArmorEquipped());
+            }
+            else if(choice == 2){
+                sellArmor(getCharacter().getBootsEquipped());
+            }
+            else if(choice == 3){
+                sellArmor(getCharacter().getHelmetEquipped());
+            }
+            else{
+                sellArmor(getCharacter().getShieldEquipped());
+            }
 
         }
         else{
+            showInventory();
 
         }
     }
@@ -130,62 +145,91 @@ public class ArmorMerchant extends NPC {
 
         if (armor instanceof BodyArmor){
             if (getCharacter().getBodyArmorEquipped() != null){
-                getCharacter().getEquipment().addEquipmentToList(armor);
+                System.out.println("Previous defence from body armor: " + getCharacter().getBodyArmorEquipped().getFlatArmor());
+                sellArmor(getCharacter().getBodyArmorEquipped());
             }
-            else{
                 getCharacter().setBodyArmorEquipped((BodyArmor) armor);
-                System.out.println("Bought: " + armor.getFlatArmor() + " defence");
-                System.out.println("\nPrevious defence: " + getCharacter().getDefence());
-                getCharacter().setDefence(getCharacter().getDefence() + armor.getFlatArmor());
-                System.out.println("\nCurrent defence: " + getCharacter().getDefence() + "\n\n");
-            }
+
         }
         else if (armor instanceof Boots){
             if (getCharacter().getBootsEquipped() != null){
-                getCharacter().getEquipment().addEquipmentToList(armor);
+                System.out.println("Previous defence from boots: " + getCharacter().getBootsEquipped().getFlatArmor());
+                sellArmor(getCharacter().getBootsEquipped());
             }
-            else{
                 getCharacter().setBootsEquipped((Boots) armor);
-                System.out.println("Bought: " + armor.getFlatArmor() + " defence");
-                System.out.println("\nPrevious defence: " + getCharacter().getDefence());
-                getCharacter().setDefence(getCharacter().getDefence() + armor.getFlatArmor());
-                System.out.println("\nCurrent defence: " + getCharacter().getDefence() + "\n\n");
-            }
-
         }
         else if (armor instanceof Helmet){
             if(getCharacter().getHelmetEquipped() != null){
-                getCharacter().getEquipment().addEquipmentToList(armor);
+                System.out.println("Previous defence from helmet: " + getCharacter().getHelmetEquipped().getFlatArmor());
+                sellArmor(getCharacter().getHelmetEquipped());
             }
-            else{
                 getCharacter().setHelmetEquipped((Helmet) armor);
-                System.out.println(";Bought: " + armor.getFlatArmor() + " defence");
-                System.out.println("\nPrevious defence: " + getCharacter().getDefence());
-                getCharacter().setDefence(getCharacter().getDefence() + armor.getFlatArmor());
-                System.out.println("\nCurrent defence: " + getCharacter().getDefence() + "\n\n");
-            }
-
         }
         else if (armor instanceof Shield){
             if (getCharacter().getShieldEquipped() != null){
-                getCharacter().getEquipment().addEquipmentToList(armor);
+                System.out.println("Previous defence from shield: " + getCharacter().getShieldEquipped().getFlatArmor());
+                sellArmor(getCharacter().getShieldEquipped());
             }
-            else{
                 getCharacter().setShieldEquipped((Shield) armor);
-                System.out.println("Bought: " + armor.getFlatArmor() + " defence");
-                System.out.println("\nPrevious defence: " + getCharacter().getDefence());
-                getCharacter().setDefence(getCharacter().getDefence() + armor.getFlatArmor());
-                System.out.println("\nCurrent defence: " + getCharacter().getDefence() + "\n\n");
-            }
-
         }
-
-
+            getCharacter().setDefence(getCharacter().getDefence() + armor.getFlatArmor());
+            System.out.println("\nCurrent defence: " + getCharacter().getDefence() + "\n\n");
 
     }
         else {
             System.out.println("\nNot enough money!\n");
         }
+    }
+
+    public void sellArmor(Armor armor){
+        if (armor instanceof BodyArmor){
+        if (getCharacter().getBodyArmorEquipped() != null) {
+            System.out.println(getCharacter().getBodyArmorEquipped().getName() + " is sold.");
+            getCharacter().setMoney(getCharacter().getMoney() + (armor.getPrice() - 20));
+            System.out.println("Gained: " + (armor.getPrice() - 20) + " gold");
+            getCharacter().setBodyArmorEquipped(null);
+        }
+        else{
+            System.out.println("You've nothing to sell me yet.");
+        }
+    }
+        else if( armor instanceof Boots){
+            if (getCharacter().getBootsEquipped() != null) {
+                System.out.println(getCharacter().getBootsEquipped().getName() + " is sold.");
+                getCharacter().setMoney(getCharacter().getMoney() + (armor.getPrice() - 20));
+                System.out.println("Gained: " + (armor.getPrice() - 20) + " gold");
+                getCharacter().setBootsEquipped(null);
+            }
+            else{
+                System.out.println("You've nothing to sell me yet.");
+            }
+
+        }
+        else if (armor instanceof Helmet){
+            if (getCharacter().getHelmetEquipped() != null) {
+                System.out.println(getCharacter().getHelmetEquipped().getName() + " is sold.");
+                getCharacter().setMoney(getCharacter().getMoney() + (armor.getPrice() - 20));
+                System.out.println("Gained: " + (armor.getPrice() - 20) + " gold");
+                getCharacter().setHelmetEquipped(null);
+            }
+            else{
+                System.out.println("You've nothing to sell me yet.");
+            }
+
+        }
+        else{
+            if (getCharacter().getShieldEquipped() != null) {
+                System.out.println(getCharacter().getShieldEquipped().getName() + " is sold.");
+                getCharacter().setMoney(getCharacter().getMoney() + (armor.getPrice() - 20));
+                System.out.println("Gained: " + (armor.getPrice() - 20) + " gold");
+                getCharacter().setShieldEquipped(null);
+            }
+            else{
+                System.out.println("You've nothing to sell me yet.");
+            }
+
+        }
+
     }
 
 

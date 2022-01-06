@@ -129,11 +129,47 @@ public class PotionMerchant extends NPC {
         System.out.println("2 - Sell item");
         int choice = scan.nextInt();
         if (choice == 2){
+            System.out.println("My,\n1 - Health Potion\n2 - Mana Potion");
+            choice = scan.nextInt();
+            if (choice == 1){
+                sellPotion(getCharacter().getHealthPotionEquipped());
+            }
+            else{
+                sellPotion(getCharacter().getManaPotionEquipped());
+            }
 
         }
         else{
+            showInventory();
 
         }
     }
+
+    public void sellPotion(Potion potion){
+        if (potion instanceof HealthPotion){
+            if (getCharacter().getHealthPotionEquipped() != null) {
+                System.out.println(getCharacter().getHealthPotionEquipped().getName() + " is sold.");
+                getCharacter().setMoney(getCharacter().getMoney() + (potion.getPrice() - 20));
+                System.out.println("Gained: " + (potion.getPrice() - 20) + " gold");
+                getCharacter().setHealthPotionEquipped(null);
+            }
+            else{
+                System.out.println("You've nothing to sell me yet.");
+            }
+    }
+        else{
+            if (getCharacter().getManaPotionEquipped() != null) {
+                System.out.println(getCharacter().getManaPotionEquipped().getName() + " is sold.");
+                getCharacter().setMoney(getCharacter().getMoney() + (potion.getPrice() - 20));
+                System.out.println("Gained: " + (potion.getPrice() - 20) + " gold");
+                getCharacter().setManaPotionEquipped(null);
+            }
+            else{
+                System.out.println("You've nothing to sell me yet.");
+            }
+
+        }
+    }
+
 }
 
