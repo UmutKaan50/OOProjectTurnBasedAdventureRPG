@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class Level3_FerociousJungle extends Battlefield {
     private Enemy enemy;
-    private final int numberOfEnemies = 12;
+    private final int numberOfEnemies = 5;
     private int remainedNumber = numberOfEnemies;
 
     // Constructor
