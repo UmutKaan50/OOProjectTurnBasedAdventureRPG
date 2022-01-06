@@ -12,32 +12,16 @@ public class Zombie extends Enemy {
     private int level;
     private int gold;
 
-    private static final List<Zombie> zombiesForBattleLvl1 = Arrays.asList( // total number is 5
-            new Zombie("ZombieLvl1.1", 10, 1, 6),
-            new Zombie("ZombieLvl1.2", 11, 1, 7),
-            new Zombie("ZombieLvl1.3", 12, 1, 10),
-            new Zombie("ZombieLvl1.4", 12, 1, 11),
+    private static final List<Zombie> zombiesForBattleLvl1 = List.of( // total number is 5
             new Zombie("ZombieLvl1.5", 15, 1, 16)
     );
     private static final List<Zombie> zombiesForBattleLvl2 = Arrays.asList( // total number is 9
-            new Zombie("ZombieLvl2.1", 20, 2, 18),
-            new Zombie("ZombieLvl2.2", 21, 2, 25),
-            new Zombie("ZombieLvl2.3", 22, 2, 26),
-            new Zombie("ZombieLvl2.4", 24, 2, 28),
-            new Zombie("ZombieLvl2.5", 25, 2, 27),
             new Zombie("ZombieLvl2.1", 20, 2, 18),
             new Zombie("ZombieLvl2.2", 21, 2, 27),
             new Zombie("ZombieLvl2.9", 28, 2, 29),
             new Zombie("ZombieLvl2.8", 28, 2, 28)
     );
-    private static final List<Zombie> zombiesForBattleLvl3 = Arrays.asList( // total number is 12
-            new Zombie("ZombieLvl3.1", 30, 3, 26),
-            new Zombie("ZombieLvl3.2", 31, 3, 27),
-            new Zombie("ZombieLvl3.3", 33, 3, 33),
-            new Zombie("ZombieLvl3.2", 32, 3, 31),
-            new Zombie("ZombieLvl3.1", 30, 3, 26),
-            new Zombie("ZombieLvl3.7", 36, 3, 36),
-            new Zombie("ZombieLvl3.4", 34, 3, 34),
+    private static final List<Zombie> zombiesForBattleLvl3 = Arrays.asList( // total number is 5
             new Zombie("ZombieLvl3.2", 32, 3, 31),
             new Zombie("ZombieLvl3.3", 35, 3, 34),
             new Zombie("ZombieLvl3.7", 36, 3, 36),

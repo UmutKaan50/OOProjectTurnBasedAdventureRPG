@@ -30,7 +30,7 @@ public class Blacksmith extends NPC {
     Staff staff2 = new Staff("Masterwork Staff",20,300);
 
     // Constructor
-    public Blacksmith(Character character, Equipment equip){ // Blacksmith can accept both all its subclasses and their subclasses' too.
+    public Blacksmith(Character character){ // Blacksmith can accept both all its subclasses and their subclasses' too.
         super(equip.getClass().getSimpleName());
         this.equip = equip;
         this.character = character;

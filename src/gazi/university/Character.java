@@ -97,9 +97,7 @@ public class Character implements ActiveAndPassive, Info{
         this.equipment = equipment;
     }
     // Adding another constructor for flexibility. And I needed it.
-    public Character(){
-
-    }
+    public Character(){}
 
     public void levelUp(){
         // Let's make this changes in another method and call them.

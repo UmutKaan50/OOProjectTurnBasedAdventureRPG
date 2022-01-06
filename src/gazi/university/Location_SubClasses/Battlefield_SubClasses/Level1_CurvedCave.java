@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class Level1_CurvedCave extends Battlefield {
     private Enemy enemy;
-    private final int numberOfEnemies = 15;
+    private final int numberOfEnemies = 3;
     private int remainedNumber = numberOfEnemies;
 
 
