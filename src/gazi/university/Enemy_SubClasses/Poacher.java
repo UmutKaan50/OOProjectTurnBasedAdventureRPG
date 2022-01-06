@@ -29,18 +29,18 @@ public class Poacher extends Enemy {
             new Poacher("PoacherLvl2.9", 28, 2, 28)
     );
     private static final List<Poacher> poacherForBattleLvl3 = Arrays.asList( //  total number is 11
-            new Poacher("PoacherLvl3.1", 20, 2, 29),
-            new Poacher("PoacherLvl3.1", 21, 2, 29),
-            new Poacher("PoacherLvl3.2", 22, 2, 20),
-            new Poacher("PoacherLvl3.3", 23, 2, 32),
-            new Poacher("PoacherLvl3.4", 24, 2, 33),
-            new Poacher("PoacherLvl3.4", 24, 2, 34),
-            new Poacher("PoacherLvl3.5", 25, 2, 35),
-            new Poacher("PoacherLvl3.9", 28, 2, 38),
-            new Poacher("PoacherLvl3.4", 24, 2, 34),
-            new Poacher("PoacherLvl3.5", 25, 2, 35),
-            new Poacher("PoacherLvl3.9", 28, 2, 38),
-            new Poacher("PoacherLvl3.1", 20, 2, 29)
+            new Poacher("PoacherLvl3.1", 20, 3, 29),
+            new Poacher("PoacherLvl3.1", 21, 3, 29),
+            new Poacher("PoacherLvl3.2", 22, 3, 20),
+            new Poacher("PoacherLvl3.3", 23, 3, 32),
+            new Poacher("PoacherLvl3.4", 24, 3, 33),
+            new Poacher("PoacherLvl3.4", 24, 3, 34),
+            new Poacher("PoacherLvl3.5", 25, 3, 35),
+            new Poacher("PoacherLvl3.9", 28, 3, 38),
+            new Poacher("PoacherLvl3.4", 24, 3, 34),
+            new Poacher("PoacherLvl3.5", 25, 3, 35),
+            new Poacher("PoacherLvl3.9", 28, 3, 38),
+            new Poacher("PoacherLvl3.1", 20, 3, 29)
     );
 
     // Constructor
