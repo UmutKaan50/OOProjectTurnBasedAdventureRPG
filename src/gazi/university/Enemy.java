@@ -55,6 +55,7 @@ public class Enemy {
         this.defence = enemy.getDefence();
         this.gold = enemy.getGold();
         this.listOfEnemies.add(enemy);
+        this.xp = enemy.getXp();
     }
 
     public void defaultAttack(Character character) {

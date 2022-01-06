@@ -117,13 +117,12 @@ public class Character implements CharacterAttack {
 
     private int dexterity;
     private int intelligence;
-    private int lvl = 0;
+    private int lvl = 1;
     private int experience = 0;
 
     private static final int xpToLvl2 = 50;
     private static final int xpToLvl3 = 150;
-    private static final int xpToLvl4 = 350;
-    private static final int xpToLvl5 = 650;
+    private static final int xpToLvl4 = 250;
 
     // Getters and setters for my additional variables.
     public int getIntelligence() {
@@ -187,10 +186,6 @@ public class Character implements CharacterAttack {
             levelUpChanges();
         }
         else if (experience >= xpToLvl4 && lvl == 3)
-        {
-           levelUpChanges();
-        }
-        else if(experience >= xpToLvl5 && lvl == 4)
         {
            levelUpChanges();
         }

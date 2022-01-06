@@ -38,6 +38,7 @@ public class Level3_FerociousJungle extends Battlefield {
 
     public boolean combat(int numberOfEnemies){
         for (int i = 0; i < numberOfEnemies; i++){
+            getCharacter().levelUp();
             int defEnHealth = enemy.getHealth();
 
             while (getCharacter().getHealth() > 0 && enemy.getHealth() > 0){
@@ -100,6 +101,7 @@ public class Level3_FerociousJungle extends Battlefield {
                 getCharacter().setMoney(getCharacter().getMoney() + enemy.getGold());
                 System.out.println("Money gained: " + enemy.getGold() + " gold");
                 getCharacter().setExperience(getCharacter().getExperience() + enemy.getXp());
+                System.out.println("Xp gained: " + enemy.getXp());
                 enemy.setHealth(defEnHealth);
 
             }

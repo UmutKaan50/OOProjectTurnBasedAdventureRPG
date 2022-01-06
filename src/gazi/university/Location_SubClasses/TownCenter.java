@@ -77,6 +77,7 @@ public class TownCenter extends Location {
     public boolean getLocation() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to Town Center!");
+
         System.out.println("(You're healed!)");
         System.out.println("Where do you like to go?");
         System.out.println("1 - Weapon Merchant");

@@ -78,6 +78,7 @@ public class Game {
                 System.out.println(player.getName() + ", lvl " + player.getLvl() + " " + player.getClass().getSimpleName());
                 System.out.println("Damage: " + player.getDamage() + ", Defence: " + player.getDefence());
                 System.out.println("Has: " + player.getMoney() + " gold\n");
+                System.out.println("Has: " + player.getExperience() + " xp");
 
 
                 System.out.println("Where do you like to go?");
@@ -107,12 +108,6 @@ public class Game {
                         musicAdder.Stop_Music();
                         musicAdder2.Start_Music();
                     case 4:
-                        location = new TownCenter(player);
-                        musicAdder2.Stop_Music();
-                        musicAdder.Start_Music();
-                        break;
-                    case 5:
-                        System.out.println(player.getExperience());
                         location = new TownCenter(player);
                         musicAdder2.Stop_Music();
                         musicAdder.Start_Music();
