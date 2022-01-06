@@ -53,7 +53,7 @@ public class Level1_CursedCave extends Battlefield {
                 String selection = scan.next();
                 selection = selection.toUpperCase();
                 try{
-                    Thread.sleep(1500);
+                    Thread.sleep(1000);
                 }
                 catch (InterruptedException exception){
                 }
@@ -65,7 +65,7 @@ public class Level1_CursedCave extends Battlefield {
 
 
                     try{
-                        Thread.sleep(1500);
+                        Thread.sleep(1000);
                     }
                     catch (InterruptedException exception){
                     }
@@ -81,7 +81,7 @@ public class Level1_CursedCave extends Battlefield {
                     System.out.println("You've used skill to the enemy!");
                     getCharacter().activeSkill(enemy);
                     try{
-                        Thread.sleep(1500);
+                        Thread.sleep(1000);
                     }
                     catch (InterruptedException exception){
                     }
@@ -93,7 +93,8 @@ public class Level1_CursedCave extends Battlefield {
                 }
 
                 else {
-                    return false;
+                    System.out.println("Wrong input!");
+                    //return false;
 
                 }
 
