@@ -10,7 +10,7 @@ import gazi.university.Equipment_SubClasses.Potions_SubClasses.HealthPotion;
 import gazi.university.Equipment_SubClasses.Potions_SubClasses.ManaPotion;
 import gazi.university.Equipment_SubClasses.Weapon;
 
-public class Character implements ActiveAndPassive, Info{
+public class Character implements CharacterAttack {
 
     private String name;
     private int health;
@@ -87,14 +87,14 @@ public class Character implements ActiveAndPassive, Info{
     // -------------------------------------------------------------
 
     // Added defence variable for combat.
-    private int defance;
+    private int defence;
 
-    public int getDefance() {
-        return defance;
+    public int getDefence() {
+        return defence;
     }
 
-    public void setDefance(int defance) {
-        this.defance = defance;
+    public void setDefence(int defence) {
+        this.defence = defence;
     }
 
     private String currentLocation;

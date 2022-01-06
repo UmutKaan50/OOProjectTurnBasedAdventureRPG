@@ -94,29 +94,46 @@ public class PotionMerchant extends NPC {
 
             if (potion instanceof HealthPotion) {
                 if (getCharacter().getHealthPotionEquipped() != null) {
-                    getCharacter().getEquipment().addEquipmentToList(potion);
-                } else {
-
-                    System.out.println("Bought: " + potion.getRegenAmount() + " regen amount");
+                    //getCharacter().getEquipment().addEquipmentToList(potion);
+                    // Instead
                     System.out.println("Previous regen amount: " + getCharacter().getHealthPotionEquipped().getRegenAmount());
+
+                }
                     getCharacter().setHealthPotionEquipped((HealthPotion) potion);
                     System.out.println("Current regen amount: " + getCharacter().getHealthPotionEquipped().getRegenAmount() + "\n\n");
 
 
+
                 }
-            } else if (potion instanceof ManaPotion) {
+                else if (potion instanceof ManaPotion) {
                 if (getCharacter().getManaPotionEquipped() != null) {
-                    getCharacter().getEquipment().addEquipmentToList(potion);
+                    System.out.println("Previous regen amount: " + getCharacter().getManaPotionEquipped().getRegenAmount());
                 } else {
                     getCharacter().setManaPotionEquipped((ManaPotion) potion);
+                    System.out.println("Current regen amount: " + getCharacter().getManaPotionEquipped().getRegenAmount());
                 }
             }
+            System.out.println(getCharacter().getMoney() + " gold left.");
         }
         else
         {
             System.out.println("Not enough money!");
         }
 
+    }
+    @Override
+    public void decision() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("I'll,");
+        System.out.println("1 - Buy item");
+        System.out.println("2 - Sell item");
+        int choice = scan.nextInt();
+        if (choice == 2){
+
+        }
+        else{
+
+        }
     }
 }
 

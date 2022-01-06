@@ -65,12 +65,12 @@ public class Vampire extends Enemy {
         };
     }
     public void defaultAttack(Character character) { // Needs to be corrected!
-        if(character.getDefance() > this.getDamage())
+        if(character.getDefence() > this.getDamage())
             System.out.println("Dealt 0 damage!");
         else {
-            int dealt = character.getHealth() - (getDamage() - character.getDefance());
-            character.setHealth(dealt);
-            System.out.println("Dealt " + dealt + " damage!");
+            int newLife = character.getHealth() - (getDamage() - character.getDefence());
+            character.setHealth(newLife);
+            System.out.println("Dealt " + (getDamage() - getDefence()) + " damage!");
         }
     }
 

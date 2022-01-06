@@ -20,4 +20,5 @@ public abstract class Battlefield extends Location { //Since each battlefield's 
     public abstract void killedEnemy(Character character, Enemy killedEnemy);
     protected abstract int getRemainedEnemies();
     protected abstract void setRemainedEnemies(int remainedEnemies);
+
 }

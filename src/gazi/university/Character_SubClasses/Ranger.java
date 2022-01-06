@@ -9,25 +9,31 @@ public class Ranger extends Character {
     // Constructor
     public Ranger(String name, int health, int mana, int str, int dex, int intel, int money, Equipment equipment){
         super(name, health, mana, str, dex, intel, money, equipment);
+        setDamage(5);
+        setDefence(0);
     }
     @Override
     public void defaultAttack(Enemy enemy) {
         if(enemy.getDefence() > this.getDamage())
             System.out.println("Dealt 0 damage!");
         else {
-            int dealt = enemy.getHealth() - (getDamage() - enemy.getDefence());
-            enemy.setHealth(dealt);
-            System.out.println("Dealt " + dealt + " damage!");
+            int newLife = enemy.getHealth() - (getDamage() - enemy.getDefence());
+            enemy.setHealth(newLife);
+            System.out.println("Dealt " + (getDamage() - getDefence()) + " damage!");
         }
     }
 
     @Override
     public void activeSkill(Enemy enemy) {
-        // Ranger's active skills damages opponnent normal attack and then heals same amount dealt damage.
-        enemy.setHealth(enemy.getHealth() - getDamage());
-        setHealth(getHealth() + getDamage());
-        setMana(getMana() - 10);
-
+        if (getMana() < 10){
+            System.out.println("Not enough mana!");
+        }
+        else {
+            // Ranger's active skills damages opponnent normal attack and then heals same amount dealt damage.
+            enemy.setHealth(enemy.getHealth() - getDamage());
+            setHealth(getHealth() + getDamage());
+            setMana(getMana() - 10);
+        }
     }
 
 }

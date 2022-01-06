@@ -1,6 +1,6 @@
 package gazi.university;
 
-public interface ActiveAndPassive {
+public interface CharacterAttack {
 
     // I thought that default attack should be int. So that it'll return enemy's next health value.
     void defaultAttack(Enemy enemy);

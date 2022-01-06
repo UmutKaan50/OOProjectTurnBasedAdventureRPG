@@ -17,4 +17,6 @@ public abstract class NPC {
     }
 
     public abstract void showInventory();
+
+    public abstract void decision();
 }

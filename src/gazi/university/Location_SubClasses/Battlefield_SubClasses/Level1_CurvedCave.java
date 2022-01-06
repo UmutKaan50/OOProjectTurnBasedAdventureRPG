@@ -8,11 +8,15 @@ import gazi.university.Enemy_SubClasses.Zombie;
 import gazi.university.Location_SubClasses.Battlefield;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Level1_CurvedCave extends Battlefield {
+
     private Enemy enemy;
-    private final int numberOfEnemies = 15;
+    private final int numberOfEnemies = 3;
     private int remainedNumber = numberOfEnemies;
 
 
@@ -25,7 +29,86 @@ public class Level1_CurvedCave extends Battlefield {
 
     @Override
     public boolean getLocation() {
+
+        System.out.println("You're now in: " + this.getClass().getSimpleName());
+        System.out.println("\nThere are enemies here.");
+
+        combat(numberOfEnemies);
+
+
+
         return true;
+    }
+
+    public boolean combat(int numberOfEnemies){
+        for (int i = 0; i < numberOfEnemies; i++){
+            int defEnHealth = enemy.getHealth();
+            playerStats();
+            enemyStats();
+            while (getCharacter().getHealth() > 0 && enemy.getHealth() > 0){
+                System.out.println("<A>ttack or <R<un away");
+                Scanner scan = new Scanner(System.in);
+                String selection = scan.next();
+                selection = selection.toUpperCase();
+                try{
+                    Thread.sleep(1500);
+                }
+                catch (InterruptedException exception){
+                }
+
+                if (selection.equals("A"))
+                {
+                    System.out.println("You've attacked to the enemy!");
+                    getCharacter().defaultAttack(enemy);
+
+
+                    try{
+                        Thread.sleep(1500);
+                    }
+                    catch (InterruptedException exception){
+                    }
+                    if (enemy.getHealth() > 0){
+                        System.out.println();
+                        System.out.println("Enemy has attacked to you!");
+                        getEnemy().defaultAttack(getCharacter());
+                    }
+
+
+                    }
+                else {
+                    return false;
+
+                }
+
+            }
+            if (enemy.getHealth() <= 0 && getCharacter().getHealth() > 0){
+                System.out.println("You've defeated the enemy!");
+                getCharacter().setMoney(getCharacter().getMoney() + enemy.getGold());
+                System.out.println("Money gained: " + enemy.getGold() + " gold");
+                enemy.setHealth(defEnHealth);
+
+            }
+
+
+        }
+
+        return true;
+    }
+
+    public void playerStats(){
+        System.out.println("-Your values-\n");
+        System.out.println("Life: " + getCharacter().getHealth());
+        System.out.println("\nDamage: " + getCharacter().getDamage());
+        System.out.println("\nDefence: " + getCharacter().getDefence());
+
+    }
+
+    public void enemyStats(){
+        System.out.println("-Enemy values-\n");
+        System.out.println("Life: " + getEnemy().getHealth());
+        System.out.println("\nDamage: " + getEnemy().getDamage());
+        System.out.println("\nDefence: " + getEnemy().getDefence());
+
     }
 
     @Override

@@ -85,17 +85,19 @@ public class TownCenter extends Location {
         switch (choice) {
             case 1:
                 npc = new WeaponMerchant(getCharacter());
-                npc.showInventory();
+                npc.decision();
                 break;
             case 2:
                 npc = new ArmorMerchant(getCharacter());
-                npc.showInventory();
+                npc.decision();
                 break;
             case 3:
                 npc = new PotionMerchant(getCharacter());
-                npc.showInventory();
+                npc.decision();
                 break;
             default:
+                npc = new WeaponMerchant(getCharacter());
+                npc.decision();
                 break;
 
 

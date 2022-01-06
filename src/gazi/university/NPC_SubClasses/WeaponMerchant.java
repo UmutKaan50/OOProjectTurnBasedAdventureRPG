@@ -101,7 +101,22 @@ public class WeaponMerchant extends NPC {
 
     }
 
+    @Override
+    public void decision() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("I'll,");
+        System.out.println("1 - Buy item");
+        System.out.println("2 - Sell item");
+        int choice = scan.nextInt();
+        if (choice == 2){
+            sellWeapon(getCharacter().getWeaponEquipped());
 
+        }
+        else{
+            showInventory();
+
+        }
+    }
 
 
 
@@ -143,22 +158,38 @@ public class WeaponMerchant extends NPC {
 
 
         if(getCharacter().getWeaponEquipped() != null) {
-            getCharacter().getEquipment().setWeaponToList(weapon);
+            System.out.println("Previous damage from weapon: " + getCharacter().getWeaponEquipped().getFlatDamage());
+            sellWeapon(weapon);
+        }
+            getCharacter().setWeaponEquipped(weapon);
+            getCharacter().setDamage(getCharacter().getDamage() + weapon.getFlatDamage());
+            System.out.println("\nCurrent damage from weapon: " + getCharacter().getWeaponEquipped().getFlatDamage() + "\n\n");
+
+            System.out.println(getCharacter().getMoney() + " gold left.");
+
         }
         else{
-            getCharacter().setWeaponEquipped(weapon);
-            System.out.println("Bought " + weapon.getFlatDamage() + " damage");
-            System.out.println("\nPrevious damage: " + getCharacter().getDamage());
-            getCharacter().setDamage(getCharacter().getDamage() + weapon.getFlatDamage());
-            System.out.println("\nCurrent damage: " + getCharacter().getDefance() + "\n\n");
-        }
-
-        }else{
             System.out.println("Not enough money!");
 
         }
+        if (weapon.getClass().getSimpleName() == "Axe" || weapon.getClass().getSimpleName() == "Sowrd" &&
+        getCharacter().getClass().getSimpleName() == "Duelist")
+        {
+            System.out.println("Matched!");
+        }
 
+    }
 
+    public void sellWeapon(Weapon weapon){
+        if (getCharacter().getWeaponEquipped() != null) {
+            System.out.println(getCharacter().getWeaponEquipped().getName() + " is sold.");
+            getCharacter().setMoney(getCharacter().getMoney() + (weapon.getPrice() - 20));
+            System.out.println("Gained: " + (weapon.getPrice() - 20) + " gold");
+            getCharacter().setWeaponEquipped(null);
+        }
+        else{
+            System.out.println("You've nothing to sell me yet.");
+        }
     }
 
 

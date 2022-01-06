@@ -3,7 +3,7 @@ package gazi.university;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Enemy implements ActiveAndPassive{
+public class Enemy {
 
     private String name;
     private int health;
@@ -54,13 +54,14 @@ public class Enemy implements ActiveAndPassive{
         this.listOfEnemies.add(enemy);
     }
 
-    @Override
-    public void defaultAttack(Enemy enemy) {
-
-    }
-
-    @Override
-    public void activeSkill(Enemy enemy) {
+    public void defaultAttack(Character character) {
+        if (character.getDefence() > getDamage())
+            System.out.println("Dealt 0 damage!");
+        else {
+            int newLife = character.getHealth() - (getDamage() - character.getDefence());
+            character.setHealth(newLife);
+            System.out.println("Dealt" + (getDamage() - getDefence()) + " damage!");
+        }
 
     }
 
