@@ -7,6 +7,8 @@ import gazi.university.NPC_SubClasses.ArmorMerchant;
 import gazi.university.NPC_SubClasses.WeaponMerchant;
 import gazi.university.NPC_SubClasses.PotionMerchant;
 
+import java.lang.annotation.AnnotationTypeMismatchException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TownCenter extends Location {
@@ -80,29 +82,41 @@ public class TownCenter extends Location {
         System.out.println("1 - Weapon Merchant");
         System.out.println("2 - Armor Merchant");
         System.out.println("3 - Potion Merchant");
+        System.out.println("4 - Exit");
         System.out.println("Any other key - Exit");
-        int choice = scan.nextInt();
-        switch (choice) {
-            case 1:
-                npc = new WeaponMerchant(getCharacter());
-                npc.decision();
-                break;
-            case 2:
-                npc = new ArmorMerchant(getCharacter());
-                npc.decision();
-                break;
-            case 3:
-                npc = new PotionMerchant(getCharacter());
-                npc.decision();
-                break;
-            default:
-                npc = new WeaponMerchant(getCharacter());
-                npc.decision();
-                break;
-
-
+        try{
+            int choice = scan.nextInt();
+            switch (choice) {
+                case 1:
+                    System.out.println("Went to Weapon Merchant.");
+                    npc = new WeaponMerchant(getCharacter());
+                    npc.decision();
+                    break;
+                case 2:
+                    System.out.println("Went to Armor Merchant.");
+                    npc = new ArmorMerchant(getCharacter());
+                    npc.decision();
+                    break;
+                case 3:
+                    System.out.println("Went to Potion Merchant.");
+                    npc = new PotionMerchant(getCharacter());
+                    npc.decision();
+                    break;
+                case 4:
+                    System.out.println("Exited");
+                    return true;
+                default:
+                    System.out.println("Went to Weapon Merchant.");
+                    npc = new WeaponMerchant(getCharacter());
+                    npc.decision();
+                    break;
+            }
+        }
+        catch (Exception exception){
+            System.out.println("Wrong input type");
 
         }
+
         return true;
     }
 }
