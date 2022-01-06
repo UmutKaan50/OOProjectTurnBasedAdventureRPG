@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class Level3_FerociousJungle extends Battlefield {
     private Enemy enemy;
-    private final int numberOfEnemies = 35;
+    private final int numberOfEnemies = 12;
     private int remainedNumber = numberOfEnemies;
 
     // Constructor
@@ -56,14 +56,19 @@ public class Level3_FerociousJungle extends Battlefield {
         while(times != this.remainedNumber){ // this guy generates random list of enemies from random enemy types
             Random random = new Random();
             Random randomIndex = new Random();
-            int randomIndexForList = randomIndex.nextInt(35);
+            int randomIndexForList = randomIndex.nextInt(12);
             int randomNumber = random.nextInt(typeName.length);
             switch (typeName[randomNumber]) {
                 case "Poacher" -> {
                     try {
                         this.enemy.addEnemyToList(poachersLvl3.get(array[randomIndexForList]));
                     } catch(ArrayIndexOutOfBoundsException ex){
-                        this.enemy.addEnemyToList(vampiresLvl3.get(array[randomIndexForList]));
+                        try {
+                            this.enemy.addEnemyToList(vampiresLvl3.get(array[randomIndexForList]));
+                        }
+                        catch(ArrayIndexOutOfBoundsException exception){
+                            this.enemy.addEnemyToList(zombiesByLvl3.get(array[randomIndexForList]));
+                        }
                     }
                 }
                 case "Vampire" -> {

@@ -141,7 +141,7 @@ public class Level1_CurvedCave extends Battlefield {
         while(times != this.remainedNumber){ // this guy generates random list of enemies from random enemy types
             Random random = new Random();
             Random randomIndex = new Random();
-            int randomIndexForList = randomIndex.nextInt(15);
+            int randomIndexForList = randomIndex.nextInt(numberOfEnemies);
             int randomNumber = random.nextInt(typeName.length);
             switch (typeName[randomNumber]) {
                 case "Poacher" -> {

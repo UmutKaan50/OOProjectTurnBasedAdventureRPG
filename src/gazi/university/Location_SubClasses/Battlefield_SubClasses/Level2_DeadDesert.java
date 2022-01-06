@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class Level2_DeadDesert extends Battlefield {
     private Enemy enemy;
-    private final int numberOfEnemies = 25;
+    private final int numberOfEnemies = 8;
     private int remainedNumber = numberOfEnemies;
 
     // Constructor
@@ -56,15 +56,11 @@ public class Level2_DeadDesert extends Battlefield {
         while(times != this.remainedNumber){ // this guy generates random list of enemies from random enemy types
             Random random = new Random();
             Random randomIndex = new Random();
-            int randomIndexForList = randomIndex.nextInt(25);
+            int randomIndexForList = randomIndex.nextInt(8);
             int randomNumber = random.nextInt(typeName.length);
             switch (typeName[randomNumber]) {
                 case "Poacher" -> {
-                    try {
-                        this.enemy.addEnemyToList(poachersLvl2.get(array[randomIndexForList]));
-                    }catch(ArrayIndexOutOfBoundsException ex){
-                        this.enemy.addEnemyToList(zombiesByLvl2.get(array[randomIndexForList]));
-                    }
+                    this.enemy.addEnemyToList(poachersLvl2.get(array[randomIndexForList]));
                 }
                 case "Vampire" -> {
                     this.enemy.addEnemyToList(vampiresLvl2.get(array[randomIndexForList]));
