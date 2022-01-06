@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Level1_CurvedCave extends Battlefield {
+public class Level1_CursedCave extends Battlefield {
 
     private Enemy enemy;
     private final int numberOfEnemies = 3;
@@ -19,7 +19,7 @@ public class Level1_CurvedCave extends Battlefield {
 
 
     // Constructor
-    public Level1_CurvedCave(Character character){
+    public Level1_CursedCave(Character character){
         super(character);
         character.setCurrentLocation(this.getClass().getSimpleName()); //Let know where currently the character is.
         spawnEnemy();
@@ -31,11 +31,11 @@ public class Level1_CurvedCave extends Battlefield {
         System.out.println("You're now in: " + this.getClass().getSimpleName());
         System.out.println("\nThere are " + numberOfEnemies + " enemies here.");
 
-        combat(numberOfEnemies);
+        boolean result = combat(numberOfEnemies);
 
 
 
-        return true;
+        return result;
     }
 
     public boolean combat(int numberOfEnemies){
@@ -105,7 +105,11 @@ public class Level1_CurvedCave extends Battlefield {
                 getCharacter().setExperience(getCharacter().getExperience() + enemy.getXp());
                 System.out.println("Xp gained: " + enemy.getXp());
                 enemy.setHealth(defEnHealth);
+                getCharacter().levelUp();
 
+            }
+            else if(getCharacter().getHealth() <= 0){
+                return false;
             }
 
 

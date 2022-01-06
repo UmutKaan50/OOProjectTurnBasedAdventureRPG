@@ -10,6 +10,8 @@ import gazi.university.Equipment_SubClasses.Potions_SubClasses.HealthPotion;
 import gazi.university.Equipment_SubClasses.Potions_SubClasses.ManaPotion;
 import gazi.university.Equipment_SubClasses.Weapon;
 
+import java.util.Scanner;
+
 public class Character implements CharacterAttack {
 
     private String name;
@@ -121,8 +123,8 @@ public class Character implements CharacterAttack {
     private int experience = 0;
 
     private static final int xpToLvl2 = 50;
-    private static final int xpToLvl3 = 150;
-    private static final int xpToLvl4 = 250;
+    private static final int xpToLvl3 = 50;
+    private static final int xpToLvl4 = 50;
 
     // Getters and setters for my additional variables.
     public int getIntelligence() {
@@ -188,6 +190,10 @@ public class Character implements CharacterAttack {
         else if (experience >= xpToLvl4 && lvl == 3)
         {
            levelUpChanges();
+            System.out.println("You Win!!!");
+            Scanner scan = new Scanner(System.in);
+            String lastWords = scan.nextLine();
+            System.exit(0);
         }
     }
 
@@ -197,7 +203,17 @@ public class Character implements CharacterAttack {
         health += 20;
         mana += 20;
         strength += 5;
+        dexterity += 5;
+        intelligence += 5;
         money += 100;
+        System.out.println("***");
+        System.out.println("Level up!");
+        System.out.println("New health: " + getHealth());
+        System.out.println("New mana: " + getMana());
+        System.out.println("New money: " + getMoney());
+        System.out.println("Stats: +5!");
+        System.out.println("***");
+
     }
 
     // Umut Kaan's thinking about

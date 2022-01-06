@@ -3,7 +3,7 @@ package gazi.university;
 import gazi.university.Character_SubClasses.Duelist;
 import gazi.university.Character_SubClasses.Ranger;
 import gazi.university.Character_SubClasses.Sorcerer;
-import gazi.university.Location_SubClasses.Battlefield_SubClasses.Level1_CurvedCave;
+import gazi.university.Location_SubClasses.Battlefield_SubClasses.Level1_CursedCave;
 import gazi.university.Location_SubClasses.Battlefield_SubClasses.Level2_DeadDesert;
 import gazi.university.Location_SubClasses.Battlefield_SubClasses.Level3_FerociousJungle;
 import gazi.university.Location_SubClasses.TownCenter;
@@ -93,7 +93,7 @@ public class Game {
                 }
                 switch (locationChoice) {
                     case 1:
-                        location = new Level1_CurvedCave(player);
+                        location = new Level1_CursedCave(player);
                         musicAdder.Stop_Music();
                         musicAdder2.Start_Music();
 
