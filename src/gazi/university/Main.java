@@ -1,15 +1,5 @@
 package gazi.university;
 
-import gazi.university.Character_SubClasses.Duelist;
-import gazi.university.Character_SubClasses.Ranger;
-import gazi.university.Character_SubClasses.Sorcerer;
-import gazi.university.Equipment_SubClasses.Weapon;
-import gazi.university.Location_SubClasses.Battlefield_SubClasses.Level1_CurvedCave;
-import gazi.university.NPC_SubClasses.WeaponMerchant;
-
-import java.util.List;
-import java.util.*;
-
 
 public class Main {
 
@@ -50,6 +40,14 @@ public class Main {
 
         //Music adding test
 
+      /*  String mName1 = "DOOM.wav";
+        String mName2 = "Main.wav";
+        try{
+            Music_Adder musicAdder = new Music_Adder(mName2);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }*/
 
         //System.out.println(enemies.get(0).toString());
         // Let's start the game!

@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class Level2_DeadDesert extends Battlefield {
     private Enemy enemy;
-    private final int numberOfEnemies = 8;
+    private final int numberOfEnemies = 4;
     private int remainedNumber = numberOfEnemies;
 
     // Constructor

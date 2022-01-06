@@ -134,9 +134,6 @@ public class Game {
     }
 }
 
-
-
-
 //    public void temporaryMessageCall(Character player){
 //        // While loop or exception handling can be added above.
 //        // I realized that we need to add equipItem and unequipItem methods.
