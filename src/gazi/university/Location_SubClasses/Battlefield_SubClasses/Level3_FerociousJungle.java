@@ -7,11 +7,12 @@ import gazi.university.Enemy_SubClasses.Vampire;
 import gazi.university.Enemy_SubClasses.Zombie;
 import gazi.university.Location_SubClasses.Battlefield;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Level3_FerociousJungle extends Battlefield {
-    private List<Enemy> enemyList;
+    private List<Enemy> enemyList = new ArrayList<Enemy>();
     private final int numberOfEnemies = 5;
     private int remainedNumber = numberOfEnemies;
 
@@ -39,12 +40,16 @@ public class Level3_FerociousJungle extends Battlefield {
         for (int i = 0; i < numberOfEnemies; i++){
             getCharacter().levelUp();
 
-            int defEnHealth = enemyList.get(numberOfEnemies).getHealth();
+            //int defEnHealth = enemyList.get(i).getHealth();
 
-            while (getCharacter().getHealth() > 0 && enemyList.get(numberOfEnemies).getHealth() > 0){
+            while (getCharacter().getHealth() > 0 && enemyList.get(i).getHealth() > 0){
+                if ((numberOfEnemies - i > 1))
+                    System.out.println((numberOfEnemies - i) + " enemies left!");
+                else
+                    System.out.println("1 enemy left!");
                 playerStats();
                 System.out.println();
-                enemyStats();
+                enemyStats(i);
                 System.out.println("<A>ttack directly\t|\tuse <S>kill\t|\t<R>un away");
                 Scanner scan = new Scanner(System.in);
                 String selection = scan.next();
@@ -58,7 +63,7 @@ public class Level3_FerociousJungle extends Battlefield {
                 if (selection.equals("A"))
                 {
                     System.out.println("You've attacked to the enemy!");
-                    getCharacter().defaultAttack(enemyList.get(numberOfEnemies));
+                    getCharacter().defaultAttack(enemyList.get(i));
 
 
                     try{
@@ -66,26 +71,26 @@ public class Level3_FerociousJungle extends Battlefield {
                     }
                     catch (InterruptedException exception){
                     }
-                    if (enemyList.get(numberOfEnemies).getHealth() > 0){
+                    if (enemyList.get(i).getHealth() > 0){
                         System.out.println();
                         System.out.println("Enemy has attacked to you!");
-                        enemyList.get(numberOfEnemies).defaultAttack(getCharacter());
+                        enemyList.get(i).defaultAttack(getCharacter());
                     }
 
 
                 }
                 else if(selection.equals("S")){
                     System.out.println("You've used skill to the enemy!");
-                    getCharacter().activeSkill(enemyList.get(numberOfEnemies));
+                    getCharacter().activeSkill(enemyList.get(i));
                     try{
                         Thread.sleep(1000);
                     }
                     catch (InterruptedException exception){
                     }
-                    if (enemyList.get(numberOfEnemies).getHealth() > 0){
+                    if (enemyList.get(i).getHealth() > 0){
                         System.out.println();
                         System.out.println("Enemy has attacked to you!");
-                        enemyList.get(numberOfEnemies).defaultAttack(getCharacter());
+                        enemyList.get(i).defaultAttack(getCharacter());
                     }
                 }
 
@@ -96,13 +101,13 @@ public class Level3_FerociousJungle extends Battlefield {
                 }
 
             }
-            if (enemyList.get(numberOfEnemies).getHealth() <= 0 && getCharacter().getHealth() > 0){
+            if (enemyList.get(i).getHealth() <= 0 && getCharacter().getHealth() > 0){
                 System.out.println("You've defeated the enemy!");
-                getCharacter().setMoney(getCharacter().getMoney() + enemyList.get(numberOfEnemies).getGold());
-                System.out.println("Money gained: " + enemyList.get(numberOfEnemies).getGold() + " gold");
-                getCharacter().setExperience(getCharacter().getExperience() + enemyList.get(numberOfEnemies).getXp());
-                System.out.println("Xp gained: " + enemyList.get(numberOfEnemies).getXp());
-                enemyList.get(numberOfEnemies).setHealth(defEnHealth);
+                getCharacter().setMoney(getCharacter().getMoney() + enemyList.get(i).getGold());
+                System.out.println("Money gained: " + enemyList.get(i).getGold() + " gold");
+                getCharacter().setExperience(getCharacter().getExperience() + enemyList.get(i).getXp());
+                System.out.println("Xp gained: " + enemyList.get(i).getXp());
+                //enemyList.get(i).setHealth(defEnHealth);
                 getCharacter().levelUp();
 
             }
@@ -126,24 +131,28 @@ public class Level3_FerociousJungle extends Battlefield {
 
     }
 
-    public void enemyStats(){
+    public void enemyStats(int number){
         System.out.println("-Enemy values-\n");
-        System.out.println(enemyList.get(numberOfEnemies).getClass().getSimpleName() + ", lvl" + enemyList.get(numberOfEnemies).getLevel());
-        System.out.println("Life: " + enemyList.get(numberOfEnemies).getHealth());
-        System.out.println("\nDamage: " + enemyList.get(numberOfEnemies).getDamage());
-        System.out.println("\nDefence: " + enemyList.get(numberOfEnemies).getDefence());
+        System.out.println(enemyList.get(number).getClass().getSimpleName() + ", lvl" + enemyList.get(number).getLevel());
+        System.out.println("Life: " + enemyList.get(number).getHealth());
+        System.out.println("\nDamage: " + enemyList.get(number).getDamage());
+        System.out.println("\nDefence: " + enemyList.get(number).getDefence());
 
     }
 
     @Override
     protected void spawnEnemy() {
-        Zombie z1 = new Zombie("z1", 15,1,20,5,1,20);
-        Poacher p1 = new Poacher("p1",15,1,20,5,1,20);
-        Vampire v1 = new Vampire("v1", 15,1,20,5,1,20);
+        Zombie z1 = new Zombie("z1", 45,3,20,5,50,50);
+        Poacher p1 = new Poacher("p1",50, 3,21, 6,55,55);
+        Vampire v1 = new Vampire("v1", 55,3,22,7,60,60);
+        Poacher p2 = new Poacher("p2", 60,3,23, 8,65,65);
+        Vampire v2 = new Vampire("v2", 65,3, 24, 9, 70,70);
 
         enemyList.add(z1);
         enemyList.add(p1);
         enemyList.add(v1);
+        enemyList.add(p2);
+        enemyList.add(v2);
     }
 
 //    @Override

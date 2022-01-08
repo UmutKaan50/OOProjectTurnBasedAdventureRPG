@@ -188,6 +188,7 @@ public class ArmorMerchant extends NPC {
             getCharacter().setMoney(getCharacter().getMoney() + (armor.getPrice() - 20));
             System.out.println("Gained: " + (armor.getPrice() - 20) + " gold");
             getCharacter().setBodyArmorEquipped(null);
+            getCharacter().setDefence(getCharacter().getDefence() - armor.getFlatArmor());
         }
         else{
             System.out.println("You've nothing to sell me yet.\n");
@@ -199,6 +200,7 @@ public class ArmorMerchant extends NPC {
                 getCharacter().setMoney(getCharacter().getMoney() + (armor.getPrice() - 20));
                 System.out.println("Gained: " + (armor.getPrice() - 20) + " gold");
                 getCharacter().setBootsEquipped(null);
+                getCharacter().setDefence(getCharacter().getDefence() - armor.getFlatArmor());
             }
             else{
                 System.out.println("You've nothing to sell me yet.\n");
@@ -211,6 +213,7 @@ public class ArmorMerchant extends NPC {
                 getCharacter().setMoney(getCharacter().getMoney() + (armor.getPrice() - 20));
                 System.out.println("Gained: " + (armor.getPrice() - 20) + " gold");
                 getCharacter().setHelmetEquipped(null);
+                getCharacter().setDefence(getCharacter().getDefence() - armor.getFlatArmor());
             }
             else{
                 System.out.println("You've nothing to sell me yet.\n");
@@ -223,6 +226,7 @@ public class ArmorMerchant extends NPC {
                 getCharacter().setMoney(getCharacter().getMoney() + (armor.getPrice() - 20));
                 System.out.println("Gained: " + (armor.getPrice() - 20) + " gold");
                 getCharacter().setShieldEquipped(null);
+                getCharacter().setDefence(getCharacter().getDefence() - armor.getFlatArmor());
             }
             else{
                 System.out.println("You've nothing to sell me yet.\n");

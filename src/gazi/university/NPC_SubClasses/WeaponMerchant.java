@@ -189,7 +189,7 @@ public class WeaponMerchant extends NPC {
             getCharacter().setWeaponEquipped(null);
         }
         else{
-            System.out.println("You've nothing to sell me yet.\n");
+            System.out.println("You've no weapon to sell me yet.\n");
         }
     }
 

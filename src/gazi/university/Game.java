@@ -77,13 +77,13 @@ public class Game {
             while (true) {
                 System.out.println(player.getName() + ", lvl " + player.getLvl() + " " + player.getClass().getSimpleName());
                 System.out.println("Damage: " + player.getDamage() + ", Defence: " + player.getDefence());
-                System.out.println("Has: " + player.getMoney() + " gold\n");
+                System.out.println("Has: " + player.getMoney() + " gold");
                 System.out.println("Has: " + player.getExperience() + " xp");
                 System.out.println("Health: " + player.getHealth());
                 System.out.println("Mana: " + player.getMana());
 
 
-                System.out.println("Where do you like to go?");
+                System.out.println("Where do you like to go?\n");
                 System.out.println("1 - Curved Cave");
                 System.out.println("2 - Dead Desert");
                 System.out.println("3 - Ferocious Jungle");

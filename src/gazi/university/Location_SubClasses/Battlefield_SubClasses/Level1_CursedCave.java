@@ -43,12 +43,13 @@ public class Level1_CursedCave extends Battlefield {
             getCharacter().levelUp();
 
             //int defEnHealth = enemyList.get(i).getHealth();
+            if ((numberOfEnemies - i > 1))
+                System.out.println((numberOfEnemies - i) + " enemies left!\n");
+            else
+                System.out.println("1 enemy left!");
 
             while (getCharacter().getHealth() > 0 && enemyList.get(i).getHealth() > 0){
-                if ((numberOfEnemies - i > 1))
-                System.out.println((numberOfEnemies - i) + " enemies left!");
-                else
-                System.out.println("1 enemy left!");
+
                 playerStats();
                 System.out.println();
                 enemyStats(i);
@@ -74,8 +75,7 @@ public class Level1_CursedCave extends Battlefield {
                     catch (InterruptedException exception){
                     }
                     if (enemyList.get(i).getHealth() > 0){
-                        System.out.println();
-                        System.out.println("Enemy has attacked to you!");
+                        System.out.println("Enemy has attacked to you!\n");
                         enemyList.get(i).defaultAttack(getCharacter());
                     }
 
@@ -124,7 +124,7 @@ public class Level1_CursedCave extends Battlefield {
     }
 
     public void playerStats(){
-        System.out.println("-Your values-\n");
+        System.out.println("-Your values-");
         System.out.println(getCharacter().getName() + ", lvl " +getCharacter().getLvl());
         System.out.println("Life: " + getCharacter().getHealth());
         System.out.println("Mana: " + getCharacter().getMana());
@@ -134,7 +134,7 @@ public class Level1_CursedCave extends Battlefield {
     }
 
     public void enemyStats(int i){
-        System.out.println("-Enemy values-\n");
+        System.out.println("-Enemy values-");
         System.out.println(enemyList.get(i).getClass().getSimpleName() + ", lvl" + enemyList.get(i).getLevel());
         System.out.println("Life: " + enemyList.get(i).getHealth());
         System.out.println("Damage: " + enemyList.get(i).getDamage());
@@ -145,8 +145,8 @@ public class Level1_CursedCave extends Battlefield {
     @Override
     protected void spawnEnemy() {
         Zombie z1 = new Zombie("z1", 15,1,14,1,20,20);
-        Poacher p1 = new Poacher("p1",15,1,15,2,25,25);
-        Vampire v1 = new Vampire("v1", 15,1,16,3,30,30);
+        Poacher p1 = new Poacher("p1",20,1,15,2,25,25);
+        Vampire v1 = new Vampire("v1", 25,1,16,3,30,30);
 
         enemyList.add(z1);
         enemyList.add(p1);

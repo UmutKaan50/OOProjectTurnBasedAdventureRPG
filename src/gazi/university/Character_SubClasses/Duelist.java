@@ -44,7 +44,7 @@ public class Duelist extends Character {
 
                 // Duelist's active skill increases duelist damage by 2 and deals double damage.
                 setDamage(getDamage() + 2);
-                enemy.setHealth(enemy.getHealth() - (getDamage() * 2) - enemy.getDefence());
+                enemy.setHealth(enemy.getHealth() - ((getDamage() * 2) - enemy.getDefence()));
                 System.out.println("Dealt " + ((getDamage() * 2) - enemy.getDefence()) + " damage!");
                 setDamage(getDamage() - 2);
             }
