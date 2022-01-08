@@ -21,6 +21,24 @@ public class Character implements CharacterAttack {
     private int money;
     private Equipment equipment;
     private int damage;
+    private int fullHealth;
+    private int fullMana;
+
+    public int getFullHealth() {
+        return fullHealth;
+    }
+
+    public void setFullHealth(int fullHealth) {
+        this.fullHealth = fullHealth;
+    }
+
+    public int getFullMana() {
+        return fullMana;
+    }
+
+    public void setFullMana(int fullMana) {
+        this.fullMana = fullMana;
+    }
 
     // Added on Wednesday, 15:10 by Umut Kaan -----------------
     private Weapon weaponEquipped = null;
@@ -123,8 +141,8 @@ public class Character implements CharacterAttack {
     private int experience = 0;
 
     private static final int xpToLvl2 = 50;
-    private static final int xpToLvl3 = 50;
-    private static final int xpToLvl4 = 50;
+    private static final int xpToLvl3 = 100;
+    private static final int xpToLvl4 = 200;
 
     // Getters and setters for my additional variables.
     public int getIntelligence() {
@@ -169,6 +187,8 @@ public class Character implements CharacterAttack {
         this.intelligence = intelligence;
         this.money = money;
         this.equipment = equipment;
+        this.fullHealth = health;
+        this.fullMana = mana;
     }
     // Adding another constructor for flexibility. And I needed it.
     public Character(){}
@@ -181,15 +201,15 @@ public class Character implements CharacterAttack {
         // Checking the level up process here.
         if (experience >= xpToLvl2 && lvl == 1)
         {
-            levelUpChanges();
+            levelUpChanges(xpToLvl2);
         }
         else if (experience >= xpToLvl3 && lvl == 2)
         {
-            levelUpChanges();
+            levelUpChanges(xpToLvl3);
         }
         else if (experience >= xpToLvl4 && lvl == 3)
         {
-           levelUpChanges();
+           levelUpChanges(xpToLvl4);
             System.out.println("You Win!!!");
             Scanner scan = new Scanner(System.in);
             String lastWords = scan.nextLine();
@@ -197,11 +217,13 @@ public class Character implements CharacterAttack {
         }
     }
 
-    private void levelUpChanges(){
+    private void levelUpChanges(int xp){
+        fullHealth += 20;
+        fullMana += 20;
+        health = fullHealth;
+        mana = fullMana;
         lvl++;
-        experience = 0;
-        health += 20;
-        mana += 20;
+        experience -= xp;
         strength += 5;
         dexterity += 5;
         intelligence += 5;

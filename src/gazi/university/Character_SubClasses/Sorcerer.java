@@ -30,11 +30,16 @@ public class Sorcerer extends Character {
         }
         else {
             // Sorcerer's active skill deals normal damage and then steals 2 dmg from enemy.
-            setMana(getMana() - 10);
 
-            enemy.setHealth(enemy.getHealth() - (getDamage() + 3));
-            setMana(getMana() + getDamage() / 2);
-            System.out.println("Dealt " + getDamage() + " damage!");
+            setMana(getMana() - 10);
+            if(enemy.getDefence() > this.getDamage())
+                System.out.println("Dealt 0 damage!");
+            else {
+
+                enemy.setHealth(enemy.getHealth() - (getDamage() + 3));
+                setMana(getMana() + getDamage() / 2);
+                System.out.println("Dealt " + getDamage() + " damage!");
+            }
 
 
         }

@@ -15,7 +15,15 @@ public class Enemy {
     private final List<Enemy> listOfEnemies = new ArrayList<>();
 
     // Constructor
-    public Enemy(){}
+    public Enemy(String name, int health, int level, int damage, int defence, int gold, int xp){
+        this.name = name;
+        this.health = health;
+        this.level = level;
+        this.damage = damage;
+        this.defence = defence;
+        this.gold = gold;
+        this.xp = xp;
+    }
     public String getName() {
         return name;
     }
@@ -36,7 +44,7 @@ public class Enemy {
     public int getXp(){return this.xp;}
     public void setXp(int xp){this.xp = xp;}
     public int getDefence() {
-        return defence;
+        return this.defence;
     }
 
     public void setDefence(int defence) {

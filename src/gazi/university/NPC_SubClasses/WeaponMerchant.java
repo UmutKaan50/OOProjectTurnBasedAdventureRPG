@@ -185,6 +185,7 @@ public class WeaponMerchant extends NPC {
             System.out.println(getCharacter().getWeaponEquipped().getName() + " is sold.");
             getCharacter().setMoney(getCharacter().getMoney() + (weapon.getPrice() - 20));
             System.out.println("Gained: " + (weapon.getPrice() - 20) + " gold");
+            getCharacter().setDamage(getCharacter().getDamage() - weapon.getFlatDamage());
             getCharacter().setWeaponEquipped(null);
         }
         else{

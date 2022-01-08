@@ -1,6 +1,10 @@
 package gazi.university;
 
 
+import gazi.university.Character_SubClasses.Ranger;
+
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args){
@@ -56,6 +60,12 @@ public class Main {
 //            int characterChoice = scan.nextInt();
             // Making more methods for processes is required.
             // I guess that changing decision from String to int changed something so I'm trying to implement it differently.
+
+//        Random random = new Random();
+//        int number = random.nextInt(3);
+//        int number1 = random.nextInt(3);
+//        System.out.println(number);
+//        System.out.println(number1);
 
 
     Game game = new Game();

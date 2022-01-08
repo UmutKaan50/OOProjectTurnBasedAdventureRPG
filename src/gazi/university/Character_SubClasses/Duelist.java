@@ -20,12 +20,14 @@ public class Duelist extends Character {
 
     @Override
     public void defaultAttack(Enemy enemy) {
-        if(enemy.getDefence() > this.getDamage())
+        if(enemy.getDefence() > getDamage()) {
             System.out.println("Dealt 0 damage!");
+        }
         else {
             int newLife = enemy.getHealth() - (getDamage() - enemy.getDefence());
             enemy.setHealth(newLife);
             System.out.println("Dealt " + (getDamage() - enemy.getDefence()) + " damage!");
+            //System.out.println("hi, dmg: " + getDamage() + " enemydef: " + enemy.getDefence());
         }
     }
 
@@ -36,11 +38,16 @@ public class Duelist extends Character {
         }
         else {
             setMana(getMana() - 10);
-            // Duelist's active skill increases duelist damage by 2 and deals double damage.
-            setDamage(getDamage() + 2);
-            enemy.setHealth(enemy.getHealth() - getDamage() * 2);
-            System.out.println("Dealt " + (getDamage() * 2) + " damage!");
-            setDamage(getDamage() - 2);
+            if(enemy.getDefence() > this.getDamage())
+                System.out.println("Dealt 0 damage!");
+            else {
+
+                // Duelist's active skill increases duelist damage by 2 and deals double damage.
+                setDamage(getDamage() + 2);
+                enemy.setHealth(enemy.getHealth() - (getDamage() * 2) - enemy.getDefence());
+                System.out.println("Dealt " + ((getDamage() * 2) - enemy.getDefence()) + " damage!");
+                setDamage(getDamage() - 2);
+            }
 
 
         }

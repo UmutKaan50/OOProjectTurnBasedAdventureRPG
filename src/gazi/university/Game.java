@@ -79,6 +79,8 @@ public class Game {
                 System.out.println("Damage: " + player.getDamage() + ", Defence: " + player.getDefence());
                 System.out.println("Has: " + player.getMoney() + " gold\n");
                 System.out.println("Has: " + player.getExperience() + " xp");
+                System.out.println("Health: " + player.getHealth());
+                System.out.println("Mana: " + player.getMana());
 
 
                 System.out.println("Where do you like to go?");
