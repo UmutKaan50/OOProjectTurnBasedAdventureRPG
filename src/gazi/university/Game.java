@@ -64,8 +64,6 @@ public class Game {
                 player = new Duelist(initialName, 100, 100, 50, 3, 2, 100, null);
             }
 
-
-        System.out.println();
         System.out.println("You are a " + player.getClass().getSimpleName() + " from distance lands.");
         System.out.println("Your travels have took you through the most dangerous places on this planet, from the wildest of jungles to the darkest of caves.");
         System.out.println("Upon your travels you arrive a nice little town. Urho.");

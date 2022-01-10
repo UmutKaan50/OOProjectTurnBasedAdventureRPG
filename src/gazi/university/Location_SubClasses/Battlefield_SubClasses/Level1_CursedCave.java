@@ -65,7 +65,7 @@ public class Level1_CursedCave extends Battlefield {
 
                 if (selection.equals("A"))
                 {
-                    System.out.println("You've attacked to the enemy!");
+                    System.out.print("You've attacked to the enemy!\t->\t");
                     getCharacter().defaultAttack(enemyList.get(i));
 
 
@@ -75,14 +75,14 @@ public class Level1_CursedCave extends Battlefield {
                     catch (InterruptedException exception){
                     }
                     if (enemyList.get(i).getHealth() > 0){
-                        System.out.println("Enemy has attacked to you!\n");
+                        System.out.print("Enemy has attacked to you!\t->\t");
                         enemyList.get(i).defaultAttack(getCharacter());
                     }
 
 
                     }
                 else if(selection.equals("S")){
-                    System.out.println("You've used skill to the enemy!");
+                    System.out.print("You've used skill to the enemy!\t->\t");
                     getCharacter().activeSkill(enemyList.get(i));
                     try{
                         Thread.sleep(1000);
@@ -90,8 +90,7 @@ public class Level1_CursedCave extends Battlefield {
                     catch (InterruptedException exception){
                     }
                     if (enemyList.get(i).getHealth() > 0){
-                        System.out.println();
-                        System.out.println("Enemy has attacked to you!");
+                        System.out.print("Enemy has attacked to you!\t->\t");
                         enemyList.get(i).defaultAttack(getCharacter());
                     }
                 }

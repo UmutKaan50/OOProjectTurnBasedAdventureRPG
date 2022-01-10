@@ -49,12 +49,16 @@ public class PotionMerchant extends NPC {
     public void showInventory() {
         // Maybe we could add item id but I don't think we need it now.
         int counter = 1;
+        System.out.println();
         for (Potion potionItem: potionList){
             System.out.println(counter + " - " + potionItem.getName() + ", " + potionItem.getRegenAmount() +
                     ", " + potionItem.getPrice() + " gold");
 
             counter++;
         }
+
+        System.out.println("\nYou have " + getCharacter().getMoney() + " gold\nWhich do you want to buy?");
+
         Scanner scan = new Scanner(System.in);
         int choice = scan.nextInt();
 

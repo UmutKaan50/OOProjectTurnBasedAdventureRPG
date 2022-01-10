@@ -61,6 +61,7 @@ public class ArmorMerchant extends NPC {
         System.out.println("I have this armors for you!");
 
         int counter = 1;
+        System.out.println();
         for (Armor armorItem: armorList)
         {
             System.out.println(counter + " - " + armorItem.getName() + ", " + armorItem.getFlatArmor() + ", "
@@ -68,7 +69,7 @@ public class ArmorMerchant extends NPC {
             counter++;
         }
 
-        System.out.println("Which do you want to buy?");
+        System.out.println("\nYou have " + getCharacter().getMoney() + " gold\nWhich do you want to buy?");
 
         Scanner scan = new Scanner(System.in);
         int choice = scan.nextInt();

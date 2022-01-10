@@ -47,12 +47,16 @@ public class WeaponMerchant extends NPC {
     @Override
     public void showInventory() {
         int counter = 1;
+        System.out.println();
         for (Weapon weaponItem: weaponList)
         {
             System.out.println(counter + " - " + weaponItem.getName() + ", " + weaponItem.getFlatDamage() + ", " +
                     weaponItem.getPrice() + " gold");
             counter++;
         }
+
+        System.out.println("\nYou have " + getCharacter().getMoney() + " gold\nWhich do you want to buy?");
+
         Scanner scan = new Scanner(System.in);
         int choice = scan.nextInt();
 
