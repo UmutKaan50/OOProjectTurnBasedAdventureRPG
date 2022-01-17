@@ -41,8 +41,8 @@ public class Game {
         System.out.println("What do you want your name to be?");
         String initialName = scan.nextLine();
         System.out.println("There are three character classes in this game:");
-        System.out.println("1 - Duelist\n2 - Ranger\n3 - Sorcerer");
-        System.out.println("With which one you want to play this game?");
+//        System.out.println("1 - Duelist\n2 - Ranger\n3 - Sorcerer");
+//        System.out.println("With which one you want to play this game?");
 
 
 
@@ -50,18 +50,35 @@ public class Game {
         // I guess that changing decision from String to int changed something so I'm trying to implement it differently.
         Character player = new Character();
 
-            int characterChoice = scan.nextInt();
 
 
+            while(true){
+                System.out.println("1 - Duelist\n2 - Ranger\n3 - Sorcerer");
+                System.out.println("With which one you want to play this game?");
+                int characterChoice = scan.nextInt();
             // Selecting character class here
             if (characterChoice == 1) {
                 player = new Duelist(initialName, 100, 100, 50, 3, 2, 100, null);
+                break;
+                // When there was no break an error came. I think it was because the loop was infinite.
             } else if (characterChoice == 2) {
                 player = new Ranger(initialName, 100, 100, 3, 5, 2, 100, null);
+                break;
             } else if (characterChoice == 3) {
                 player = new Sorcerer(initialName, 100, 100, 2, 3, 5, 100, null);
-            } else {
-                player = new Duelist(initialName, 100, 100, 50, 3, 2, 100, null);
+                break;
+            }
+                System.out.println("Enter a valid number.\n");
+            // Half second waiting time. It's because of wrong input.
+                try{
+                    Thread.sleep(800);
+                }
+                catch (InterruptedException exception){
+                }
+//            else {
+//
+//                 player = new Duelist(initialName, 100, 100, 50, 3, 2, 100, null);
+//            }
             }
 
         System.out.println("You are a " + player.getClass().getSimpleName() + " from distance lands.");
@@ -81,7 +98,7 @@ public class Game {
                 System.out.println("Mana: " + player.getMana());
 
 
-                System.out.println("Where do you like to go?\n");
+                System.out.println("Where do you like to go " + player.getName() + "?\n");
                 System.out.println("1 - Curved Cave");
                 System.out.println("2 - Dead Desert");
                 System.out.println("3 - Ferocious Jungle");
