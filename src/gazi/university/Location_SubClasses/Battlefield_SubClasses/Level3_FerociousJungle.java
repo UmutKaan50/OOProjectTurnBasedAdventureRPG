@@ -133,7 +133,7 @@ public class Level3_FerociousJungle extends Battlefield {
 
     public void enemyStats(int number){
         System.out.println("-Enemy values-\n");
-        System.out.println(enemyList.get(number).getClass().getSimpleName() + ", lvl" + enemyList.get(number).getLevel());
+        System.out.println(enemyList.get(number).getClass().getSimpleName() + ", lvl " + enemyList.get(number).getLevel());
         System.out.println("Life: " + enemyList.get(number).getHealth());
         System.out.println("\nDamage: " + enemyList.get(number).getDamage());
         System.out.println("\nDefence: " + enemyList.get(number).getDefence());

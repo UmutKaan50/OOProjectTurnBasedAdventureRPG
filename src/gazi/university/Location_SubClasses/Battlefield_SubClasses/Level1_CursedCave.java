@@ -6,7 +6,6 @@ import gazi.university.Enemy_SubClasses.Poacher;
 import gazi.university.Enemy_SubClasses.Vampire;
 import gazi.university.Enemy_SubClasses.Zombie;
 import gazi.university.Location_SubClasses.Battlefield;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,7 +15,6 @@ public class Level1_CursedCave extends Battlefield {
     private List<Enemy> enemyList = new ArrayList<Enemy>();
     private final int numberOfEnemies = 3;
     private int remainedNumber = numberOfEnemies;
-
 
     // Constructor
     public Level1_CursedCave(Character character){
@@ -132,9 +130,10 @@ public class Level1_CursedCave extends Battlefield {
 
     }
 
+    // I don't know if we need printing lvl here.
     public void enemyStats(int i){
         System.out.println("-Enemy values-");
-        System.out.println(enemyList.get(i).getClass().getSimpleName() + ", lvl" + enemyList.get(i).getLevel());
+        System.out.println(enemyList.get(i).getClass().getSimpleName() + ", lvl " + enemyList.get(i).getLevel());
         System.out.println("Life: " + enemyList.get(i).getHealth());
         System.out.println("Damage: " + enemyList.get(i).getDamage());
         System.out.println("Defence: " + enemyList.get(i).getDefence());

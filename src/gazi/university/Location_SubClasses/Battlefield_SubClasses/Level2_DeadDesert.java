@@ -133,7 +133,7 @@ public class Level2_DeadDesert extends Battlefield {
 
     public void enemyStats(int i){
         System.out.println("-Enemy values-");
-        System.out.println(enemyList.get(i).getClass().getSimpleName() + ", lvl" + enemyList.get(i).getLevel());
+        System.out.println(enemyList.get(i).getClass().getSimpleName() + ", lvl " + enemyList.get(i).getLevel());
         System.out.println("Life: " + enemyList.get(i).getHealth());
         System.out.println("Damage: " + enemyList.get(i).getDamage());
         System.out.println("Defence: " + enemyList.get(i).getDefence());
